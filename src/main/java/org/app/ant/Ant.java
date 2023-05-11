@@ -22,14 +22,44 @@ public class Ant extends Agent {
         this.antDecisionFactor = antDecisionFactor;
     }
 
+    private void setAntHunger(){
+
+    }
+
+    private void setAntDecisionFactor(){
+
+    }
+
+    private void setAntLifetime(){
+
+    }
+    private double getAntHunger(){
+
+        return antHunger;
+    }
+
+    private double getAntDecisionFactor(){
+
+        return antDecisionFactor;
+    }
+
+    private double getAntLifetime(){
+
+        return antLifetime;
+    }
 
     private boolean moveTest() {
+
         return true;
+    }
+
+    private void moveAnt(){
+
     }
 
     public void update() {
 
-    };
+    }
 
 
     public String toString() {
