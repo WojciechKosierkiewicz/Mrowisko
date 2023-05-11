@@ -113,6 +113,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="Mrowisko" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
@@ -132,8 +133,14 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Build&amp;Run" />
+      <item itemvalue="Gradle.Mrowisko" />
+      <item itemvalue="Gradle.Mrowisko [assemble]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Mrowisko [assemble]" />
