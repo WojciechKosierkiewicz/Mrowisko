@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Build&amp;Run" type="Application" factoryName="Application">
-    <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
+    <option name="ALTERNATIVE_JRE_PATH" value="liberica-20" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-    <option name="MAIN_CLASS_NAME" value="org.app.application.Application" />
+    <option name="MAIN_CLASS_NAME" value="org.app.MainApp.MainApp" />
     <module name="Mrowisko.main" />
     <extension name="coverage">
       <pattern>
