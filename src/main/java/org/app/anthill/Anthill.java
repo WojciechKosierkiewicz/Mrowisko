@@ -6,6 +6,7 @@ import org.app.ant.Ant;
 
 public class Anthill {
     Vector<Ant> Ants;
+    int AntLimit;
     int AntLifeTime;
 
     public Anthill() {
@@ -35,6 +36,13 @@ public class Anthill {
         for (Ant ant : Ants) {
             System.out.println(ant);
         }
+    }
+
+    public void Update() {
+        for (Ant ant : Ants) {
+            ant.update();
+        }
+        removeOldAnts();
     }
 
     private void removeOldAnts() {
