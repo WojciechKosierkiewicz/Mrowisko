@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-      fx:controller="org.app.MainApp.MainAppController">
+<HBox xmlns:fx="http://javafx.com/fxml/1" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="591.0" prefWidth="985.0"
+      xmlns="http://javafx.com/javafx/17.0.2-ea">
+    <children>
+        <AnchorPane prefHeight="595.0" prefWidth="240.0">
+            <children>
+                <Button layoutY="2.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="181.0" text="Start!"/>
+            </children>
+        </AnchorPane>
+        <VBox prefHeight="591.0" prefWidth="274.0">
+            <children>
+                <AreaChart prefHeight="215.0" prefWidth="200.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </AreaChart>
+                <AreaChart prefHeight="155.0" prefWidth="200.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </AreaChart>
+                <LineChart prefHeight="180.0" prefWidth="200.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </LineChart>
+            </children>
+        </VBox>
+        <Canvas height="550.0" width="550.0"/>
+    </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button onAction="#onHelloButtonClick" text="Hello!" textFill="#c41a16"/>
-</VBox>
+</HBox>
