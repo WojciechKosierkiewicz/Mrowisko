@@ -4,36 +4,35 @@ import org.app.agent.Agent;
 
 public class Ant extends Agent {
 
-    private double antLifetime;
+    private int livedUpdates = 0;
     private double antHunger;
     private double antDecisionFactor;
 
     public Ant() {
         super();
         this.antHunger = 100;
-        this.antLifetime = 100;
         this.antDecisionFactor = 0.5;
     }
 
-    public Ant(double antLifetime, double antHunger, double antDecisionFactor) {
+    public Ant(double antHunger, double antDecisionFactor) {
         super();
-        this.antLifetime = antLifetime;
         this.antHunger = antHunger;
         this.antDecisionFactor = antDecisionFactor;
     }
 
-    private void setAntHunger(){
+    public int getLivedUpdates() {
+        return livedUpdates;
+    }
+
+    private void setAntHunger() {
 
     }
 
-    private void setAntDecisionFactor(){
+    private void setAntDecisionFactor() {
 
     }
 
-    private void setAntLifetime(){
-
-    }
-    private double getAntHunger(){
+    private double getAntHunger() {
 
         return antHunger;
     }
@@ -41,11 +40,6 @@ public class Ant extends Agent {
     private double getAntDecisionFactor(){
 
         return antDecisionFactor;
-    }
-
-    private double getAntLifetime(){
-
-        return antLifetime;
     }
 
     private boolean moveTest() {
@@ -58,7 +52,7 @@ public class Ant extends Agent {
     }
 
     public void update() {
-
+        livedUpdates++;
     }
 
 
