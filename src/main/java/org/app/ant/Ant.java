@@ -6,4 +6,8 @@ public class Ant extends Agent {
     public Ant() {
         super();
     }
+
+    public String toString() {
+        return "id: { " + getId() + " }";
+    }
 }

@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="koniec github workflows :(">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/ant/Ant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Build_Run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_Run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Dodanie plikow klas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +168,7 @@
       <workItem from="1683799199569" duration="717000" />
       <workItem from="1683801144413" duration="560000" />
       <workItem from="1683801718464" duration="44000" />
-      <workItem from="1683801770053" duration="782000" />
+      <workItem from="1683801770053" duration="1083000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -225,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683801622896</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Dodanie plikow klas">
+      <created>1683802769410</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683802769410</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +248,8 @@
     <MESSAGE value="start" />
     <MESSAGE value="zmiana gradlew na chmod+x" />
     <MESSAGE value="koniec github workflows :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="koniec github workflows :(" />
+    <MESSAGE value="Dodanie plikow klas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodanie plikow klas" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
