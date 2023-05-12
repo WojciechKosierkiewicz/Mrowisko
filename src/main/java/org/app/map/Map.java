@@ -1,17 +1,25 @@
 package org.app.map;
 
+import org.app.anthill.Anthill;
+
+import java.util.List;
 import java.util.Vector;
 
 public class Map {
-    Vector<Vector<Integer>> Map;
+    Vector<Vector<Integer>> HeightMap;
+    List<Anthill> anthills;
 
     Map(int x, int y) {
-        Map = new Vector<Vector<Integer>>();
+        HeightMap = new Vector<>();
         for (int i = 0; i < x; i++) {
-            Map.add(new Vector<Integer>());
+            HeightMap.add(new Vector<>());
             for (int j = 0; j < y; j++) {
-                Map.get(i).add(0);
+                HeightMap.get(i).add(0);
             }
         }
+    }
+
+    public void addAnthill(Anthill anthill) {
+        anthills.add(anthill);
     }
 }

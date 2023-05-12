@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="edycja gui">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="dodanie id do mrowek oraz dodanie lokazacji do agenta.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/food/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,8 @@
       <workItem from="1683821979968" duration="373000" />
       <workItem from="1683822365989" duration="208000" />
       <workItem from="1683884927827" duration="112000" />
-      <workItem from="1683885052384" duration="412000" />
+      <workItem from="1683885052384" duration="789000" />
+      <workItem from="1683898461767" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -267,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683822566350</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="dodanie id do mrowek oraz dodanie lokazacji do agenta.">
+      <created>1683885837506</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683885837506</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +302,8 @@
     <MESSAGE value="zmiany w mrowkach" />
     <MESSAGE value="przeniesienie lifetimu" />
     <MESSAGE value="edycja gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="edycja gui" />
+    <MESSAGE value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
