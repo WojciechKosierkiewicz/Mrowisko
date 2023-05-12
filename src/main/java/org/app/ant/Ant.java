@@ -2,11 +2,15 @@ package org.app.ant;
 
 import org.app.agent.Agent;
 
+import java.util.UUID;
+
 public class Ant extends Agent {
 
     private int livedUpdates = 0;
     private double antHunger;
     private double antDecisionFactor;
+
+    UUID id_mrowiska;
 
     public Ant() {
         super();
@@ -14,10 +18,11 @@ public class Ant extends Agent {
         this.antDecisionFactor = 0.5;
     }
 
-    public Ant(double antHunger, double antDecisionFactor) {
+    public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska) {
         super();
         this.antHunger = antHunger;
         this.antDecisionFactor = antDecisionFactor;
+        this.id_mrowiska = id_mrowiska;
     }
 
     public int getLivedUpdates() {

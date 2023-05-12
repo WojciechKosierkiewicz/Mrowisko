@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="przeniesienie lifetimu">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="edycja gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/MainApp/MainApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/MainApp/MainApp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +179,9 @@
       <workItem from="1683801770053" duration="1083000" />
       <workItem from="1683821620654" duration="321000" />
       <workItem from="1683821979968" duration="373000" />
+      <workItem from="1683822365989" duration="208000" />
+      <workItem from="1683884927827" duration="112000" />
+      <workItem from="1683885052384" duration="412000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -258,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683806344897</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="edycja gui">
+      <created>1683822566350</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683822566350</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +292,8 @@
     <MESSAGE value="Dodanie plikow klas" />
     <MESSAGE value="zmiany w mrowkach" />
     <MESSAGE value="przeniesienie lifetimu" />
-    <option name="LAST_COMMIT_MESSAGE" value="przeniesienie lifetimu" />
+    <MESSAGE value="edycja gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="edycja gui" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
