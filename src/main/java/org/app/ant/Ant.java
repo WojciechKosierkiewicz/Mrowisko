@@ -10,12 +10,19 @@ public class Ant extends Agent {
     private double antHunger;
     private double antDecisionFactor;
 
+    private double movement_angle;
+    private double turn_angle;
+    private double move_len;
+
     UUID id_mrowiska;
 
     public Ant() {
         super();
         this.antHunger = 100;
         this.antDecisionFactor = 0.5;
+        this.turn_angle = 0;
+        this.movement_angle = 0;
+        this.move_len = 1;
     }
 
     public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska) {
@@ -29,31 +36,38 @@ public class Ant extends Agent {
         return livedUpdates;
     }
 
-    private void setAntHunger() {
-
+    public void setTurn_angle(double turn_angle) {
+        this.turn_angle = turn_angle;
     }
 
-    private void setAntDecisionFactor() {
-
+    public void setMovement_angle(double movement_angle) {
+        this.movement_angle = movement_angle;
     }
 
-    private double getAntHunger() {
-
+    public double getAntHunger() {
         return antHunger;
     }
 
-    private double getAntDecisionFactor(){
+    public void setAntHunger(double antHunger) {
+        this.antHunger = antHunger;
+    }
 
+    public double getAntDecisionFactor() {
         return antDecisionFactor;
     }
 
-    private boolean moveTest() {
-
-        return true;
+    public void setAntDecisionFactor(double antDecisionFactor) {
+        this.antDecisionFactor = antDecisionFactor;
     }
 
-    private void moveAnt(){
+    public void moveAnt(double move_len) {
+        this.setLocx(this.getLocx() + move_len * Math.cos(movement_angle));
+        this.setLocy(this.getLocy() + move_len * Math.sin(movement_angle));
+    }
 
+    public void moveAnt() {
+        this.setLocx(this.getLocx() + move_len * Math.cos(movement_angle));
+        this.setLocy(this.getLocy() + move_len * Math.sin(movement_angle));
     }
 
     public void update() {
