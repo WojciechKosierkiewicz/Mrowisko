@@ -10,6 +10,9 @@ public class Ant extends Agent {
     private double antHunger;
     private double antDecisionFactor;
 
+    private double antAngle;
+
+
     UUID id_mrowiska;
 
     public Ant() {
@@ -18,15 +21,29 @@ public class Ant extends Agent {
         this.antDecisionFactor = 0.5;
     }
 
-    public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska) {
+    public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska, int x, int y) {
         super();
         this.antHunger = antHunger;
         this.antDecisionFactor = antDecisionFactor;
         this.id_mrowiska = id_mrowiska;
+        this.setLocx(x);
+        this.setLocy(y);
     }
 
+
     public int getLivedUpdates() {
+
         return livedUpdates;
+    }
+
+    public double getLocXofAnt() {
+
+        return getLocx();
+    }
+
+    public double getLocYOfAnt() {
+
+        return getLocy();
     }
 
     private void setAntHunger() {
@@ -42,17 +59,29 @@ public class Ant extends Agent {
         return antHunger;
     }
 
-    private double getAntDecisionFactor(){
+    private double getAntDecisionFactor() {
 
         return antDecisionFactor;
     }
+
+    public UUID getId_mrowiska() {
+
+        return id_mrowiska;
+    }
+
 
     private boolean moveTest() {
 
         return true;
     }
 
-    private void moveAnt(){
+    private double countAntAngle() {
+
+
+        return antAngle;
+    }
+
+    private void moveAnt() {
 
     }
 

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="zabawa z mapa" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="dodanie id do mrowek oraz dodanie lokazacji do agenta.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/food/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,30 +108,6 @@
   }
 }</component>
   <component name="RunManager" selected="Application.Build&amp;Run">
-    <configuration name="AntTest.movement_angle_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.app.ant.AntTest.movement_angle_test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
     <configuration name="Mrowisko [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -174,13 +154,11 @@
       <item itemvalue="Application.Build&amp;Run" />
       <item itemvalue="Gradle.Mrowisko [:test]" />
       <item itemvalue="Gradle.Mrowisko" />
-      <item itemvalue="Gradle.AntTest.movement_angle_test" />
       <item itemvalue="Gradle.Mrowisko [assemble]" />
       <item itemvalue="JUnit.AntTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AntTest.movement_angle_test" />
         <item itemvalue="Gradle.Mrowisko [assemble]" />
       </list>
     </recent_temporary>
@@ -205,9 +183,7 @@
       <workItem from="1683822365989" duration="208000" />
       <workItem from="1683884927827" duration="112000" />
       <workItem from="1683885052384" duration="789000" />
-      <workItem from="1683898461767" duration="746000" />
-      <workItem from="1683903131409" duration="1533000" />
-      <workItem from="1683987516223" duration="296000" />
+      <workItem from="1683898461767" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -300,21 +276,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683885837506</updated>
     </task>
-    <task id="LOCAL-00014" summary="zabawa z mapa">
-      <created>1683899201733</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1683899201733</updated>
-    </task>
-    <task id="LOCAL-00015" summary="zabawa z mapa">
-      <created>1683908121207</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1683908121207</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,8 +303,7 @@
     <MESSAGE value="przeniesienie lifetimu" />
     <MESSAGE value="edycja gui" />
     <MESSAGE value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
-    <MESSAGE value="zabawa z mapa" />
-    <option name="LAST_COMMIT_MESSAGE" value="zabawa z mapa" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
