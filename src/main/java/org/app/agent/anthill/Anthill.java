@@ -1,8 +1,8 @@
-package org.app.anthill;
+package org.app.agent.anthill;
 
 import java.util.Vector;
 
-import org.app.ant.Ant;
+import org.app.agent.ant.Ant;
 
 public class Anthill {
     Vector<Ant> Ants;

@@ -1,4 +1,4 @@
-package org.app.ant;
+package org.app.agent.ant;
 
 import org.app.agent.Agent;
 

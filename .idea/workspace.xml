@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="zabawa z mapa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/app/ant/AntTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/app/ant/AntTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="zabawa z mapa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +103,31 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AntTest">
+  <component name="RunManager" selected="Application.Build&amp;Run">
+    <configuration name="AntTest.movement_angle_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.app.ant.AntTest.movement_angle_test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="Mrowisko [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -154,11 +174,13 @@
       <item itemvalue="Application.Build&amp;Run" />
       <item itemvalue="Gradle.Mrowisko [:test]" />
       <item itemvalue="Gradle.Mrowisko" />
+      <item itemvalue="Gradle.AntTest.movement_angle_test" />
       <item itemvalue="Gradle.Mrowisko [assemble]" />
       <item itemvalue="JUnit.AntTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AntTest.movement_angle_test" />
         <item itemvalue="Gradle.Mrowisko [assemble]" />
       </list>
     </recent_temporary>
@@ -184,7 +206,8 @@
       <workItem from="1683884927827" duration="112000" />
       <workItem from="1683885052384" duration="789000" />
       <workItem from="1683898461767" duration="746000" />
-      <workItem from="1683903131409" duration="1522000" />
+      <workItem from="1683903131409" duration="1533000" />
+      <workItem from="1683987516223" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -284,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683899201733</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="zabawa z mapa">
+      <created>1683908121207</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683908121207</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

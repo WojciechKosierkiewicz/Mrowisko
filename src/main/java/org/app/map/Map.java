@@ -1,6 +1,6 @@
 package org.app.map;
 
-import org.app.anthill.Anthill;
+import org.app.agent.anthill.Anthill;
 
 import java.util.List;
 import java.util.Vector;

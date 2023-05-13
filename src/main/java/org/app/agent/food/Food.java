@@ -1,4 +1,4 @@
-package org.app.food;
+package org.app.agent.food;
 
 import org.app.agent.Agent;
 
