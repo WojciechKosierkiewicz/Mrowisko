@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Dodanie JavaFX !" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="dodanie id do mrowek oraz dodanie lokazacji do agenta.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/food/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +40,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Mrowisko" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Mrowisko" type="f1a62948:ProjectNode" />
                 <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
               <path>
@@ -59,13 +57,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -92,7 +94,6 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/wojtek/Projekty/Java/Mrowisko/src/main/java/org/app/MainApp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,43 +101,14 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/wojte/Projekty/PolWro/Mrowisko/src/main/java/org/example/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.20034844&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/org/app/MainApp" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/org/app/MainApp" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-  </component>
   <component name="RunManager" selected="Application.Build&amp;Run">
-    <configuration name="Mrowisko" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="mrowisko [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Mrowisko [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,85 +130,17 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="mrowisko [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Mrowisko" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="mrowisko [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
           <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="mrowisko [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="mrowisko [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="testClasses" />
-          </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
@@ -250,20 +154,12 @@
       <item itemvalue="Application.Build&amp;Run" />
       <item itemvalue="Gradle.Mrowisko [:test]" />
       <item itemvalue="Gradle.Mrowisko" />
-      <item itemvalue="Gradle.mrowisko [assemble]" />
-      <item itemvalue="Gradle.mrowisko [build]" />
-      <item itemvalue="Gradle.mrowisko [clean]" />
-      <item itemvalue="Gradle.mrowisko [jar]" />
-      <item itemvalue="Gradle.mrowisko [testClasses]" />
+      <item itemvalue="Gradle.Mrowisko [assemble]" />
       <item itemvalue="JUnit.AntTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.mrowisko [build]" />
-        <item itemvalue="Gradle.mrowisko [assemble]" />
-        <item itemvalue="Gradle.mrowisko [jar]" />
-        <item itemvalue="Gradle.mrowisko [testClasses]" />
-        <item itemvalue="Gradle.mrowisko [clean]" />
+        <item itemvalue="Gradle.Mrowisko [assemble]" />
       </list>
     </recent_temporary>
   </component>
@@ -282,16 +178,12 @@
       <workItem from="1683801144413" duration="560000" />
       <workItem from="1683801718464" duration="44000" />
       <workItem from="1683801770053" duration="1083000" />
-      <workItem from="1683807651674" duration="65000" />
-      <workItem from="1683807724813" duration="10000" />
-      <workItem from="1683807750900" duration="88000" />
-      <workItem from="1683807844514" duration="170000" />
-      <workItem from="1683808020395" duration="127000" />
-      <workItem from="1683808152353" duration="1895000" />
-      <workItem from="1683810398657" duration="300000" />
-      <workItem from="1683810717883" duration="1738000" />
-      <workItem from="1683819637354" duration="149000" />
-      <workItem from="1683822711304" duration="650000" />
+      <workItem from="1683821620654" duration="321000" />
+      <workItem from="1683821979968" duration="373000" />
+      <workItem from="1683822365989" duration="208000" />
+      <workItem from="1683884927827" duration="112000" />
+      <workItem from="1683885052384" duration="789000" />
+      <workItem from="1683898461767" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -356,21 +248,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683805914390</updated>
     </task>
-    <task id="LOCAL-00010" summary="kontunuacja setupu">
-      <created>1683807906416</created>
+    <task id="LOCAL-00010" summary="przeniesienie lifetimu">
+      <created>1683806278653</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1683807906416</updated>
+      <updated>1683806278653</updated>
     </task>
-    <task id="LOCAL-00011" summary="Dodanie JavaFX !">
-      <created>1683812691050</created>
+    <task id="LOCAL-00011" summary="przeniesienie lifetimu">
+      <created>1683806344897</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1683812691050</updated>
+      <updated>1683806344897</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="edycja gui">
+      <created>1683822566350</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683822566350</updated>
+    </task>
+    <task id="LOCAL-00013" summary="dodanie id do mrowek oraz dodanie lokazacji do agenta.">
+      <created>1683885837506</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683885837506</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,9 +301,9 @@
     <MESSAGE value="Dodanie plikow klas" />
     <MESSAGE value="zmiany w mrowkach" />
     <MESSAGE value="przeniesienie lifetimu" />
-    <MESSAGE value="kontunuacja setupu" />
-    <MESSAGE value="Dodanie JavaFX !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodanie JavaFX !" />
+    <MESSAGE value="edycja gui" />
+    <MESSAGE value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie id do mrowek oraz dodanie lokazacji do agenta." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -1,15 +1,20 @@
 package org.app.map;
 
 import org.app.agent.anthill.Anthill;
+import org.app.agent.pheromone.*;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.Vector;
 
 public class Map {
-    Vector<Vector<Integer>> HeightMap;
-    List<Anthill> anthills;
 
-    Map(int x, int y) {
+    private final int sector_size;
+    private final Vector<Vector<Integer>> HeightMap;
+    private final List<Anthill> anthills;
+    private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
+
+    Map(int x, int y, int sector_size) {
         HeightMap = new Vector<>();
         for (int i = 0; i < x; i++) {
             HeightMap.add(new Vector<>());
@@ -17,9 +22,65 @@ public class Map {
                 HeightMap.get(i).add(0);
             }
         }
+        this.sector_size = sector_size;
+
+        anthills = new Vector<>();
+        Pheromone_Sector_map = new Vector<>();
+        for (int i = 0; i < x / sector_size; i++) {
+            Pheromone_Sector_map.add(new Vector<>());
+            for (int j = 0; j < y / sector_size; j++) {
+                Pheromone_Sector_map.get(i).add(new Vector<>());
+                for (int k = 0; k < 4; k++) {
+                    Pheromone_Sector_map.get(i).get(j).add(new Pheromone());
+                }
+            }
+        }
     }
 
-    public void addAnthill(Anthill anthill) {
-        anthills.add(anthill);
+    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range) {
+        Vector<Pheromone> result = new Vector<>();
+        int sector_x = (int) (x / sector_size);
+        int sector_y = (int) (y / sector_size);
+        int sectors_in_range = (int) (range / sector_size);
+
+        for (int i = sector_x - sectors_in_range; i <= sector_x + sectors_in_range; i++)
+            for (int j = sector_y - sectors_in_range; j <= sector_y + sectors_in_range; j++)
+                if (i >= 0 && i < Pheromone_Sector_map.size() && j >= 0 && j < Pheromone_Sector_map.get(i).size())
+                    result.addAll(Pheromone_Sector_map.get(i).get(j));
+
+        return result;
+    }
+
+    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, Pheromone.PheromoneType type) {
+        Vector<Pheromone> result = new Vector<>();
+        int sector_x = (int) (x / sector_size);
+        int sector_y = (int) (y / sector_size);
+        int sectors_in_range = (int) (range / sector_size);
+
+        for (int i = sector_x - sectors_in_range; i <= sector_x + sectors_in_range; i++)
+            for (int j = sector_y - sectors_in_range; j <= sector_y + sectors_in_range; j++)
+                if (i >= 0 && i < Pheromone_Sector_map.size() && j >= 0 && j < Pheromone_Sector_map.get(i).size())
+                    for (Pheromone p : Pheromone_Sector_map.get(i).get(j))
+                        if (p.getType() == type)
+                            result.add(p);
+
+        return result;
+    }
+
+
+    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, Pheromone.PheromoneType type, UUID creator) {
+        Vector<Pheromone> result = new Vector<>();
+        int sector_x = (int) (x / sector_size);
+        int sector_y = (int) (y / sector_size);
+        int sectors_in_range = (int) (range / sector_size);
+
+        for (int i = sector_x - sectors_in_range; i <= sector_x + sectors_in_range; i++)
+            for (int j = sector_y - sectors_in_range; j <= sector_y + sectors_in_range; j++)
+                if (i >= 0 && i < Pheromone_Sector_map.size() && j >= 0 && j < Pheromone_Sector_map.get(i).size())
+                    for (Pheromone p : Pheromone_Sector_map.get(i).get(j))
+                        if (p.getType() == type && p.getCreator() == creator)
+                            result.add(p);
+
+        return result;
     }
 }
