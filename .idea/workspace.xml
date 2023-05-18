@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="nic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="ant move ant">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,7 +383,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684405301560</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="nic">
+      <created>1684408394549</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684408394549</updated>
+    </task>
+    <task id="LOCAL-00015" summary="nic">
+      <created>1684408649943</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684408649943</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ant move ant">
+      <created>1684408664734</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684408664734</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +432,8 @@
     <MESSAGE value="kontunuacja setupu" />
     <MESSAGE value="Dodanie JavaFX !" />
     <MESSAGE value="nic" />
-    <option name="LAST_COMMIT_MESSAGE" value="nic" />
+    <MESSAGE value="ant move ant" />
+    <option name="LAST_COMMIT_MESSAGE" value="ant move ant" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

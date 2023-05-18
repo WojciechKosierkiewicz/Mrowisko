@@ -59,20 +59,26 @@ public class Ant extends Agent {
 
     public void moveAnt() {
 
-        java.util.Vector pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
-
-        int oldestPheromone = pheromones.get(1);
-
-        for (org.app.agent.pheromone.Pheromone p : pheromones) {
-
-            if (p.getCreationTick() > oldestPheromone)
-
-        }
-
     }
 
     public void updateAngle() {
 
+        java.util.Vector<org.app.agent.pheromone.Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
+
+        org.app.agent.pheromone.Pheromone oldestPheromone = pheromones.get(1);
+
+        for (org.app.agent.pheromone.Pheromone p : pheromones) {
+
+            if (p.getCreationTick() < oldestPheromone.getCreationTick()) {
+                oldestPheromone = p;
+            }
+        }
+
+        double angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
+    }
+
+    private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
+        // TODO: 18.05.2023
     }
 
     public void update() {

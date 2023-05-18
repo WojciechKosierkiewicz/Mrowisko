@@ -20,7 +20,7 @@ public class Pheromone {
         return creationTick;
     }
 
-    public int setCreationTick(double creationTick) {
+    public void setCreationTick(double creationTick) {
         this.creationTick = settings.getCurrentTick();
     }
 
