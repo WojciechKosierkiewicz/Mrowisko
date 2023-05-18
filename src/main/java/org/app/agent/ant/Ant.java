@@ -12,7 +12,7 @@ public class Ant extends Agent {
     private double antDecisionFactor;
 
     private double movement_angle;
-    private double turn_angle;
+
     private double step_len;
     private Config settings;
 
@@ -33,9 +33,6 @@ public class Ant extends Agent {
         return livedUpdates;
     }
 
-    public void setTurn_angle(double turn_angle) {
-        this.turn_angle = turn_angle;
-    }
 
     public void setMovement_angle(double movement_angle) {
         this.movement_angle = movement_angle;
@@ -79,6 +76,7 @@ public class Ant extends Agent {
 
     private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
         // TODO: 18.05.2023
+        return 1;
     }
 
     public void update() {

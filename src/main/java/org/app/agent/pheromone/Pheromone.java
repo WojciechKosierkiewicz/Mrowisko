@@ -1,10 +1,11 @@
 package org.app.agent.pheromone;
 
+import org.app.agent.Agent;
 import org.app.menager.config.Config;
 
 import java.util.UUID;
 
-public class Pheromone {
+public class Pheromone extends Agent {
     PheromoneType type;
     UUID creator;
 
