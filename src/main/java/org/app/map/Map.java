@@ -88,16 +88,22 @@ public class Map {
         return result;
     }
 
-    public Vector<Integer> getSurroundingTiles(double x, double y) {
+    public Vector<Vector<Integer>> getSurroundingTiles(double x, double y) {
         int posx = (int) x;
         int posy = (int) y;
 
         Vector results = new Vector();
+        Vector subres = new Vector();
 
-        for (int i = posx - 1; i <= posx + 1; i++)
-            for (int j = posy - 1; j <= posy + 1; j++)
-                if (i >= 0 && i < HeightMap.size() && j >= 0 && j < HeightMap.get(i).size())
-                    results.add(HeightMap.get(i).get(j));
+        for (int i = posx - 1; i <= posx + 1; i++) {
+            subres = new Vector();
+            for (int j = posy - 1; j <= posy + 1; j++) {
+                if (i >= 0 && i < HeightMap.size() && j >= 0 && j < HeightMap.get(i).size()) {
+                    subres.add(HeightMap.get(i).get(j));
+                }
+            }
+            results.add(subres);
+        }
 
         return results;
     }
