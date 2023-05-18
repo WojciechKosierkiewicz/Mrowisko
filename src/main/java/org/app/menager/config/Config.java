@@ -6,19 +6,37 @@ public class Config {
     int AnthillAntLimit;
     int MaxStepHeightDelta;
 
+    double antDecisionFactor;
+
     double antRange;
 
-    double max_turn_angle;
+    public int getMaxStepHeightDelta() {
+        return MaxStepHeightDelta;
+    }
+
+    public void setMaxStepHeightDelta(int maxStepHeightDelta) {
+        MaxStepHeightDelta = maxStepHeightDelta;
+    }
+
+    public double getAntDecisionFactor() {
+        return antDecisionFactor;
+    }
+
+    public void setAntDecisionFactor(double antDecisionFactor) {
+        this.antDecisionFactor = antDecisionFactor;
+    }
+
+    //    double max_turn_angle;
 
     private int currentTick = 0;
 
-    public double getMax_turn_angle() {
-        return max_turn_angle;
-    }
-
-    public void setMax_turn_angle(double max_turn_angle) {
-        this.max_turn_angle = max_turn_angle;
-    }
+//    public double getMax_turn_angle() {
+//        return max_turn_angle;
+//    }
+//
+//    public void setMax_turn_angle(double max_turn_angle) {
+//        this.max_turn_angle = max_turn_angle;
+//    }
 
     public double getAntRange() {
         return antRange;

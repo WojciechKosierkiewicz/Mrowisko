@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="update angle i count angle">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="gotowy update angle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +80,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2PdqtPoQgDW3on0GL12qc7kfjHR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -414,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684409675523</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="gotowy update angle">
+      <created>1684410264731</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684410264731</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +454,8 @@
     <MESSAGE value="nic" />
     <MESSAGE value="ant move ant" />
     <MESSAGE value="update angle i count angle" />
-    <option name="LAST_COMMIT_MESSAGE" value="update angle i count angle" />
+    <MESSAGE value="gotowy update angle" />
+    <option name="LAST_COMMIT_MESSAGE" value="gotowy update angle" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

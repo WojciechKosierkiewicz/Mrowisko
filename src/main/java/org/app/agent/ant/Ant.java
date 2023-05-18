@@ -3,13 +3,13 @@ package org.app.agent.ant;
 import org.app.agent.Agent;
 import org.app.menager.config.Config;
 
+import java.util.Random;
 import java.util.UUID;
 
 public class Ant extends Agent {
 
     private int livedUpdates = 0;
     private double antHunger;
-    private double antDecisionFactor;
 
     private double movement_angle;
 
@@ -24,7 +24,6 @@ public class Ant extends Agent {
     public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska, org.app.map.Map map) {
         super();
         this.antHunger = antHunger;
-        this.antDecisionFactor = antDecisionFactor;
         this.id_mrowiska = id_mrowiska;
         this.map = map;
     }
@@ -46,16 +45,71 @@ public class Ant extends Agent {
         this.antHunger = antHunger;
     }
 
-    public double getAntDecisionFactor() {
-        return antDecisionFactor;
-    }
-
-    public void setAntDecisionFactor(double antDecisionFactor) {
-        this.antDecisionFactor = antDecisionFactor;
-    }
 
     public void moveAnt() {
 
+        int[] possibleAngles = {0, 45, 90, 135, 180, 225, 270, 315};
+
+        double dMovement_angle;
+
+        dMovement_angle = settings.getAntDecisionFactor() * movement_angle;
+
+        Random rand = new Random();
+        double endAntAngle = rand.nextDouble() * ((movement_angle + dMovement_angle) - (movement_angle - dMovement_angle)) + movement_angle - dMovement_angle;
+
+
+        double closestAngle = Math.abs(Math.toRadians(possibleAngles[0]));
+        double smallestDifference = endAntAngle - closestAngle;
+
+        for (int i = 1; i < possibleAngles.length; i++) {
+            double currentDifference = Math.abs(endAntAngle - Math.toRadians(possibleAngles[i]));
+
+            if (currentDifference < smallestDifference) {
+                closestAngle = Math.toRadians(possibleAngles[i]);
+                smallestDifference = currentDifference;
+            }
+        }
+
+        int positionX = getLocx();
+        int positionY = getLocy();
+
+        if (closestAngle == Math.toRadians(possibleAngles[0])) {
+            positionX++;
+        } else if (closestAngle == Math.toRadians(possibleAngles[1])) {
+            positionX++;
+            positionY++;
+        } else if (closestAngle == Math.toRadians(possibleAngles[2])) {
+            positionY++;
+        } else if (closestAngle == Math.toRadians(possibleAngles[3])) {
+            positionX--;
+            positionY++;
+        } else if (closestAngle == Math.toRadians(possibleAngles[4])) {
+            positionX--;
+        } else if (closestAngle == Math.toRadians(possibleAngles[5])) {
+            positionX--;
+            positionY--;
+        } else if (closestAngle == Math.toRadians(possibleAngles[6])) {
+            positionY--;
+        } else if (closestAngle == Math.toRadians(possibleAngles[6])) {
+            positionX++;
+            positionY--;
+        }
+
+        int deltaOldLocAndNewLoc;
+        int oldLocHeight = map.getHeight(getLocx(), getLocy());
+        int newLocHeight = map.getHeight(positionX, positionY);
+
+        deltaOldLocAndNewLoc = Math.abs(oldLocHeight - newLocHeight);
+
+        if (deltaOldLocAndNewLoc <= settings.getMaxStepHeightDelta()) {
+            setLocx(positionX);
+            setLocy(positionY);
+        } else {
+            setLocx(getLocx());
+            setLocy(getLocy());
+        }
+
+        /// a co dalej? jezeli sie nie moge ruszyc? no to nie wiem XD
     }
 
     public void updateAngle() {
@@ -71,12 +125,16 @@ public class Ant extends Agent {
             }
         }
 
-        double angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
+        this.movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
     }
 
-    private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
-        // TODO: 18.05.2023
-        return 1;
+    private double countAngleBeetwenPoints(int x1, int y1, int x2, int y2) {
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+
+        double radianAngle = Math.atan2(dy, dx);
+
+        return radianAngle;
     }
 
     public void update() {

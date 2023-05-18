@@ -107,4 +107,17 @@ public class Map {
 
         return results;
     }
+
+    //TODO
+    //funkcja, która zwróci wysokość w punkcie locx i locy
+
+    public int getHeight(int posx, int posy) {
+        int height = 0;
+////
+////        // wbijamy do tej pozycji  w mapie i sprawdzamy wysokosc na podstawie koloru
+////
+////
+///
+        return height;
+    }
 }
