@@ -1,6 +1,7 @@
 package org.app.agent.ant;
 
 import org.app.agent.Agent;
+import org.app.menager.config.Config;
 
 import java.util.UUID;
 
@@ -13,23 +14,18 @@ public class Ant extends Agent {
     private double movement_angle;
     private double turn_angle;
     private double step_len;
+    private Config settings;
+
+    private org.app.map.Map map;
 
     UUID id_mrowiska;
 
-    public Ant() {
-        super();
-        this.antHunger = 100;
-        this.antDecisionFactor = 0.5;
-        this.turn_angle = 0;
-        this.movement_angle = 0;
-        this.step_len = 1;
-    }
-
-    public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska) {
+    public Ant(double antHunger, double antDecisionFactor, UUID id_mrowiska, org.app.map.Map map) {
         super();
         this.antHunger = antHunger;
         this.antDecisionFactor = antDecisionFactor;
         this.id_mrowiska = id_mrowiska;
+        this.map = map;
     }
 
     public int getLivedUpdates() {

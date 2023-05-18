@@ -2,7 +2,9 @@ package org.app.map;
 
 import org.app.agent.anthill.Anthill;
 import org.app.agent.pheromone.*;
+import org.app.menager.config.Config;
 
+import java.io.File;
 import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
@@ -13,6 +15,8 @@ public class Map {
     private final Vector<Vector<Integer>> HeightMap;
     private final List<Anthill> anthills;
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
+    private Config settings;
+
 
     Map(int x, int y, int sector_size) {
         HeightMap = new Vector<>();
@@ -82,5 +86,19 @@ public class Map {
                             result.add(p);
 
         return result;
+    }
+
+    public Vector<Integer> getSurroundingTiles(double x, double y) {
+        int posx = (int) x;
+        int posy = (int) y;
+
+        Vector results = new Vector();
+
+        for (int i = posx - 1; i <= posx + 1; i++)
+            for (int j = posy - 1; j <= posy + 1; j++)
+                if (i >= 0 && i < HeightMap.size() && j >= 0 && j < HeightMap.get(i).size())
+                    results.add(HeightMap.get(i).get(j));
+
+        return results;
     }
 }
