@@ -63,9 +63,9 @@ public class Ant extends Agent {
 
         int oldestPheromone = pheromones.get(1);
 
-        for (pheromones p : pheromones) {
+        for (org.app.agent.pheromone.Pheromone p : pheromones) {
 
-            if (settings.getCurrentTick() - > oldestPheromone)
+            if (p.getCreationTick() > oldestPheromone)
 
         }
 
