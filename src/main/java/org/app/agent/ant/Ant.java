@@ -16,6 +16,7 @@ public class Ant extends Agent {
     private double step_len;
     private Config settings;
 
+
     private org.app.map.Map map;
 
     UUID id_mrowiska;
@@ -56,14 +57,22 @@ public class Ant extends Agent {
         this.antDecisionFactor = antDecisionFactor;
     }
 
-    public void moveAnt(double move_len) {
-        this.setLocx(this.getLocx() + move_len * Math.cos(movement_angle));
-        this.setLocy(this.getLocy() + move_len * Math.sin(movement_angle));
+    public void moveAnt() {
+
+        java.util.Vector pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
+
+        int oldestPheromone = pheromones.get(1);
+
+        for (pheromones p : pheromones) {
+
+            if (settings.getCurrentTick() - > oldestPheromone)
+
+        }
+
     }
 
-    public void moveAnt() {
-        this.setLocx(this.getLocx() + step_len * Math.cos(movement_angle));
-        this.setLocy(this.getLocy() + step_len * Math.sin(movement_angle));
+    public void updateAngle() {
+
     }
 
     public void update() {

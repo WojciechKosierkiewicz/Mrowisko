@@ -6,6 +6,26 @@ public class Config {
     int AnthillAntLimit;
     int MaxStepHeightDelta;
 
+    double antRange;
+
+    private int currentTick = 0;
+
+    public double getAntRange() {
+        return antRange;
+    }
+
+    public void setAntRange(double antRange) {
+        this.antRange = antRange;
+    }
+
+    public int setCurrentTick() {
+        return this.currentTick + 1;
+    }
+
+    public int getCurrentTick() {
+        return currentTick;
+    }
+
     public int getAnthillAntLimit() {
         return AnthillAntLimit;
     }

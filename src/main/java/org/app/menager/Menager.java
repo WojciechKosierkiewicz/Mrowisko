@@ -10,6 +10,7 @@ public class Menager {
     private SimResults results;
     private org.app.map.Map map;
 
+
     Menager(Config konfiguracja) {
         // TODO: 15.05.2023  
     }
@@ -25,5 +26,6 @@ public class Menager {
     void ZapiszWyniki() {
         // TODO: 15.05.2023   
     }
+
 
 }
