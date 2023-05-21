@@ -2,9 +2,11 @@ package org.app.agent.ant;
 
 import org.app.agent.Agent;
 import org.app.menager.config.Config;
+import org.app.agent.pheromone.Pheromone;
 
 import java.util.Random;
 import java.util.UUID;
+import java.util.Vector;
 
 public class Ant extends Agent {
 
@@ -114,11 +116,11 @@ public class Ant extends Agent {
 
     public void updateAngle() {
 
-        java.util.Vector<org.app.agent.pheromone.Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
+        Vector<Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
 
-        org.app.agent.pheromone.Pheromone oldestPheromone = pheromones.get(1);
+        Pheromone oldestPheromone = pheromones.get(1);
 
-        for (org.app.agent.pheromone.Pheromone p : pheromones) {
+        for (Pheromone p : pheromones) {
 
             if (p.getCreationTick() < oldestPheromone.getCreationTick()) {
                 oldestPheromone = p;
