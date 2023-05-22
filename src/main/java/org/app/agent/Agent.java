@@ -4,7 +4,7 @@ package org.app.agent;
 import java.util.UUID;
 
 public abstract class Agent {
-    private java.util.UUID id;
+    private final java.util.UUID id;
     private double locx;
     private double locy;
 
