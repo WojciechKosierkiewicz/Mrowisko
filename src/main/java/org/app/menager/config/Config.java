@@ -1,7 +1,10 @@
 package org.app.menager.config;
 
 
+import java.nio.file.Path;
+
 public class Config {
+    Path datalogpath;
     int AntLifetime;
     int AnthillAntLimit;
     int MaxStepHeightDelta;
@@ -27,6 +30,11 @@ public class Config {
     }
 
     //    double max_turn_angle;
+
+
+    public Path getDatalogpath() {
+        return datalogpath;
+    }
 
     private int currentTick = 0;
 

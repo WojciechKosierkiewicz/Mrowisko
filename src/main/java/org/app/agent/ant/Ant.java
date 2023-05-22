@@ -14,6 +14,7 @@ public class Ant extends Agent {
     private double antHunger;
 
     private double movement_angle;
+    private double ant_freedom_angle;
 
     private double step_len;
     private Config settings;
@@ -49,74 +50,20 @@ public class Ant extends Agent {
 
 
     public void moveAnt() {
+        //losowanie kąta w zakresie dopuszczonym przez ant freedom angle
+        double angle = ((Math.random() * (movement_angle + ant_freedom_angle - (movement_angle - ant_freedom_angle))) + (movement_angle - ant_freedom_angle));
 
-        int[] possibleAngles = {0, 45, 90, 135, 180, 225, 270, 315};
-
-        double dMovement_angle;
-
-        dMovement_angle = settings.getAntDecisionFactor() * movement_angle;
-
-        Random rand = new Random();
-        double endAntAngle = rand.nextDouble() * ((movement_angle + dMovement_angle) - (movement_angle - dMovement_angle)) + movement_angle - dMovement_angle;
-
-
-        double closestAngle = Math.abs(Math.toRadians(possibleAngles[0]));
-        double smallestDifference = endAntAngle - closestAngle;
-
-        for (int i = 1; i < possibleAngles.length; i++) {
-            double currentDifference = Math.abs(endAntAngle - Math.toRadians(possibleAngles[i]));
-
-            if (currentDifference < smallestDifference) {
-                closestAngle = Math.toRadians(possibleAngles[i]);
-                smallestDifference = currentDifference;
-            }
-        }
-
-        int positionX = getLocx();
-        int positionY = getLocy();
-
-        if (closestAngle == Math.toRadians(possibleAngles[0])) {
-            positionX++;
-        } else if (closestAngle == Math.toRadians(possibleAngles[1])) {
-            positionX++;
-            positionY++;
-        } else if (closestAngle == Math.toRadians(possibleAngles[2])) {
-            positionY++;
-        } else if (closestAngle == Math.toRadians(possibleAngles[3])) {
-            positionX--;
-            positionY++;
-        } else if (closestAngle == Math.toRadians(possibleAngles[4])) {
-            positionX--;
-        } else if (closestAngle == Math.toRadians(possibleAngles[5])) {
-            positionX--;
-            positionY--;
-        } else if (closestAngle == Math.toRadians(possibleAngles[6])) {
-            positionY--;
-        } else if (closestAngle == Math.toRadians(possibleAngles[6])) {
-            positionX++;
-            positionY--;
-        }
-
-        int deltaOldLocAndNewLoc;
-        int oldLocHeight = map.getHeight(getLocx(), getLocy());
-        int newLocHeight = map.getHeight(positionX, positionY);
-
-        deltaOldLocAndNewLoc = Math.abs(oldLocHeight - newLocHeight);
-
-        if (deltaOldLocAndNewLoc <= settings.getMaxStepHeightDelta()) {
-            setLocx(positionX);
-            setLocy(positionY);
-        } else {
-            setLocx(getLocx());
-            setLocy(getLocy());
-        }
-
-        /// a co dalej? jezeli sie nie moge ruszyc? no to nie wiem XD
+        //przesunięcie o krok w kierunku wylosowanego kąta
+        //aktualnie nie sprawdzam czy dany krok jest legalny :( fuck law
+        this.setLocx(this.getLocx() + step_len * Math.cos(angle));
+        this.setLocy(this.getLocy() + step_len * Math.sin(angle));
     }
 
     public void updateAngle() {
 
+        //wysyłam zapytanie do mapy o feromony
         Vector<Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
+
 
         Pheromone oldestPheromone = pheromones.get(1);
 
@@ -130,7 +77,7 @@ public class Ant extends Agent {
         this.movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
     }
 
-    private double countAngleBeetwenPoints(int x1, int y1, int x2, int y2) {
+    private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
         double dx = x2 - x1;
         double dy = y2 - y1;
 

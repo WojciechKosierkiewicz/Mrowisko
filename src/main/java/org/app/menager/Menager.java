@@ -9,6 +9,7 @@ public class Menager {
     private Config konfiguracja;
     private SimResults results;
     private org.app.map.Map map;
+    private int CurrentTick = 0;
 
 
     Menager(Config konfiguracja) {

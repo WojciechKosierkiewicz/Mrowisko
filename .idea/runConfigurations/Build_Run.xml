@@ -3,7 +3,7 @@
     <option name="ALTERNATIVE_JRE_PATH" value="liberica-20" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="org.app.MainApp.MainApp" />
-    <module name="Mrowisko.main" />
+    <module name="Mrowisko" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="org.example.*" />

@@ -5,8 +5,8 @@ import java.util.UUID;
 
 public abstract class Agent {
     private java.util.UUID id;
-    private int locx;
-    private int locy;
+    private double locx;
+    private double locy;
 
     public Agent() {
         id = java.util.UUID.randomUUID();
@@ -16,19 +16,19 @@ public abstract class Agent {
         return id;
     }
 
-    public int getLocx() {
+    public double getLocx() {
         return locx;
     }
 
-    public void setLocx(int locx) {
+    public void setLocx(double locx) {
         this.locx = locx;
     }
 
-    public int getLocy() {
+    public double getLocy() {
         return locy;
     }
 
-    public void setLocy(int locy) {
+    public void setLocy(double locy) {
         this.locy = locy;
     }
 }
