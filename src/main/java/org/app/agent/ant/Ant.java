@@ -56,8 +56,8 @@ public class Ant extends Agent {
 
         //przesunięcie o krok w kierunku wylosowanego kąta
         //aktualnie nie sprawdzam czy dany krok jest legalny :( fuck law
-        this.setLocx(this.getLocx() + step_len * Math.cos(angle));
-        this.setLocy(this.getLocy() + step_len * Math.sin(angle));
+        this.setLocx(this.getLocx() + step_len * Math.cos(movement_angle));
+        this.setLocy(this.getLocy() + step_len * Math.sin(movement_angle));
     }
 
     public void updateAngle() {
