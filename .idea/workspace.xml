@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="nic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/simresults/logpackage/Logpackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Build_Run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_Run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/simresults/SimResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/simresults/SimResults.java" afterDir="false" />
-    </list>
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="finakl" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -282,7 +273,7 @@
       <workItem from="1684702391501" duration="507000" />
       <workItem from="1684702987732" duration="722000" />
       <workItem from="1684776314010" duration="608000" />
-      <workItem from="1684776933024" duration="335000" />
+      <workItem from="1684776933024" duration="523000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -382,7 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684405850313</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="mikro zmiany">
+      <created>1684777393231</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684777393231</updated>
+    </task>
+    <task id="LOCAL-00016" summary="finakl">
+      <created>1684777434439</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684777434439</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +415,9 @@
     <MESSAGE value="kontunuacja setupu" />
     <MESSAGE value="Dodanie JavaFX !" />
     <MESSAGE value="nic" />
-    <option name="LAST_COMMIT_MESSAGE" value="nic" />
+    <MESSAGE value="mikro zmiany" />
+    <MESSAGE value="finakl" />
+    <option name="LAST_COMMIT_MESSAGE" value="finakl" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

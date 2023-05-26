@@ -33,7 +33,7 @@ public class Anthill extends Agent {
         }
     }
 
-    public void Update() {
+    public void update() {
         for (Ant ant : Ants) {
             ant.update();
         }
@@ -47,4 +47,5 @@ public class Anthill extends Agent {
                 Ants.remove(i);
 
     }
+
 }

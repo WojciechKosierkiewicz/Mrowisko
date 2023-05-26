@@ -108,8 +108,13 @@ public class Map {
         return results;
     }
 
-    //TODO
-    //funkcja, która zwróci wysokość w punkcie locx i locy
+
+    public void SendUpdateSignal() {
+        for (Anthill a : anthills) {
+            a.update();
+        }
+    }
+
 
     public int getHeight(int posx, int posy) {
         int height = 0;
