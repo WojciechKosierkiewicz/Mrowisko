@@ -17,7 +17,7 @@ public class Menager {
     private int CurrentTick = 0;
 
 
-    Menager(Config konfiguracja) {
+    public Menager(Config konfiguracja) {
         // TODO: 15.05.2023  
     }
 
@@ -32,6 +32,7 @@ public class Menager {
     void ZapiszWyniki() {
         // TODO: 15.05.2023   
     }
+
 
     public Vector<Ant> getAnts() {
         return map.getAnts();
