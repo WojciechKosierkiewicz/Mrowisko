@@ -1,10 +1,10 @@
 package org.app.map;
 
 import org.app.agent.anthill.Anthill;
+import org.app.agent.food.Food;
 import org.app.agent.pheromone.*;
 import org.app.menager.config.Config;
 
-import java.io.File;
 import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
@@ -16,6 +16,7 @@ public class Map {
     private final int sector_size;
     private final Vector<Vector<Integer>> HeightMap;
     private final List<Anthill> anthills;
+    private final List<Food> foods;
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
     private Config settings;
 
@@ -28,7 +29,9 @@ public class Map {
         return ants;
     }
 
-    Map(int x, int y, int sector_size) {
+    Map(int x, int y, int sector_size, List<Food> foods, Config settings) {
+        this.foods = foods;
+        this.settings = settings;
         HeightMap = new Vector<>();
         for (int i = 0; i < x; i++) {
             HeightMap.add(new Vector<>());
@@ -118,6 +121,19 @@ public class Map {
         return results;
     }
 
+    double getDistanceBetweenPoints(double x1, double y1, double x2, double y2) {
+        return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+    }
+
+    public Vector<Food> getFoodinRange(double x, double y, double range) {
+        Vector<Food> result = new Vector<>();
+        for (Food f : foods) {
+            if (getDistanceBetweenPoints(x, y, f.getLocx(), f.getLocy()) <= range) {
+                result.add(f);
+            }
+        }
+        return result;
+    }
 
     public void SendUpdateSignal() {
         for (Anthill a : anthills) {

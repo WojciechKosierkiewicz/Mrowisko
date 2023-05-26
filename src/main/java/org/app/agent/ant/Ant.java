@@ -1,9 +1,11 @@
 package org.app.agent.ant;
 
 import org.app.agent.Agent;
+import org.app.agent.food.Food;
 import org.app.menager.config.Config;
 import org.app.agent.pheromone.Pheromone;
 
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 import java.util.Vector;
@@ -51,7 +53,6 @@ public class Ant extends Agent {
 
     public void moveAnt() {
         //losowanie kąta w zakresie dopuszczonym przez ant freedom angle
-        double angle = ((Math.random() * (movement_angle + ant_freedom_angle - (movement_angle - ant_freedom_angle))) + (movement_angle - ant_freedom_angle));
 
         //przesunięcie o krok w kierunku wylosowanego kąta
         //aktualnie nie sprawdzam czy dany krok jest legalny :( fuck law
@@ -63,7 +64,11 @@ public class Ant extends Agent {
 
         //wysyłam zapytanie do mapy o feromony
         Vector<Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
+        Vector<Food> foods = map.getFoodinRange(getLocx(), getLocy(), settings.getAntRange());
 
+        if (foods.size() > 0) {
+            movement_angle = countAngleBeetwenPoints(foods.get(0).getLocx(), foods.get(0).getLocy(), getLocx(), getLocy());
+        }
 
         Pheromone oldestPheromone = pheromones.get(1);
 
@@ -74,7 +79,8 @@ public class Ant extends Agent {
             }
         }
 
-        this.movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
+        movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
+        movement_angle = ((Math.random() * (movement_angle + ant_freedom_angle - (movement_angle - ant_freedom_angle))) + (movement_angle - ant_freedom_angle));
     }
 
     private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
