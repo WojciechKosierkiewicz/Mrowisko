@@ -4,6 +4,11 @@ package org.app.menager;
 import org.app.menager.config.Config;
 import org.app.menager.simresults.SimResults;
 
+import java.util.Map;
+import java.util.Vector;
+
+import org.app.agent.ant.Ant;
+
 public class Menager {
 
     private Config konfiguracja;
@@ -28,5 +33,8 @@ public class Menager {
         // TODO: 15.05.2023   
     }
 
+    public Vector<Ant> getAnts() {
+        return map.getAnts();
+    }
 
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="finakl" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="nic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,6 +274,7 @@
       <workItem from="1684702987732" duration="722000" />
       <workItem from="1684776314010" duration="608000" />
       <workItem from="1684776933024" duration="523000" />
+      <workItem from="1685097195415" duration="349000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -387,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684777434439</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="nic">
+      <created>1685097400389</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685097400389</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,10 +422,10 @@
     <MESSAGE value="przeniesienie lifetimu" />
     <MESSAGE value="kontunuacja setupu" />
     <MESSAGE value="Dodanie JavaFX !" />
-    <MESSAGE value="nic" />
     <MESSAGE value="mikro zmiany" />
     <MESSAGE value="finakl" />
-    <option name="LAST_COMMIT_MESSAGE" value="finakl" />
+    <MESSAGE value="nic" />
+    <option name="LAST_COMMIT_MESSAGE" value="nic" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

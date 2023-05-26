@@ -48,4 +48,7 @@ public class Anthill extends Agent {
 
     }
 
+    public Vector<Ant> getAnts() {
+        return Ants;
+    }
 }

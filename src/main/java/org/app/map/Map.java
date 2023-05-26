@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
 
+import org.app.agent.ant.Ant;
+
 public class Map {
 
     private final int sector_size;
@@ -17,6 +19,14 @@ public class Map {
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
     private Config settings;
 
+
+    public Vector<Ant> getAnts() {
+        Vector<Ant> ants = new Vector<Ant>();
+        for (Anthill anthill : anthills) {
+            ants.addAll(anthill.getAnts());
+        }
+        return ants;
+    }
 
     Map(int x, int y, int sector_size) {
         HeightMap = new Vector<>();
