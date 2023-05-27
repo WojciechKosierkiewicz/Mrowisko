@@ -4,14 +4,47 @@ package org.app.menager.config;
 import java.nio.file.Path;
 
 public class Config {
-    Path datalogpath;
-    int AntLifetime;
-    int AnthillAntLimit;
-    int MaxStepHeightDelta;
 
-    double antDecisionFactor;
+    int MapSizeX = 500;
+    int MapSizeY = 500;
 
-    double antRange;
+    int senseRange = 10;
+
+    int InitialAntHunger = 100;
+
+    int AntLifetime = 10000;
+    int AnthillAntLimit = 10000;
+    int MaxStepHeightDelta = 10;
+    int AntStepLen = 10;
+
+    double antDecisionFactor = 20;
+
+    double antRange = 10;
+    int AntCircleRadius = 5;
+
+    public int getInitialAntHunger() {
+        return InitialAntHunger;
+    }
+
+    public int getSenseRange() {
+        return senseRange;
+    }
+
+    public int getMapSizeX() {
+        return MapSizeX;
+    }
+
+    public int getMapSizeY() {
+        return MapSizeY;
+    }
+
+    public int getAntStepLen() {
+        return AntStepLen;
+    }
+
+    public int getAntCircleRadius() {
+        return AntCircleRadius;
+    }
 
     public int getMaxStepHeightDelta() {
         return MaxStepHeightDelta;
@@ -32,9 +65,6 @@ public class Config {
     //    double max_turn_angle;
 
 
-    public Path getDatalogpath() {
-        return datalogpath;
-    }
 
     private int currentTick = 0;
 

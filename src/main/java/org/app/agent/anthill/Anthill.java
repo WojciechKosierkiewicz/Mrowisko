@@ -2,11 +2,13 @@ package org.app.agent.anthill;
 
 import java.util.Vector;
 
+import javafx.scene.layout.Pane;
 import org.app.agent.Agent;
 import org.app.agent.ant.Ant;
 import org.app.menager.config.Config;
 
 public class Anthill extends Agent {
+    private Pane world;
     Vector<Ant> Ants;
     private org.app.map.Map map;
     private Config settings;
@@ -15,16 +17,19 @@ public class Anthill extends Agent {
         Ants = new Vector<Ant>();
     }
 
-    public Anthill(int AntLifeTime) {
+    public Anthill(Config settings, Pane world, org.app.map.Map map) {
+        this.settings = settings;
+        this.world = world;
+        this.map = map;
         Ants = new Vector<Ant>();
-    }
-
-    public Anthill(Vector<Ant> Ants, int AntLifeTime) {
-        this.Ants = Ants;
     }
 
     public void addAnt(Ant ant) {
         Ants.add(ant);
+    }
+
+    public void addAnt() {
+        Ants.add(new Ant(getId(), map, world, settings));
     }
 
     public void printAnts() {
@@ -33,11 +38,22 @@ public class Anthill extends Agent {
         }
     }
 
+    public void setPos(double posx, double posy) {
+        setLocx(posx);
+        setLocy(posy);
+    }
+
     public void update() {
         for (Ant ant : Ants) {
             ant.update();
         }
         removeOldAnts();
+    }
+
+    public void draw() {
+        for (Ant ant : Ants) {
+            ant.draw();
+        }
     }
 
     private void removeOldAnts() {

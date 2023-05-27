@@ -15,43 +15,32 @@ public class Map {
 
     private final int sector_size;
     private final Vector<Vector<Integer>> HeightMap;
-    private final List<Anthill> anthills;
-    private final List<Food> foods;
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
     private Config settings;
 
 
-    public Vector<Ant> getAnts() {
-        Vector<Ant> ants = new Vector<Ant>();
-        for (Anthill anthill : anthills) {
-            ants.addAll(anthill.getAnts());
-        }
-        return ants;
-    }
 
-    Map(int x, int y, int sector_size, List<Food> foods, Config settings) {
-        this.foods = foods;
+    public Map(int x, int y, int sector_size, Config settings) {
         this.settings = settings;
         HeightMap = new Vector<>();
+
         for (int i = 0; i < x; i++) {
             HeightMap.add(new Vector<>());
             for (int j = 0; j < y; j++) {
                 HeightMap.get(i).add(0);
             }
         }
+
         this.sector_size = sector_size;
 
-        anthills = new Vector<>();
         Pheromone_Sector_map = new Vector<>();
         for (int i = 0; i < x / sector_size; i++) {
             Pheromone_Sector_map.add(new Vector<>());
             for (int j = 0; j < y / sector_size; j++) {
                 Pheromone_Sector_map.get(i).add(new Vector<>());
-                for (int k = 0; k < 4; k++) {
-                    Pheromone_Sector_map.get(i).get(j).add(new Pheromone());
-                }
             }
         }
+
     }
 
     public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range) {
@@ -123,32 +112,5 @@ public class Map {
 
     double getDistanceBetweenPoints(double x1, double y1, double x2, double y2) {
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
-    }
-
-    public Vector<Food> getFoodinRange(double x, double y, double range) {
-        Vector<Food> result = new Vector<>();
-        for (Food f : foods) {
-            if (getDistanceBetweenPoints(x, y, f.getLocx(), f.getLocy()) <= range) {
-                result.add(f);
-            }
-        }
-        return result;
-    }
-
-    public void SendUpdateSignal() {
-        for (Anthill a : anthills) {
-            a.update();
-        }
-    }
-
-
-    public int getHeight(int posx, int posy) {
-        int height = 0;
-////
-////        // wbijamy do tej pozycji  w mapie i sprawdzamy wysokosc na podstawie koloru
-////
-////
-///
-        return height;
     }
 }

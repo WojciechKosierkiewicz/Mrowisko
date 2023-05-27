@@ -20,15 +20,15 @@ public class MainAppController {
     @FXML
     public void initialize() {
 
-        world.setBackground(new Background(new BackgroundFill(Color.WHITE, null, null)));
-
+        world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
+        settings = new Config();
+        sim = new Menager(settings, world);
+        sim.addAnthill(settings.getMapSizeX() / 2, settings.getMapSizeY() / 2);
+        sim.addAnts(10, sim.getAnthillIDs().get(0));
+        sim.PrzeprowadzTickSymulacji();
     }
-
     @FXML
     public void reset() {
-
-        world.getChildren().clear();
-        sim = new Menager(settings);
-
+        sim.PrzeprowadzTickSymulacji();
     }
 }
