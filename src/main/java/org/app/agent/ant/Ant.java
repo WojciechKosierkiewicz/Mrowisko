@@ -22,7 +22,7 @@ public class Ant extends Agent {
     private double antHunger;
 
     private double movement_angle;
-    private double ant_freedom_angle = 40;
+    private double ant_freedom_angle = 2;
 
     private Config settings;
     private Circle shape;
