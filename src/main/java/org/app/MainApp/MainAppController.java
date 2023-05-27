@@ -1,5 +1,6 @@
 package org.app.MainApp;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
@@ -17,8 +18,12 @@ public class MainAppController {
     Config settings;
     Menager sim;
 
+    Boolean isRunning = false;
+    private Movement clock;
+
     @FXML
     public void initialize() {
+        clock = new Movement();
 
         world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
         settings = new Config();
@@ -27,8 +32,41 @@ public class MainAppController {
         sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
     }
+
     @FXML
-    public void reset() {
+    public void step() {
         sim.PrzeprowadzTickSymulacji();
     }
+
+    @FXML
+    public void start() {
+        clock.start();
+    }
+
+    @FXML
+    public void stop() {
+        clock.stop();
+    }
+
+    @FXML
+    public void reset() {
+        sim.RandomAntPosition();
+    }
+
+    private class Movement extends AnimationTimer {
+        private long FRAMES_PER_SEC = 50L;
+        private long INTERVAL = 10000000L / FRAMES_PER_SEC;
+        private long last = 0;
+
+        @Override
+        public void handle(long now) {
+            if (now - last > INTERVAL) {
+                step();
+                System.out.println("Tick : " + sim.getTick());
+                last = now;
+            }
+        }
+
+    }
+
 }

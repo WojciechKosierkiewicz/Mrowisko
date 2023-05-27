@@ -15,7 +15,7 @@ public class Config {
     int AntLifetime = 10000;
     int AnthillAntLimit = 10000;
     int MaxStepHeightDelta = 10;
-    int AntStepLen = 10;
+    int AntStepLen = 1;
 
     double antDecisionFactor = 20;
 

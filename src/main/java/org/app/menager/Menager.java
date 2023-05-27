@@ -85,10 +85,12 @@ public class Menager {
             anthill.draw();
         }
         Tick++;
+    }
 
+    public void RandomAntPosition() {
         for (Anthill anthill : anthills) {
             for (Ant ant : anthill.getAnts()) {
-                System.out.println(ant);
+                ant.setRandomPosition();
             }
         }
     }

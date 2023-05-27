@@ -22,7 +22,7 @@ public class Ant extends Agent {
     private double antHunger;
 
     private double movement_angle;
-    private double ant_freedom_angle;
+    private double ant_freedom_angle = 40;
 
     private Config settings;
     private Circle shape;
@@ -98,16 +98,24 @@ public class Ant extends Agent {
         //wysyłam zapytanie do mapy o feromony
         Vector<Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
 
-        Pheromone oldestPheromone = pheromones.get(1);
+        if (pheromones.size() > 1) {
+            Pheromone oldestPheromone = pheromones.get(1);
 
-        for (Pheromone p : pheromones) {
+            for (Pheromone p : pheromones) {
 
-            if (p.getCreationTick() < oldestPheromone.getCreationTick()) {
-                oldestPheromone = p;
+                if (p.getCreationTick() < oldestPheromone.getCreationTick()) {
+                    oldestPheromone = p;
+                }
             }
+
+            movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
         }
 
-        movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
+        if (getLocx() < 0 || getLocy() < 0) {
+            movement_angle += Math.PI * 2;
+        }
+
+
         movement_angle = ((Math.random() * (movement_angle + ant_freedom_angle - (movement_angle - ant_freedom_angle))) + (movement_angle - ant_freedom_angle));
     }
 
@@ -122,6 +130,7 @@ public class Ant extends Agent {
 
     public void update() {
         moveAnt();
+        updateAngle();
         draw();
     }
 
