@@ -24,12 +24,16 @@ public class Anthill extends Agent {
         Ants = new Vector<Ant>();
     }
 
+
     public void addAnt(Ant ant) {
+
         Ants.add(ant);
+        Ants.get(Ants.size() - 1).setPosition(getLocx(), getLocy());
     }
 
     public void addAnt() {
         Ants.add(new Ant(getId(), map, world, settings));
+        Ants.get(Ants.size() - 1).setPosition(getLocx(), getLocy());
     }
 
     public void printAnts() {
@@ -42,6 +46,12 @@ public class Anthill extends Agent {
         setLocx(posx);
         setLocy(posy);
     }
+
+    public void setrandompos() {
+        setLocx(Math.random() * settings.getMapSizeY());
+        setLocy(Math.random() * settings.getMapSizeX());
+    }
+
 
     public void update() {
         for (Ant ant : Ants) {

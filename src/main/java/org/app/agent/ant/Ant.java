@@ -16,18 +16,19 @@ import java.util.Vector;
 import javafx.scene.shape.Circle;
 import javafx.scene.layout.Pane;
 
+import org.app.agent.ant.AntHeading;
+
 public class Ant extends Agent {
 
     private int livedUpdates = 0;
     private double antHunger;
 
-    private double movement_angle;
-    private double ant_freedom_angle = 2;
+    private AntHeading heading;
 
     private Config settings;
     private Circle shape;
-    private Pane world;
 
+    private Pane world;
 
     private org.app.map.Map map;
 
@@ -35,13 +36,13 @@ public class Ant extends Agent {
 
     public Ant(UUID id_mrowiska, org.app.map.Map map, Pane world, Config settings) {
         super();
+        this.heading = new AntHeading(settings);
         this.antHunger = settings.getInitialAntHunger();
         this.id_mrowiska = id_mrowiska;
         this.map = map;
         this.setTypAgenta(TypAgenta.ANT);
         this.world = world;
         this.settings = settings;
-        this.movement_angle = Math.toRadians(Math.random() * 360);
         this.shape = new Circle(settings.getAntCircleRadius(), this.getColor());
         shape.setStroke(Color.BLACK);
         world.getChildren().add(shape);
@@ -58,10 +59,10 @@ public class Ant extends Agent {
         shape.setTranslateY(this.getLocy());
     }
 
-
-    public void setMovement_angle(double movement_angle) {
-        this.movement_angle = movement_angle;
+    public void removefromworld() {
+        world.getChildren().remove(shape);
     }
+
 
     public void setPosition(double x, double y) {
         this.setLocx(x);
@@ -84,39 +85,27 @@ public class Ant extends Agent {
 
 
     public void moveAnt() {
-        //losowanie kąta w zakresie dopuszczonym przez ant freedom angle
+        double movementx = settings.getAntStepLen() * Math.cos(heading.getHeadingAngle());
+        double movementy = settings.getAntStepLen() * Math.sin(heading.getHeadingAngle());
 
-        //przesunięcie o krok w kierunku wylosowanego kąta
-        //aktualnie nie sprawdzam czy dany krok jest legalny :( fuck law
-        this.setLocx(this.getLocx() + settings.getAntStepLen() * Math.cos(movement_angle));
-        this.setLocy(this.getLocy() + settings.getAntStepLen() * Math.sin(movement_angle));
+        double newx = this.getLocx() + movementx;
+        double newy = this.getLocy() + movementy;
+
+        if (newx < 0 || newx > world.getWidth()) {
+            heading.bouncexwall();
+        }
+
+        if (newy < 0 || newy > world.getHeight()) {
+            heading.bounceywall();
+        }
+
+        this.setLocx(newx);
+        this.setLocy(newy);
     }
 
 
     public void updateAngle() {
-
-        //wysyłam zapytanie do mapy o feromony
-        Vector<Pheromone> pheromones = map.getSurroundingPheromones(getLocx(), getLocy(), settings.getAntRange());
-
-        if (pheromones.size() > 1) {
-            Pheromone oldestPheromone = pheromones.get(1);
-
-            for (Pheromone p : pheromones) {
-
-                if (p.getCreationTick() < oldestPheromone.getCreationTick()) {
-                    oldestPheromone = p;
-                }
-            }
-
-            movement_angle = countAngleBeetwenPoints(getLocx(), getLocy(), oldestPheromone.getLocx(), oldestPheromone.getLocy());
-        }
-
-        if (getLocx() < 0 || getLocy() < 0) {
-            movement_angle += Math.PI * 2;
-        }
-
-
-        movement_angle = ((Math.random() * (movement_angle + ant_freedom_angle - (movement_angle - ant_freedom_angle))) + (movement_angle - ant_freedom_angle));
+        heading.update();
     }
 
     private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
@@ -132,6 +121,10 @@ public class Ant extends Agent {
         moveAnt();
         updateAngle();
         draw();
+        livedUpdates++;
+        if (livedUpdates % 10 == 0) {
+            map.createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+        }
     }
 
 

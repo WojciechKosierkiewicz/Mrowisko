@@ -33,7 +33,8 @@ public class Menager {
                 settings.getMapSizeY(),
                 //ustawia najniższy optymalny sektor
                 settings.getMapSizeX() > settings.getMapSizeY() ? settings.getMapSizeX() / settings.getSenseRange() : settings.getMapSizeY() / settings.getSenseRange(),
-                settings);
+                settings,
+                world);
         this.results = new SimResults();
         this.anthills = new Vector<Anthill>();
         this.foods = new Vector<Food>();
@@ -50,6 +51,12 @@ public class Menager {
     public void addAnthill(double posx, double posy) {
         anthills.add(new Anthill(settings, world, map));
         anthills.get(anthills.size() - 1).setPos(posx, posy);
+
+    }
+
+    public void addAnthill() {
+        anthills.add(new Anthill(settings, world, map));
+        anthills.get(anthills.size() - 1).setrandompos();
     }
 
     public Vector<UUID> getAnthillIDs() {
@@ -97,6 +104,16 @@ public class Menager {
 
     public int getTick() {
         return Tick;
+    }
+
+
+    public void killeveryone() {
+        for (Anthill anthill : anthills) {
+            for (Ant ant : anthill.getAnts()) {
+                ant.removefromworld();
+            }
+        }
+        anthills.clear();
     }
 
     void ZwrocAktulneWyniki() {

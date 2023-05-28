@@ -1,5 +1,6 @@
 package org.app.map;
 
+import javafx.scene.layout.Pane;
 import org.app.agent.anthill.Anthill;
 import org.app.agent.food.Food;
 import org.app.agent.pheromone.*;
@@ -17,10 +18,11 @@ public class Map {
     private final Vector<Vector<Integer>> HeightMap;
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
     private Config settings;
+    private Pane world;
 
 
-
-    public Map(int x, int y, int sector_size, Config settings) {
+    public Map(int x, int y, int sector_size, Config settings, Pane world) {
+        this.world = world;
         this.settings = settings;
         HeightMap = new Vector<>();
 
@@ -112,5 +114,11 @@ public class Map {
 
     double getDistanceBetweenPoints(double x1, double y1, double x2, double y2) {
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+    }
+
+    public void createPheromoneAtPoint(double posx, double posy, UUID creator) {
+        int sector_x = 2;
+        int sector_y = 2;
+        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, world));
     }
 }

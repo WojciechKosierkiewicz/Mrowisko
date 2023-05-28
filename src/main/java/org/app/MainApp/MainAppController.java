@@ -28,7 +28,7 @@ public class MainAppController {
         world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
         settings = new Config();
         sim = new Menager(settings, world);
-        sim.addAnthill(settings.getMapSizeX() / 2, settings.getMapSizeY() / 2);
+        sim.addAnthill();
         sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
     }
@@ -50,7 +50,8 @@ public class MainAppController {
 
     @FXML
     public void reset() {
-        sim.RandomAntPosition();
+        sim.killeveryone();
+        initialize();
     }
 
     private class Movement extends AnimationTimer {

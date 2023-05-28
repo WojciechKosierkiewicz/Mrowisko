@@ -1,6 +1,8 @@
 package org.app.menager.config;
 
 
+import javafx.scene.layout.Pane;
+
 import java.nio.file.Path;
 
 public class Config {
@@ -9,8 +11,10 @@ public class Config {
     int MapSizeY = 500;
 
     int senseRange = 10;
+    double AntTurnAngle = 0.001;
 
     int InitialAntHunger = 100;
+    int pheromoneCircleRadius = 2;
 
     int AntLifetime = 10000;
     int AnthillAntLimit = 10000;
@@ -21,6 +25,14 @@ public class Config {
 
     double antRange = 10;
     int AntCircleRadius = 5;
+
+    public double getAntTurnAngle() {
+        return AntTurnAngle;
+    }
+
+    public int getPheromoneCircleRadius() {
+        return pheromoneCircleRadius;
+    }
 
     public int getInitialAntHunger() {
         return InitialAntHunger;
