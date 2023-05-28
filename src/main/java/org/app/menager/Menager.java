@@ -39,6 +39,7 @@ public class Menager {
         this.anthills = new Vector<Anthill>();
         this.foods = new Vector<Food>();
     }
+
     private SimResults results;
     private org.app.map.Map map;
     private int CurrentTick = 0;
@@ -111,11 +112,6 @@ public class Menager {
 
 
     public void killeveryone() {
-        for (Anthill anthill : anthills) {
-            for (Ant ant : anthill.getAnts()) {
-                ant.removefromworld();
-            }
-        }
         anthills.clear();
         map.clearPhermonoes();
     }

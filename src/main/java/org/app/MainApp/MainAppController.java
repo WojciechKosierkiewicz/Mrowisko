@@ -36,9 +36,6 @@ public class MainAppController {
     @FXML
     public void step() {
         sim.PrzeprowadzTickSymulacji();
-        if (sim.getTick() % 500 == 0) {
-            sim.addAnts(10, sim.getAnthillIDs().get(0));
-        }
     }
 
     @FXML
@@ -58,8 +55,8 @@ public class MainAppController {
     }
 
     private class Movement extends AnimationTimer {
-        private long FRAMES_PER_SEC = 50L;
-        private long INTERVAL = 100L / FRAMES_PER_SEC;
+        private long FRAMES_PER_SEC = 144L;
+        private long INTERVAL = 1000000L / FRAMES_PER_SEC;
         private long last = 0;
 
         @Override

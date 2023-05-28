@@ -7,24 +7,22 @@ import java.nio.file.Path;
 
 public class Config {
 
-    int MapSizeX = 500;
-    int MapSizeY = 500;
+    int MapSizeX = 1000;
+    int MapSizeY = 900;
 
     int senseRange = 10;
     double AntTurnAngle = 0.001;
 
-    int InitialAntHunger = 100;
     int pheromoneCircleRadius = 2;
+    int AntCircleRadius = 5;
 
-    int AntLifetime = 10000;
-    int AnthillAntLimit = 10000;
-    int MaxStepHeightDelta = 10;
+    int AntLifetime = 1090;
+    int AnthillAntLimit = 100;
     int AntStepLen = 1;
 
     double antDecisionFactor = 20;
 
     double antRange = 10;
-    int AntCircleRadius = 5;
 
     public double getAntTurnAngle() {
         return AntTurnAngle;
@@ -34,9 +32,6 @@ public class Config {
         return pheromoneCircleRadius;
     }
 
-    public int getInitialAntHunger() {
-        return InitialAntHunger;
-    }
 
     public int getSenseRange() {
         return senseRange;
@@ -58,14 +53,6 @@ public class Config {
         return AntCircleRadius;
     }
 
-    public int getMaxStepHeightDelta() {
-        return MaxStepHeightDelta;
-    }
-
-    public void setMaxStepHeightDelta(int maxStepHeightDelta) {
-        MaxStepHeightDelta = maxStepHeightDelta;
-    }
-
     public double getAntDecisionFactor() {
         return antDecisionFactor;
     }
@@ -74,19 +61,7 @@ public class Config {
         this.antDecisionFactor = antDecisionFactor;
     }
 
-    //    double max_turn_angle;
-
-
-
     private int currentTick = 0;
-
-//    public double getMax_turn_angle() {
-//        return max_turn_angle;
-//    }
-//
-//    public void setMax_turn_angle(double max_turn_angle) {
-//        this.max_turn_angle = max_turn_angle;
-//    }
 
     public double getAntRange() {
         return antRange;

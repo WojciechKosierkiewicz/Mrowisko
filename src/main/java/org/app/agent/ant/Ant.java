@@ -37,7 +37,7 @@ public class Ant extends Agent {
     public Ant(UUID id_mrowiska, org.app.map.Map map, Pane world, Config settings) {
         super();
         this.heading = new AntHeading(settings);
-        this.antHunger = settings.getInitialAntHunger();
+        this.antHunger = 100;
         this.id_mrowiska = id_mrowiska;
         this.map = map;
         this.setTypAgenta(TypAgenta.ANT);
@@ -126,7 +126,6 @@ public class Ant extends Agent {
             map.createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
         }
     }
-
 
     public String toString() {
         return "id: { " + getId() + " }, locx: { " + getLocx() + " }, locy: { " + getLocy() + " }";
