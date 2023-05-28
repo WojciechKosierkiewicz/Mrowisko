@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="dldldldldlld">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/AntHeading.java" afterDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="wyswietlanie grafów">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/MainApp/MainApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/MainApp/MainApp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,29 +65,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/wojtek/Projekty/Java/Mrowisko/src/main/java/org/app/MainApp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/wojte/Projekty/PolWro/Mrowisko/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.20034844&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/Users/wojtek/Projekty/Java/Mrowisko/src/main/java/org/app/MainApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/wojte/Projekty/PolWro/Mrowisko/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.20034844",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/org/app/MainApp" />
@@ -281,6 +278,7 @@
       <workItem from="1685281760333" duration="1586000" />
       <workItem from="1685288040567" duration="607000" />
       <workItem from="1685289769176" duration="2967000" />
+      <workItem from="1685292749561" duration="636000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -464,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685289706871</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="wyswietlanie grafów">
+      <created>1685292985366</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685292985366</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +506,8 @@
     <MESSAGE value="usuwanie pheromonów działa now" />
     <MESSAGE value="poprawa mapy" />
     <MESSAGE value="dldldldldlld" />
-    <option name="LAST_COMMIT_MESSAGE" value="dldldldldlld" />
+    <MESSAGE value="wyswietlanie grafów" />
+    <option name="LAST_COMMIT_MESSAGE" value="wyswietlanie grafów" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -68,6 +68,10 @@ public class Menager {
         return anthillIDs;
     }
 
+    public Map getMap() {
+        return map;
+    }
+
     public void addAnts(int amount, UUID anthillID) {
         for (Anthill anthill : anthills) {
             if (anthill.getId() == anthillID) {

@@ -23,29 +23,22 @@ public class Ant extends Agent {
     private int livedUpdates = 0;
     private double antHunger;
 
-    private AntHeading heading;
+    private final AntHeading heading;
 
-    private Config settings;
-    private Circle shape;
-
-    private Pane world;
-
-    private org.app.map.Map map;
-
+    private final Config settings;
+    private final Circle shape;
     UUID id_mrowiska;
 
-    public Ant(UUID id_mrowiska, org.app.map.Map map, Pane world, Config settings) {
+    public Ant(UUID id_mrowiska, Config settings) {
         super();
         this.heading = new AntHeading(settings);
         this.antHunger = 100;
         this.id_mrowiska = id_mrowiska;
-        this.map = map;
         this.setTypAgenta(TypAgenta.ANT);
-        this.world = world;
         this.settings = settings;
         this.shape = new Circle(settings.getAntCircleRadius(), this.getColor());
         shape.setStroke(Color.BLACK);
-        world.getChildren().add(shape);
+        settings.getWorld().getChildren().add(shape);
         draw();
     }
 
@@ -59,7 +52,7 @@ public class Ant extends Agent {
     }
 
     public void removefromworld() {
-        world.getChildren().remove(shape);
+        settings.getWorld().getChildren().remove(shape);
     }
 
 
@@ -70,8 +63,8 @@ public class Ant extends Agent {
 
     public void setRandomPosition() {
         Random rand = new Random();
-        this.setLocx(Math.random() * world.getWidth());
-        this.setLocy(Math.random() * world.getHeight());
+        this.setLocx(Math.random() * settings.getWorld().getWidth());
+        this.setLocy(Math.random() * settings.getWorld().getHeight());
     }
 
     public double getAntHunger() {
@@ -111,9 +104,7 @@ public class Ant extends Agent {
         double dx = x2 - x1;
         double dy = y2 - y1;
 
-        double radianAngle = Math.atan2(dy, dx);
-
-        return radianAngle;
+        return Math.atan2(dy, dx);
     }
 
     public void update() {
@@ -122,7 +113,7 @@ public class Ant extends Agent {
         draw();
         livedUpdates++;
         if (livedUpdates % 10 == 0) {
-            map.createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+            settings.getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
         }
     }
 

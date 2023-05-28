@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
+import org.app.map.Map;
 import org.app.menager.Menager;
 import javafx.scene.paint.Color;
 import org.app.menager.config.Config;
@@ -34,8 +35,9 @@ public class MainAppController {
     public void initialize() {
         clock = new Movement();
         world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
-        settings = new Config();
+        settings = new Config(world);
         sim = new Menager(settings, world);
+        settings.setMap(sim.getMap());
         sim.addAnthill();
         sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();

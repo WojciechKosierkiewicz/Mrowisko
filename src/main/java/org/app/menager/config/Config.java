@@ -1,7 +1,12 @@
 package org.app.menager.config;
 
 
+import javafx.scene.layout.Pane;
+import org.app.map.Map;
+
 public class Config {
+    Pane world;
+    org.app.map.Map map;
 
     int MapSizeX = 1000;
     int MapSizeY = 900;
@@ -27,8 +32,24 @@ public class Config {
     int AntHillCircleRadius = 10;
     int pheromoneCircleRadius = 2;
 
+    public Config(Pane world) {
+        this.world = world;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
     public int getAntHillCircleRadius() {
         return AntHillCircleRadius;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Pane getWorld() {
+        return world;
     }
 
     public double getAnthillAntSpawnChance() {
