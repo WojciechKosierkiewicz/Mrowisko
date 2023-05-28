@@ -1,9 +1,9 @@
-package org.app.agent.ant;
+package org.app.simulation.agent.ant;
 
 import javafx.scene.paint.Color;
-import org.app.agent.Agent;
-import org.app.agent.TypAgenta;
-import org.app.menager.config.Config;
+import org.app.simulation.agent.Agent;
+import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.menager.config.Config;
 
 import java.util.Random;
 import java.util.UUID;

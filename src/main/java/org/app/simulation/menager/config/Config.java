@@ -1,14 +1,14 @@
-package org.app.menager.config;
+package org.app.simulation.menager.config;
 
 
 import javafx.scene.layout.Pane;
-import org.app.map.Map;
+import org.app.simulation.map.Map;
 
 public class Config {
 
     //zmienne "globalne" dla całego projektu <- Wszyscy agenci ich używają
     Pane world;
-    org.app.map.Map map;
+    Map map;
     int CurrentTick = 0;
 
 

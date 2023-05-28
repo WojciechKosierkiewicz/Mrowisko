@@ -1,4 +1,4 @@
-package org.app.agent;
+package org.app.simulation.agent;
 
 import javafx.scene.paint.Color;
 

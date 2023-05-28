@@ -1,4 +1,4 @@
-package org.app.agent.pheromone;
+package org.app.simulation.agent.pheromone;
 
 public enum PheromoneType {
     FOOD, HOME, SEARCH, NONE

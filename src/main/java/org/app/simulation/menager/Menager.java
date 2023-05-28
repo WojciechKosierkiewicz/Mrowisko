@@ -1,22 +1,21 @@
-package org.app.menager;
+package org.app.simulation.menager;
 
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
 
-import org.app.agent.anthill.Anthill;
-import org.app.agent.food.Food;
-import org.app.agent.pheromone.Pheromone;
-import org.app.map.Map;
-import org.app.menager.config.Config;
-import org.app.menager.simresults.SimResults;
+import org.app.simulation.agent.anthill.Anthill;
+import org.app.simulation.agent.food.Food;
+import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.map.Map;
+import org.app.simulation.menager.config.Config;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
 
-import org.app.agent.ant.Ant;
+import org.app.simulation.agent.ant.Ant;
 
 public class Menager {
 
@@ -26,8 +25,7 @@ public class Menager {
     private final List<Food> foods;
     private int Tick = 0;
     private final Config settings;
-    private final SimResults results;
-    private final org.app.map.Map map;
+    private final Map map;
     private final int CurrentTick = 0;
 
     public Menager(Config settings, Pane world) {
@@ -39,7 +37,6 @@ public class Menager {
                 settings.getMapSizeX() > settings.getMapSizeY() ? settings.getMapSizeX() / settings.getSenseRange() : settings.getMapSizeY() / settings.getSenseRange(),
                 settings,
                 world);
-        this.results = new SimResults();
         this.anthills = new Vector<>();
         this.foods = new Vector<>();
     }

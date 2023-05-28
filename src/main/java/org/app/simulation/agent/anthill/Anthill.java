@@ -1,13 +1,13 @@
-package org.app.agent.anthill;
+package org.app.simulation.agent.anthill;
 
 import java.util.Vector;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import org.app.agent.Agent;
-import org.app.agent.TypAgenta;
-import org.app.agent.ant.Ant;
-import org.app.menager.config.Config;
+import org.app.simulation.agent.Agent;
+import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.agent.ant.Ant;
+import org.app.simulation.menager.config.Config;
 
 public class Anthill extends Agent {
     Vector<Ant> Ants;

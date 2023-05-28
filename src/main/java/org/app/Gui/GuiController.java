@@ -9,9 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
-import org.app.menager.Menager;
+import org.app.simulation.menager.Menager;
 import javafx.scene.paint.Color;
-import org.app.menager.config.Config;
+import org.app.simulation.menager.config.Config;
 
 
 public class GuiController {

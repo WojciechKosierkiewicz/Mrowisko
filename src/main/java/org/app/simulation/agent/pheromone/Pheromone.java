@@ -1,11 +1,10 @@
-package org.app.agent.pheromone;
+package org.app.simulation.agent.pheromone;
 
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import org.app.agent.Agent;
-import org.app.agent.TypAgenta;
-import org.app.menager.config.Config;
+import org.app.simulation.agent.Agent;
+import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.menager.config.Config;
 
 import java.util.UUID;
 

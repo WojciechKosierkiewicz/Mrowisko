@@ -1,8 +1,8 @@
-package org.app.agent.ant;
+package org.app.simulation.agent.ant;
 
-import org.app.agent.pheromone.Pheromone;
-import org.app.agent.pheromone.PheromoneType;
-import org.app.menager.config.Config;
+import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.agent.pheromone.PheromoneType;
+import org.app.simulation.menager.config.Config;
 
 import java.util.Comparator;
 import java.util.Vector;

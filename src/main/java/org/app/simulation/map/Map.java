@@ -1,16 +1,12 @@
-package org.app.map;
+package org.app.simulation.map;
 
 import javafx.scene.layout.Pane;
-import org.app.agent.anthill.Anthill;
-import org.app.agent.food.Food;
-import org.app.agent.pheromone.*;
-import org.app.menager.config.Config;
+import org.app.simulation.agent.pheromone.PheromoneType;
+import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.menager.config.Config;
 
-import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
-
-import org.app.agent.ant.Ant;
 
 public class Map {
 

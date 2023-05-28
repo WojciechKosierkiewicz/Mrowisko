@@ -1,6 +1,6 @@
-package org.app.agent.food;
+package org.app.simulation.agent.food;
 
-import org.app.agent.Agent;
+import org.app.simulation.agent.Agent;
 
 public class Food extends Agent {
     private int foodAmount;
