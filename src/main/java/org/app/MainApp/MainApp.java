@@ -18,8 +18,8 @@ public class MainApp extends Application {
     public void start(Stage stage) throws IOException {
         URL url = getClass().getResource("MainApp.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(url);
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        stage.setTitle("Mrowisko");
         stage.setScene(scene);
         stage.show();
     }
