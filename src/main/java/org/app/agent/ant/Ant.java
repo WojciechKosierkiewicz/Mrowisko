@@ -54,7 +54,6 @@ public class Ant extends Agent {
     }
 
     public void draw() {
-        shape.setRadius(settings.getAntCircleRadius());
         shape.setTranslateX(this.getLocx());
         shape.setTranslateY(this.getLocy());
     }

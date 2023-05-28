@@ -16,7 +16,7 @@ public class Config {
     int pheromoneCircleRadius = 2;
     int AntCircleRadius = 5;
 
-    int AntLifetime = 1090;
+    int AntLifetime = 10090;
     int AnthillAntLimit = 100;
     int AntStepLen = 1;
 

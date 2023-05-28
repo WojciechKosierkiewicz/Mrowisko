@@ -24,7 +24,6 @@ public class MainAppController {
     @FXML
     public void initialize() {
         clock = new Movement();
-
         world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
         settings = new Config();
         sim = new Menager(settings, world);
@@ -36,6 +35,9 @@ public class MainAppController {
     @FXML
     public void step() {
         sim.PrzeprowadzTickSymulacji();
+        if (sim.getTick() % 10 == 0) {
+            sim.printAmounts();
+        }
     }
 
     @FXML

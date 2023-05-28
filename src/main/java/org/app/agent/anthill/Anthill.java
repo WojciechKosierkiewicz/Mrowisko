@@ -77,9 +77,12 @@ public class Anthill extends Agent {
 
     private void removeOldAnts() {
 
-        for (int i = 0; i < Ants.size(); i++)
-            if (Ants.get(i).getLivedUpdates() > settings.getAntLifetime())
+        for (int i = 0; i < Ants.size(); i++) {
+            if (Ants.get(i).getLivedUpdates() > settings.getAntLifetime()) {
+                Ants.get(i).removefromworld();
                 Ants.remove(i);
+            }
+        }
 
     }
 

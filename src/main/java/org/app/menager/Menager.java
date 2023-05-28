@@ -126,6 +126,22 @@ public class Menager {
         }
     }
 
+    public void printAmounts() {
+        System.out.println("==================================");
+        System.out.println("Anthills: " + anthills.size());
+        System.out.println("Ants: " + getAmountofants());
+        System.out.println("Pheromones: " + getAmountofphermoones());
+        System.out.println("==================================");
+    }
+
+    public int getAmountofants() {
+        int amount = 0;
+        for (Anthill anthill : anthills) {
+            amount += anthill.getAnts().size();
+        }
+        return amount;
+    }
+
     public int getAmountofphermoones() {
         return map.getamountofpheromones();
     }
