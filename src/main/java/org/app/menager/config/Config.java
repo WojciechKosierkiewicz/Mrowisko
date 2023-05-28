@@ -1,28 +1,43 @@
 package org.app.menager.config;
 
 
-import javafx.scene.layout.Pane;
-
-import java.nio.file.Path;
-
 public class Config {
 
     int MapSizeX = 1000;
     int MapSizeY = 900;
 
-    int senseRange = 10;
+    int AntSenseRange = 10;
+    int AntLifetime = 1500;
     double AntTurnAngle = 0.001;
+    double AntTurnAngleMax = 0.01;
 
-    int pheromoneCircleRadius = 2;
-    int AntCircleRadius = 5;
 
-    int AntLifetime = 10090;
-    int AnthillAntLimit = 100;
     int AntStepLen = 1;
 
     double antDecisionFactor = 20;
 
     double antRange = 10;
+
+
+    int AnthillAntLimit = 100;
+    double AnthillAntSpawnChance = 0.1;
+
+
+    int AntCircleRadius = 5;
+    int AntHillCircleRadius = 10;
+    int pheromoneCircleRadius = 2;
+
+    public int getAntHillCircleRadius() {
+        return AntHillCircleRadius;
+    }
+
+    public double getAnthillAntSpawnChance() {
+        return AnthillAntSpawnChance;
+    }
+
+    public double getAntTurnAngleMax() {
+        return AntTurnAngleMax;
+    }
 
     public double getAntTurnAngle() {
         return AntTurnAngle;
@@ -34,7 +49,7 @@ public class Config {
 
 
     public int getSenseRange() {
-        return senseRange;
+        return AntSenseRange;
     }
 
     public int getMapSizeX() {

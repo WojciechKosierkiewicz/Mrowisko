@@ -35,9 +35,9 @@
         </HBox>
     </bottom>
     <right>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox prefHeight="477.0" prefWidth="244.0" BorderPane.alignment="CENTER">
             <children>
-                <AreaChart prefHeight="155.0" prefWidth="200.0">
+                <AreaChart fx:id="populacjaant" prefHeight="155.0" prefWidth="200.0" title="Ilość Mrówków">
                     <xAxis>
                         <CategoryAxis side="BOTTOM"/>
                     </xAxis>
@@ -45,7 +45,7 @@
                         <NumberAxis side="LEFT"/>
                     </yAxis>
                 </AreaChart>
-                <AreaChart prefHeight="215.0" prefWidth="267.0">
+                <AreaChart fx:id="iloscpheromonow" prefHeight="155.0" prefWidth="200.0" title="Ilość Mrówków">
                     <xAxis>
                         <CategoryAxis side="BOTTOM"/>
                     </xAxis>
@@ -53,14 +53,6 @@
                         <NumberAxis side="LEFT"/>
                     </yAxis>
                 </AreaChart>
-                <LineChart prefHeight="180.0" prefWidth="200.0">
-                    <xAxis>
-                        <CategoryAxis side="BOTTOM"/>
-                    </xAxis>
-                    <yAxis>
-                        <NumberAxis side="LEFT"/>
-                    </yAxis>
-                </LineChart>
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -72,6 +64,10 @@
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
+            <children>
+                <Label text="Current Tick"/>
+                <TextField fx:id="ticktext"/>
+            </children>
         </VBox>
     </left>
 </BorderPane>

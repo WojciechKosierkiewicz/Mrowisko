@@ -3,7 +3,10 @@ package org.app.agent.anthill;
 import java.util.Vector;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import org.app.agent.Agent;
+import org.app.agent.TypAgenta;
 import org.app.agent.ant.Ant;
 import org.app.menager.config.Config;
 
@@ -12,12 +15,17 @@ public class Anthill extends Agent {
     Vector<Ant> Ants;
     private org.app.map.Map map;
     private Config settings;
+    private Circle shape;
 
     public Anthill() {
         Ants = new Vector<Ant>();
     }
 
     public Anthill(Config settings, Pane world, org.app.map.Map map) {
+        setTypAgenta(TypAgenta.ANTHILL);
+        shape = new Circle(settings.getAntHillCircleRadius(), getColor());
+        shape.setStroke(Color.BLUE);
+        world.getChildren().add(shape);
         this.settings = settings;
         this.world = world;
         this.map = map;
@@ -54,11 +62,12 @@ public class Anthill extends Agent {
     public void setPos(double posx, double posy) {
         setLocx(posx);
         setLocy(posy);
+        shape.setTranslateX(posx);
+        shape.setTranslateY(posy);
     }
 
     public void setrandompos() {
-        setLocx(Math.random() * settings.getMapSizeY());
-        setLocy(Math.random() * settings.getMapSizeX());
+        setPos(Math.random() * settings.getMapSizeX(), Math.random() * settings.getMapSizeY());
     }
 
 
@@ -67,6 +76,10 @@ public class Anthill extends Agent {
             ant.update();
         }
         removeOldAnts();
+        if (Ants.size() < settings.getAnthillAntLimit()) {
+            if (Math.random() < settings.getAnthillAntSpawnChance())
+                addAnt();
+        }
     }
 
     public void draw() {
