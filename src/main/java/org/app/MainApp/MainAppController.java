@@ -38,7 +38,7 @@ public class MainAppController {
     Slider AntRangeSlide = new Slider(0, 100, 10);
 
     @FXML
-    Slider AntStepLengthSlide = new Slider(0, 20, 1);
+    Slider AntStepLengthSlide = new Slider(0, 10, 1);
 
     @FXML
     TextField ticktext;
