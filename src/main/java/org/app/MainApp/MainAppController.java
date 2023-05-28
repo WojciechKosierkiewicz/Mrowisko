@@ -29,7 +29,16 @@ public class MainAppController {
     XYChart.Series pheromonyxy = new XYChart.Series();
 
     @FXML
-    Slider AntSizeSlide = new Slider(0, 10, 3);
+    Slider AntSizeSlide = new Slider(0, 10, 5);
+
+    @FXML
+    Slider AntLifeTimeSlide = new Slider(0, 10000, 1500);
+
+    @FXML
+    Slider AntRangeSlide = new Slider(0, 100, 10);
+
+    @FXML
+    Slider AntStepLengthSlide = new Slider(0, 20, 1);
 
     @FXML
     TextField ticktext;
@@ -39,6 +48,9 @@ public class MainAppController {
 
     void UpdateSettings() {
         settings.setAntCircleRadius(AntSizeSlide.getValue());
+        settings.setAntLifetime(AntLifeTimeSlide.getValue());
+        settings.setAntRange(AntRangeSlide.getValue());
+        settings.setAntStepLen(AntStepLengthSlide.getValue());
     }
 
     @FXML

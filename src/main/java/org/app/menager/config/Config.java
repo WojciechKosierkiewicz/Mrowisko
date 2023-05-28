@@ -22,11 +22,11 @@ public class Config {
 
     //zmienne mrówek
     int AntSenseRange = 10;
-    int AntLifetime = 1500;
+    double AntLifetime = 1500;
     double AntTurnAngle = 0.001;
     double AntTurnAngleMax = 0.01;
 
-    int AntStepLen = 1;
+    double AntStepLen = 1;
 
     double antRange = 10;
 
@@ -104,7 +104,7 @@ public class Config {
         return MapSizeY;
     }
 
-    public int getAntStepLen() {
+    public double getAntStepLen() {
         return AntStepLen;
     }
 
@@ -128,11 +128,15 @@ public class Config {
         AnthillAntLimit = anthillAntLimit;
     }
 
-    public int getAntLifetime() {
+    public void setAntStepLen(double antStepLen) {
+        AntStepLen = antStepLen;
+    }
+
+    public double getAntLifetime() {
         return AntLifetime;
     }
 
-    public void setAntLifetime(int antLifetime) {
+    public void setAntLifetime(double antLifetime) {
         AntLifetime = antLifetime;
     }
 }

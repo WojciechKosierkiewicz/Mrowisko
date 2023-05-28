@@ -60,14 +60,31 @@
         </VBox>
     </right>
     <left>
-        <VBox prefHeight="460.0" prefWidth="175.0" BorderPane.alignment="CENTER">
+        <VBox prefHeight="460.0" prefWidth="175.0" spacing="10.0" BorderPane.alignment="CENTER">
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
             <children>
                 <Label text="Current Tick"/>
                 <TextField fx:id="ticktext"/>
-                <Slider fx:id="AntSizeSlide"/>
+                <Label text="Długość życia mrówki"/>
+                <Slider fx:id="AntLifeTimeSlide" max="10000.0" showTickLabels="true" showTickMarks="true"
+                        value="1500.0"/>
+                <Label text="Długość kroku mrówki"/>
+                <Slider fx:id="AntStepLengthSlide" majorTickUnit="40.0" max="10.0" showTickLabels="true"
+                        showTickMarks="true" value="1.0"/>
+                <Label text="Zasięg mrówki"/>
+                <Slider fx:id="AntRangeSlide" showTickLabels="true" showTickMarks="true" value="10.0"/>
+                <Label text="AntTurnAngleMax"/>
+                <Slider majorTickUnit="0.2" max="1.0" showTickLabels="true" showTickMarks="true" value="0.01"/>
+                <Label text="Szerokość mrówki"/>
+                <Slider fx:id="AntSizeSlide" majorTickUnit="2.0" max="10.0" showTickLabels="true" showTickMarks="true"
+                        value="5.0"/>
+                <Label text="Szerokość mrowiska"/>
+                <Slider majorTickUnit="2.0" max="10.0" showTickLabels="true" showTickMarks="true" value="10.0"/>
+                <Label layoutX="15.0" layoutY="332.0" text="Szerokość feromonu"/>
+                <Slider layoutX="15.0" layoutY="359.0" majorTickUnit="2.0" max="10.0" showTickLabels="true"
+                        showTickMarks="true" value="2.0"/>
             </children>
         </VBox>
     </left>
