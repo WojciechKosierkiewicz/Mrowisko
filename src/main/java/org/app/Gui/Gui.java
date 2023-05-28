@@ -1,4 +1,4 @@
-package org.app.MainApp;
+package org.app.Gui;
 
 
 import javafx.application.Application;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class MainApp extends Application {
+public class Gui extends Application {
     public static void main(String[] args) {
         launch();
     }

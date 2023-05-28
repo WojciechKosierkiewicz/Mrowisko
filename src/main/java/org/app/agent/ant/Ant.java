@@ -13,7 +13,9 @@ import javafx.scene.shape.Circle;
 public class Ant extends Agent {
 
     private int livedUpdates = 0;
-    private double antHunger;
+    private double antHunger = 0;
+    private int CarriedFood = 0;
+    private Antdirection direction = Antdirection.FOOD;
 
     private final AntHeading heading;
 
@@ -24,7 +26,6 @@ public class Ant extends Agent {
     public Ant(UUID id_mrowiska, Config settings) {
         super();
         this.heading = new AntHeading(settings);
-        this.antHunger = 100;
         this.id_mrowiska = id_mrowiska;
         this.setTypAgenta(TypAgenta.ANT);
         this.settings = settings;
@@ -68,6 +69,28 @@ public class Ant extends Agent {
         return antHunger;
     }
 
+    void feedself() {
+        if (!settings.isAntGetHungry()) {
+            return;
+        }
+        if (CarriedFood <= 0) {
+            return;
+        }
+        if (antHunger == settings.getAntHungerLimit() / 2) {
+            antHunger -= 5;
+            CarriedFood--;
+        }
+    }
+
+    void starve() {
+        if (!settings.isAntGetHungry()) {
+            return;
+        }
+        if (antHunger > 0) {
+            antHunger -= settings.getAntConsumption();
+        }
+    }
+
     public void setAntHunger(double antHunger) {
         this.antHunger = antHunger;
     }
@@ -94,7 +117,7 @@ public class Ant extends Agent {
 
 
     public void updateAngle() {
-        heading.update();
+        heading.update(getLocx(), getLocy(), direction);
     }
 
     private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
@@ -104,15 +127,20 @@ public class Ant extends Agent {
         return Math.atan2(dy, dx);
     }
 
+    public void leavePheromoneBehind() {
+        if (livedUpdates % settings.getAntPheromoneInterval() == 0) {
+            settings.getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+        }
+    }
+
     public void update() {
+        starve();
+        feedself();
         moveAnt();
         updateAngle();
         updateJavaFxLocation();
+        leavePheromoneBehind();
         livedUpdates++;
-        if (livedUpdates % 10 == 0) {
-            settings.getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
-        }
-        updateJavaFxShape();
     }
 
     public String toString() {

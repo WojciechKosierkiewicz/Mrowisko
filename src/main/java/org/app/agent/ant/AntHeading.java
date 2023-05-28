@@ -1,6 +1,11 @@
 package org.app.agent.ant;
 
+import org.app.agent.pheromone.Pheromone;
+import org.app.agent.pheromone.PheromoneType;
 import org.app.menager.config.Config;
+
+import java.util.Comparator;
+import java.util.Vector;
 
 public class AntHeading {
 
@@ -21,8 +26,11 @@ public class AntHeading {
         currentangle = angle;
     }
 
-    public void update() {
-        limitpi();
+    public void update(double x, double y, Antdirection direction) {
+        if (direction == Antdirection.NONE) {
+            changecurrentaanglefrompheromones(x, y, direction);
+        }
+        currentangle = limitpi(currentangle);
         currentangle = currentangle + turnangle;
         turnangle += (Math.random() - 0.5) * settings.getAntTurnAngle();
         if (turnangle > settings.getAntTurnAngleMax()) {
@@ -33,20 +41,64 @@ public class AntHeading {
         }
     }
 
-    public void limitpi() {
-        if (currentangle > 2 * Math.PI) {
-            currentangle = currentangle - 2 * Math.PI;
+    void changecurrentaanglefrompheromones(double locx, double locy, Antdirection antdirection) {
+
+        if (antdirection == Antdirection.NONE) {
+            return;
         }
-        if (currentangle < 0) {
-            currentangle = currentangle + 2 * Math.PI;
+
+        if (antdirection == Antdirection.SEARCH) {
+            return;
         }
+
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(locx, locy, settings.getAntRange());
+
+        if (pheromones.size() == 0) {
+            return;
+        }
+
+        for (Pheromone p : pheromones) {
+            if (antdirection == Antdirection.FOOD) {
+                if (p.getType() != PheromoneType.FOOD) {
+                    pheromones.remove(p);
+                }
+            }
+
+            if (antdirection == Antdirection.HOME) {
+                if (p.getType() != PheromoneType.HOME) {
+                    pheromones.remove(p);
+                }
+            }
+        }
+
+        if (pheromones.size() == 0) {
+            return;
+        }
+
+        pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+
+        Pheromone youngestPheromone = pheromones.get(pheromones.size() - 1);
+
+        double angle = Math.atan2(youngestPheromone.getLocy() - locy, youngestPheromone.getLocx() - locx);
+        angle = limitpi(angle);
+        currentangle = angle;
     }
 
-    public void bouncexwall() {
+    double limitpi(double angle) {
+        if (angle > 2 * Math.PI) {
+            angle = angle - 2 * Math.PI;
+        }
+        if (angle < 0) {
+            angle = angle + 2 * Math.PI;
+        }
+        return angle;
+    }
+
+    void bouncexwall() {
         currentangle = Math.PI - currentangle;
     }
 
-    public void bounceywall() {
+    void bounceywall() {
         currentangle = 2 * Math.PI - currentangle;
     }
 

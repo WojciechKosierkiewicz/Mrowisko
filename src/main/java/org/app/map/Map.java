@@ -60,62 +60,10 @@ public class Map {
         return result;
     }
 
-    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, PheromoneType type) {
-        Vector<Pheromone> result = new Vector<>();
-        int sector_x = (int) (x / sector_size);
-        int sector_y = (int) (y / sector_size);
-        int sectors_in_range = (int) (range / sector_size);
-
-        for (int i = sector_x - sectors_in_range; i <= sector_x + sectors_in_range; i++)
-            for (int j = sector_y - sectors_in_range; j <= sector_y + sectors_in_range; j++)
-                if (i >= 0 && i < Pheromone_Sector_map.size() && j >= 0 && j < Pheromone_Sector_map.get(i).size())
-                    for (Pheromone p : Pheromone_Sector_map.get(i).get(j))
-                        if (p.getType() == type)
-                            result.add(p);
-
-        return result;
-    }
-
-
-    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, PheromoneType type, UUID creator) {
-        Vector<Pheromone> result = new Vector<>();
-        int sector_x = (int) (x / sector_size);
-        int sector_y = (int) (y / sector_size);
-        int sectors_in_range = (int) (range / sector_size);
-
-        for (int i = sector_x - sectors_in_range; i <= sector_x + sectors_in_range; i++)
-            for (int j = sector_y - sectors_in_range; j <= sector_y + sectors_in_range; j++)
-                if (i >= 0 && i < Pheromone_Sector_map.size() && j >= 0 && j < Pheromone_Sector_map.get(i).size())
-                    for (Pheromone p : Pheromone_Sector_map.get(i).get(j))
-                        if (p.getType() == type && p.getCreator() == creator)
-                            result.add(p);
-
-        return result;
-    }
-
     public void Tick() {
         ticks++;
     }
 
-    public Vector<Vector<Integer>> getSurroundingTiles(double x, double y) {
-        int posx = (int) x;
-        int posy = (int) y;
-
-        Vector results = new Vector();
-        Vector subres = new Vector();
-
-        for (int i = posx - 1; i <= posx + 1; i++) {
-            subres = new Vector();
-            for (int j = posy - 1; j <= posy + 1; j++) {
-                if (i >= 0 && i < HeightMap.size() && j >= 0 && j < HeightMap.get(i).size()) {
-                    subres.add(HeightMap.get(i).get(j));
-                }
-            }
-            results.add(subres);
-        }
-
-        return results;
-    }
 
     double getDistanceBetweenPoints(double x1, double y1, double x2, double y2) {
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
@@ -129,12 +77,13 @@ public class Map {
 
     public void removePheromonesolderthan(int x) {
 
-        for (int i = 0; i < Pheromone_Sector_map.size(); i++) {
-            for (int j = 0; j < Pheromone_Sector_map.get(i).size(); j++) {
-                for (int k = 0; k < Pheromone_Sector_map.get(i).get(j).size(); k++) {
-                    if (ticks - Pheromone_Sector_map.get(i).get(j).get(k).getCreationTick() > x) {
-                        Pheromone_Sector_map.get(i).get(j).get(k).removefromworld();
-                        Pheromone_Sector_map.get(i).get(j).remove(k);
+        for (Vector<Vector<Pheromone>> vectors : Pheromone_Sector_map) {
+            for (Vector<Pheromone> vector : vectors) {
+                for (int k = 0; k < vector.size(); k++) {
+                    if (ticks - vector.get(k).getCreationTick() > x) {
+                        vector.get(k).removefromworld();
+                        vector.remove(k);
+                        k--;
                     }
                 }
             }
@@ -143,9 +92,9 @@ public class Map {
 
     public int getamountofpheromones() {
         int result = 0;
-        for (int i = 0; i < Pheromone_Sector_map.size(); i++) {
-            for (int j = 0; j < Pheromone_Sector_map.get(i).size(); j++) {
-                result += Pheromone_Sector_map.get(i).get(j).size();
+        for (Vector<Vector<Pheromone>> vectors : Pheromone_Sector_map) {
+            for (Vector<Pheromone> vector : vectors) {
+                result += vector.size();
             }
         }
         return result;
@@ -157,8 +106,23 @@ public class Map {
                 for (Pheromone p : pheromonez) {
                     p.removefromworld();
                 }
-                pheromonez = new Vector<>();
+                pheromonez.clear();
+            }
+            sector.clear();
+        }
+    }
+
+    public Pheromone[] getPheromones() {
+        Pheromone[] result = new Pheromone[getamountofpheromones()];
+        int index = 0;
+        for (Vector<Vector<Pheromone>> sector : Pheromone_Sector_map) {
+            for (Vector<Pheromone> pheromonez : sector) {
+                for (Pheromone p : pheromonez) {
+                    result[index] = p;
+                    index++;
+                }
             }
         }
+        return result;
     }
 }

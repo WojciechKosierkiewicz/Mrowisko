@@ -15,7 +15,7 @@ public class Anthill extends Agent {
     private Circle shape;
 
     public Anthill() {
-        Ants = new Vector<Ant>();
+        Ants = new Vector<>();
     }
 
     public Anthill(Config settings) {
@@ -24,7 +24,12 @@ public class Anthill extends Agent {
         shape.setStroke(Color.BLUE);
         settings.getWorld().getChildren().add(shape);
         this.settings = settings;
-        Ants = new Vector<Ant>();
+        Ants = new Vector<>();
+    }
+
+    public void updateJavaFxShape() {
+        shape.setRadius(settings.getAntHillCircleRadius());
+        shape.setFill(this.getColor());
     }
 
     public void removeAntsOutsideMap(double threshold) {
@@ -32,6 +37,8 @@ public class Anthill extends Agent {
             if (Ants.get(i).getLocx() < -threshold || Ants.get(i).getLocx() > settings.getMapSizeX() + threshold || Ants.get(i).getLocy() < 0 - threshold || Ants.get(i).getLocy() > settings.getMapSizeY() + threshold) {
                 getAnts().get(i).removefromworld();
                 Ants.remove(i);
+                //zmniejszam i by nie pominąc żadnego elementu w nowej zmniejszonej tablicy
+                i--;
             }
         }
     }
@@ -65,6 +72,20 @@ public class Anthill extends Agent {
         setPos(Math.random() * settings.getMapSizeX(), Math.random() * settings.getMapSizeY());
     }
 
+    public void removeFromWorld() {
+        settings.getWorld().getChildren().remove(shape);
+    }
+
+    public void removeAntsfromWorld() {
+        for (Ant ant : Ants) {
+            ant.removefromworld();
+        }
+    }
+
+    public void removeEverythingFromWorld() {
+        removeFromWorld();
+        removeAntsfromWorld();
+    }
 
     public void update() {
         for (Ant ant : Ants) {
@@ -91,6 +112,8 @@ public class Anthill extends Agent {
             if (Ants.get(i).getLivedUpdates() > settings.getAntLifetime()) {
                 Ants.get(i).removefromworld();
                 Ants.remove(i);
+                //zmniejszam i by nie pominąc żadnego elementu w nowej zmniejszonej tablicy
+                i--;
             }
         }
 

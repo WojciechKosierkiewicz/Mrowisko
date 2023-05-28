@@ -12,12 +12,12 @@ public class Config {
     int CurrentTick = 0;
 
 
-    //ustawienia ogólne sym
-    int OutsideMapTreshold = 2;
+    //ustawienia ogólne symulacji
+    int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 1000;
-    int MapSizeY = 900;
+    int MapSizeX = 600;
+    int MapSizeY = 600;
 
 
     //zmienne mrówek
@@ -25,16 +25,25 @@ public class Config {
     double AntLifetime = 1500;
     double AntTurnAngle = 0.001;
     double AntTurnAngleMax = 0.01;
-
+    double AntConsumption = 0.5;
+    int AntFoodCapacity = 100;
+    double AntHungerLimit = 100;
     double AntStepLen = 1;
-
     double antRange = 10;
+    int AntPheromoneInterval = 10;
+    boolean AntGetHungry = true;
+    boolean AntDiesOfAge = true;
 
     //ustawienia anthills
 
     int AnthillAntLimit = 100;
     double AnthillAntSpawnChance = 0.1;
 
+
+    //ustawienia pheromonów
+    boolean doPheromonesEvaporate = true;
+    int PheromoneEvaporationTime = 1000;
+    boolean isPheromoneVisible = true;
 
     //ustawienia wyswietlania
     double AntCircleRadius = 5;
@@ -44,6 +53,14 @@ public class Config {
 
     public Config(Pane world) {
         this.world = world;
+    }
+
+    public int getPheromoneEvaporationTime() {
+        return PheromoneEvaporationTime;
+    }
+
+    public int getAntPheromoneInterval() {
+        return AntPheromoneInterval;
     }
 
     public double getAntHillCircleRadius() {
@@ -69,6 +86,10 @@ public class Config {
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public boolean isPheromoneVisible() {
+        return isPheromoneVisible;
     }
 
     public Pane getWorld() {
@@ -102,6 +123,14 @@ public class Config {
 
     public int getMapSizeY() {
         return MapSizeY;
+    }
+
+    public boolean isDoPheromonesEvaporate() {
+        return doPheromonesEvaporate;
+    }
+
+    public void setDoPheromonesEvaporate(boolean doPheromonesEvaporate) {
+        this.doPheromonesEvaporate = doPheromonesEvaporate;
     }
 
     public double getAntStepLen() {
@@ -151,4 +180,37 @@ public class Config {
     public void setAntLifetime(double antLifetime) {
         AntLifetime = antLifetime;
     }
+
+    public double getAntHungerLimit() {
+        return AntHungerLimit;
+    }
+
+    public void setAntHungerLimit(int antHungerLimit) {
+        AntHungerLimit = antHungerLimit;
+    }
+
+    public double getAntConsumption() {
+        return AntConsumption;
+    }
+
+    public void setAntConsumption(double antConsumption) {
+        AntConsumption = antConsumption;
+    }
+
+    public int getAntFoodCapacity() {
+        return AntFoodCapacity;
+    }
+
+    public void setAntFoodCapacity(int antFoodCapacity) {
+        AntFoodCapacity = antFoodCapacity;
+    }
+
+    public boolean isAntGetHungry() {
+        return AntGetHungry;
+    }
+
+    public boolean isAntDiesOfAge() {
+        return AntDiesOfAge;
+    }
+
 }

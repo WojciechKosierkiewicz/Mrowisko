@@ -23,6 +23,7 @@ public class Pheromone extends Agent {
         creator = null;
     }
 
+
     public Pheromone(Config settings, double posx, double posy, UUID creator, int creationTick) {
         this.settings = settings;
         this.creator = creator;
@@ -30,7 +31,9 @@ public class Pheromone extends Agent {
         this.setTypAgenta(TypAgenta.PHEROMONE);
         setLocx(posx);
         setLocy(posy);
-        initializeDisplay();
+        if (settings.isPheromoneVisible()) {
+            initializeDisplay();
+        }
     }
 
     void initializeDisplay() {
@@ -41,6 +44,7 @@ public class Pheromone extends Agent {
         settings.getWorld().getChildren().add(shape);
         shape.setStroke(Color.RED);
     }
+
 
     public int getCreationTick() {
         return creationTick;
@@ -53,6 +57,18 @@ public class Pheromone extends Agent {
     public Pheromone(PheromoneType type, UUID creator) {
         this.type = type;
         this.creator = creator;
+    }
+
+    public void updateJavaFxShape() {
+        if (settings.isPheromoneVisible()) {
+            if (shape == null) {
+                initializeDisplay();
+            }
+            shape.setRadius(settings.getPheromoneCircleRadius());
+            shape.setFill(this.getColor());
+        } else if (shape != null) {
+            removefromworld();
+        }
     }
 
     public PheromoneType getType() {
