@@ -124,7 +124,7 @@ public class Map {
     public void createPheromoneAtPoint(double posx, double posy, UUID creator) {
         int sector_x = 2;
         int sector_y = 2;
-        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, world, ticks));
+        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, ticks));
     }
 
     public void removePheromonesolderthan(int x) {

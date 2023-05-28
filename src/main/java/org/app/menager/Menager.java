@@ -50,13 +50,13 @@ public class Menager {
     }
 
     public void addAnthill(double posx, double posy) {
-        anthills.add(new Anthill(settings, world, map));
+        anthills.add(new Anthill(settings));
         anthills.get(anthills.size() - 1).setPos(posx, posy);
 
     }
 
     public void addAnthill() {
-        anthills.add(new Anthill(settings, world, map));
+        anthills.add(new Anthill(settings));
         anthills.get(anthills.size() - 1).setrandompos();
     }
 

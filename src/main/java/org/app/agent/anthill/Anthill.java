@@ -11,9 +11,7 @@ import org.app.agent.ant.Ant;
 import org.app.menager.config.Config;
 
 public class Anthill extends Agent {
-    private Pane world;
     Vector<Ant> Ants;
-    private org.app.map.Map map;
     private Config settings;
     private Circle shape;
 
@@ -21,14 +19,12 @@ public class Anthill extends Agent {
         Ants = new Vector<Ant>();
     }
 
-    public Anthill(Config settings, Pane world, org.app.map.Map map) {
+    public Anthill(Config settings) {
         setTypAgenta(TypAgenta.ANTHILL);
         shape = new Circle(settings.getAntHillCircleRadius(), getColor());
         shape.setStroke(Color.BLUE);
-        world.getChildren().add(shape);
+        settings.getWorld().getChildren().add(shape);
         this.settings = settings;
-        this.world = world;
-        this.map = map;
         Ants = new Vector<Ant>();
     }
 

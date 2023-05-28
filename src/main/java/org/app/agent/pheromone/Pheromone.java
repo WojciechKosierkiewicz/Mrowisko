@@ -17,18 +17,16 @@ public class Pheromone extends Agent {
     private Config settings;
 
     private Circle shape;
-    private Pane world;
 
     public Pheromone() {
         type = PheromoneType.NONE;
         creator = null;
     }
 
-    public Pheromone(Config settings, double posx, double posy, UUID creator, Pane world, int creationTick) {
+    public Pheromone(Config settings, double posx, double posy, UUID creator, int creationTick) {
         this.settings = settings;
         this.creator = creator;
         this.creationTick = creationTick;
-        this.world = world;
         this.setTypAgenta(TypAgenta.PHEROMONE);
         setLocx(posx);
         setLocy(posy);
@@ -36,7 +34,7 @@ public class Pheromone extends Agent {
         shape.setRadius(settings.getPheromoneCircleRadius());
         shape.setTranslateX(this.getLocx());
         shape.setTranslateY(this.getLocy());
-        world.getChildren().add(shape);
+        settings.getWorld().getChildren().add(shape);
         shape.setStroke(Color.RED);
     }
 
@@ -62,7 +60,7 @@ public class Pheromone extends Agent {
     }
 
     public void removefromworld() {
-        world.getChildren().remove(shape);
+        settings.getWorld().getChildren().remove(shape);
     }
 
     public enum PheromoneType {
