@@ -136,6 +136,18 @@ public class Config {
         return AntLifetime;
     }
 
+    public void setAntTurnAngleMax(double antTurnAngleMax) {
+        AntTurnAngleMax = antTurnAngleMax;
+    }
+
+    public void setAntHillCircleRadius(double antHillCircleRadius) {
+        AntHillCircleRadius = antHillCircleRadius;
+    }
+
+    public void setPheromoneCircleRadius(double pheromoneCircleRadius) {
+        this.pheromoneCircleRadius = pheromoneCircleRadius;
+    }
+
     public void setAntLifetime(double antLifetime) {
         AntLifetime = antLifetime;
     }

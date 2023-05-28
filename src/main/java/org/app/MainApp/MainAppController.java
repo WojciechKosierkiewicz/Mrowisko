@@ -41,6 +41,14 @@ public class MainAppController {
     Slider AntStepLengthSlide = new Slider(0, 10, 1);
 
     @FXML
+    Slider AntTurnAngleMaxSlide = new Slider(0, 1, 0.01);
+
+    @FXML
+    Slider AnthillCircleRadiusSlide = new Slider(0, 10, 10);
+
+    @FXML
+    Slider PheromoneCircleRadiusSlide = new Slider(0, 10, 2);
+    @FXML
     TextField ticktext;
     @FXML
     private AreaChart<?, ?> populacjaant;
@@ -51,6 +59,9 @@ public class MainAppController {
         settings.setAntLifetime(AntLifeTimeSlide.getValue());
         settings.setAntRange(AntRangeSlide.getValue());
         settings.setAntStepLen(AntStepLengthSlide.getValue());
+        settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
+        settings.setAntHillCircleRadius(AnthillCircleRadiusSlide.getValue());
+        settings.setPheromoneCircleRadius(PheromoneCircleRadiusSlide.getValue());
     }
 
     @FXML

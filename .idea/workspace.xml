@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="nowa rozdzielczosc">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="slidery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
@@ -502,7 +502,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685299011550</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="nowa rozdzielczosc">
+      <created>1685300674775</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300674775</updated>
+    </task>
+    <task id="LOCAL-00034" summary="slidery">
+      <created>1685300720964</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300720964</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +555,9 @@
     <MESSAGE value="dldldldldlld" />
     <MESSAGE value="wyswietlanie grafów" />
     <MESSAGE value="usuwanie redundant kopii mapy i world" />
-    <option name="LAST_COMMIT_MESSAGE" value="usuwanie redundant kopii mapy i world" />
+    <MESSAGE value="nowa rozdzielczosc" />
+    <MESSAGE value="slidery" />
+    <option name="LAST_COMMIT_MESSAGE" value="slidery" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
