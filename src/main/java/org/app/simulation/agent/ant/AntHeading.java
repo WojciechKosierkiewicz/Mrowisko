@@ -57,18 +57,12 @@ public class AntHeading {
             return;
         }
 
-        for (Pheromone p : pheromones) {
-            if (antdirection == Antdirection.FOOD) {
-                if (p.getType() != PheromoneType.FOOD) {
-                    pheromones.remove(p);
-                }
-            }
+        if (antdirection == Antdirection.FOOD) {
+            pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
+        }
 
-            if (antdirection == Antdirection.HOME) {
-                if (p.getType() != PheromoneType.HOME) {
-                    pheromones.remove(p);
-                }
-            }
+        if (antdirection == Antdirection.HOME) {
+            pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
         }
 
         if (pheromones.size() == 0) {

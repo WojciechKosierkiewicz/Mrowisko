@@ -24,8 +24,8 @@ public class GuiController {
     Boolean isRunning = false;
     private TimeKeeper clock;
 
-    XYChart.Series populacjaxy = new XYChart.Series();
-    XYChart.Series pheromonyxy = new XYChart.Series();
+    XYChart.Series<String, Integer> populacjaxy = new XYChart.Series<>();
+    XYChart.Series<String, Integer> pheromonyxy = new XYChart.Series<>();
 
     @FXML
     Slider AntSizeSlide = new Slider(0, 10, 5);
@@ -50,8 +50,9 @@ public class GuiController {
     @FXML
     TextField ticktext;
     @FXML
-    private AreaChart<?, ?> populacjaant;
-
+    private AreaChart<String, Integer> populacjaant;
+    @FXML
+    private AreaChart<String, Integer> iloscpheromonow;
 
     @FXML
     void UpdateSettings() {
@@ -84,14 +85,11 @@ public class GuiController {
     }
 
     @FXML
-    private AreaChart<?, ?> iloscpheromonow;
-
-    @FXML
     public void step() {
         sim.PrzeprowadzTickSymulacji();
         if (sim.getTick() % 100 == 0) {
-            populacjaxy.getData().add(new XYChart.Data(Integer.toString(sim.getTick() - 100), sim.getAmountofants()));
-            pheromonyxy.getData().add(new XYChart.Data(Integer.toString(sim.getTick() - 100), sim.getAmountofphermoones()));
+            populacjaxy.getData().add(new XYChart.Data<>(Integer.toString(sim.getTick()), sim.getAmountofants()));
+            pheromonyxy.getData().add(new XYChart.Data<>(Integer.toString(sim.getTick()), sim.getAmountofphermoones()));
         }
         ticktext.setText(Integer.toString(sim.getTick()));
     }
@@ -122,9 +120,9 @@ public class GuiController {
 
 
     private class TimeKeeper extends AnimationTimer {
-        private long FRAMES_PER_SEC = 10L;
-        private long INTERVAL = 1000000L / FRAMES_PER_SEC;
         private long last = 0;
+        long FRAMES_PER_SEC = 10L;
+        long INTERVAL = 1000000L / FRAMES_PER_SEC;
 
         @Override
         public void handle(long now) {

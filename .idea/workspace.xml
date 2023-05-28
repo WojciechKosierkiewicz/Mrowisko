@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="slidery">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Antdirection.java" afterDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="organizing file structure !">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/MainApp/MainApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/Gui/MainApp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +283,7 @@
       <workItem from="1685294350262" duration="35000" />
       <workItem from="1685298784769" duration="313000" />
       <workItem from="1685303998283" duration="6849000" />
-      <workItem from="1685311118278" duration="119000" />
+      <workItem from="1685311118278" duration="1544000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -531,7 +523,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685300720964</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="major changes !">
+      <created>1685311297070</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1685311297070</updated>
+    </task>
+    <task id="LOCAL-00036" summary="organizing file structure !">
+      <created>1685311478711</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1685311478711</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +578,9 @@
     <MESSAGE value="usuwanie redundant kopii mapy i world" />
     <MESSAGE value="nowa rozdzielczosc" />
     <MESSAGE value="slidery" />
-    <option name="LAST_COMMIT_MESSAGE" value="slidery" />
+    <MESSAGE value="major changes !" />
+    <MESSAGE value="organizing file structure !" />
+    <option name="LAST_COMMIT_MESSAGE" value="organizing file structure !" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
