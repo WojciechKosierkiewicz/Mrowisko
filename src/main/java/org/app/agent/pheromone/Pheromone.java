@@ -30,6 +30,10 @@ public class Pheromone extends Agent {
         this.setTypAgenta(TypAgenta.PHEROMONE);
         setLocx(posx);
         setLocy(posy);
+        initializeDisplay();
+    }
+
+    void initializeDisplay() {
         shape = new Circle(settings.getPheromoneCircleRadius(), this.getColor());
         shape.setRadius(settings.getPheromoneCircleRadius());
         shape.setTranslateX(this.getLocx());

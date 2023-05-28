@@ -99,7 +99,6 @@ public class Menager {
         Tick++;
         map.Tick();
         map.removePheromonesolderthan(300);
-        removeAntsOutside(2);
     }
 
     public void RandomAntPosition() {
@@ -122,20 +121,6 @@ public class Menager {
 
     void ZwrocAktulneWyniki() {
         // TODO: 15.05.2023  
-    }
-
-    void removeAntsOutside(double treshold) {
-        for (Anthill anthill : anthills) {
-            anthill.removeAntsOutsideMap(treshold);
-        }
-    }
-
-    public void printAmounts() {
-        System.out.println("==================================");
-        System.out.println("Anthills: " + anthills.size());
-        System.out.println("Ants: " + getAmountofants());
-        System.out.println("Pheromones: " + getAmountofphermoones());
-        System.out.println("==================================");
     }
 
     public int getAmountofants() {

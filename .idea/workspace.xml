@@ -7,8 +7,8 @@
     <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="usuwanie redundant kopii mapy i world">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -279,7 +279,7 @@
       <workItem from="1685281760333" duration="1586000" />
       <workItem from="1685288040567" duration="607000" />
       <workItem from="1685289769176" duration="2967000" />
-      <workItem from="1685292749561" duration="1018000" />
+      <workItem from="1685292749561" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -477,7 +477,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685293584520</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="usuwanie redundant kopii mapy i world">
+      <created>1685293778276</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1685293778276</updated>
+    </task>
+    <task id="LOCAL-00030" summary="usuwanie redundant kopii mapy i world">
+      <created>1685293847851</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685293847851</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

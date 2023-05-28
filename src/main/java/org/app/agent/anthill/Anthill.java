@@ -76,6 +76,8 @@ public class Anthill extends Agent {
             if (Math.random() < settings.getAnthillAntSpawnChance())
                 addAnt();
         }
+
+        removeAntsOutsideMap(settings.getOutsideMapTreshold());
     }
 
     public void draw() {

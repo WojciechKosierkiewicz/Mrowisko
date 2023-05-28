@@ -5,35 +5,54 @@ import javafx.scene.layout.Pane;
 import org.app.map.Map;
 
 public class Config {
+
+    //zmienne "globalne" dla całego projektu <- Wszyscy agenci ich używają
     Pane world;
     org.app.map.Map map;
+    int CurrentTick = 0;
 
+
+    //ustawienia ogólne sym
+    int OutsideMapTreshold = 2;
+
+    //zmienne mapy
     int MapSizeX = 1000;
     int MapSizeY = 900;
 
+
+    //zmienne mrówek
     int AntSenseRange = 10;
     int AntLifetime = 1500;
     double AntTurnAngle = 0.001;
     double AntTurnAngleMax = 0.01;
 
-
     int AntStepLen = 1;
-
-    double antDecisionFactor = 20;
 
     double antRange = 10;
 
+    //ustawienia anthills
 
     int AnthillAntLimit = 100;
     double AnthillAntSpawnChance = 0.1;
 
 
+    //ustawienia wyswietlania
     int AntCircleRadius = 5;
     int AntHillCircleRadius = 10;
     int pheromoneCircleRadius = 2;
 
+
     public Config(Pane world) {
         this.world = world;
+    }
+
+    public int getOutsideMapTreshold() {
+        return OutsideMapTreshold;
+    }
+
+
+    public int getCurrentTick() {
+        return CurrentTick;
     }
 
     public Map getMap() {
@@ -89,30 +108,12 @@ public class Config {
         return AntCircleRadius;
     }
 
-    public double getAntDecisionFactor() {
-        return antDecisionFactor;
-    }
-
-    public void setAntDecisionFactor(double antDecisionFactor) {
-        this.antDecisionFactor = antDecisionFactor;
-    }
-
-    private int currentTick = 0;
-
     public double getAntRange() {
         return antRange;
     }
 
     public void setAntRange(double antRange) {
         this.antRange = antRange;
-    }
-
-    public int setCurrentTick() {
-        return this.currentTick + 1;
-    }
-
-    public int getCurrentTick() {
-        return currentTick;
     }
 
     public int getAnthillAntLimit() {
