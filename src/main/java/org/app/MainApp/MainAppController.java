@@ -38,7 +38,7 @@ public class MainAppController {
 
 
     void UpdateSettings() {
-        settings.setAntCircleRadius((int) AntSizeSlide.getValue());
+        settings.setAntCircleRadius(AntSizeSlide.getValue());
     }
 
     @FXML

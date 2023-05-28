@@ -3,20 +3,12 @@ package org.app.agent.ant;
 import javafx.scene.paint.Color;
 import org.app.agent.Agent;
 import org.app.agent.TypAgenta;
-import org.app.agent.food.Food;
-import org.app.menager.config.Config;
-import org.app.agent.pheromone.Pheromone;
 import org.app.menager.config.Config;
 
-import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
-import java.util.Vector;
 
 import javafx.scene.shape.Circle;
-import javafx.scene.layout.Pane;
-
-import org.app.agent.ant.AntHeading;
 
 public class Ant extends Agent {
 
@@ -39,14 +31,19 @@ public class Ant extends Agent {
         this.shape = new Circle(settings.getAntCircleRadius(), this.getColor());
         shape.setStroke(Color.BLACK);
         settings.getWorld().getChildren().add(shape);
-        draw();
+        updateJavaFxLocation();
     }
 
     public int getLivedUpdates() {
         return livedUpdates;
     }
 
-    public void draw() {
+    public void updateJavaFxShape() {
+        shape.setRadius(settings.getAntCircleRadius());
+        shape.setFill(this.getColor());
+    }
+
+    public void updateJavaFxLocation() {
         shape.setTranslateX(this.getLocx());
         shape.setTranslateY(this.getLocy());
     }
@@ -110,11 +107,12 @@ public class Ant extends Agent {
     public void update() {
         moveAnt();
         updateAngle();
-        draw();
+        updateJavaFxLocation();
         livedUpdates++;
         if (livedUpdates % 10 == 0) {
             settings.getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
         }
+        updateJavaFxShape();
     }
 
     public String toString() {

@@ -2,7 +2,6 @@ package org.app.agent.anthill;
 
 import java.util.Vector;
 
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.app.agent.Agent;
@@ -82,7 +81,7 @@ public class Anthill extends Agent {
 
     public void draw() {
         for (Ant ant : Ants) {
-            ant.draw();
+            ant.updateJavaFxLocation();
         }
     }
 

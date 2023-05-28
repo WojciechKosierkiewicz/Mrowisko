@@ -37,17 +37,17 @@ public class Config {
 
 
     //ustawienia wyswietlania
-    int AntCircleRadius = 5;
-    int AntHillCircleRadius = 10;
-    int pheromoneCircleRadius = 2;
+    double AntCircleRadius = 5;
+    double AntHillCircleRadius = 10;
+    double pheromoneCircleRadius = 2;
 
 
     public Config(Pane world) {
         this.world = world;
     }
 
-    public void setAntCircleRadius(int antCircleRadius) {
-        AntCircleRadius = antCircleRadius;
+    public double getAntHillCircleRadius() {
+        return AntHillCircleRadius;
     }
 
     public int getOutsideMapTreshold() {
@@ -63,8 +63,8 @@ public class Config {
         return map;
     }
 
-    public int getAntHillCircleRadius() {
-        return AntHillCircleRadius;
+    public double getPheromoneCircleRadius() {
+        return pheromoneCircleRadius;
     }
 
     public void setMap(Map map) {
@@ -87,8 +87,8 @@ public class Config {
         return AntTurnAngle;
     }
 
-    public int getPheromoneCircleRadius() {
-        return pheromoneCircleRadius;
+    public double getAntCircleRadius() {
+        return AntCircleRadius;
     }
 
 
@@ -108,8 +108,8 @@ public class Config {
         return AntStepLen;
     }
 
-    public int getAntCircleRadius() {
-        return AntCircleRadius;
+    public void setAntCircleRadius(double antCircleRadius) {
+        AntCircleRadius = antCircleRadius;
     }
 
     public double getAntRange() {
