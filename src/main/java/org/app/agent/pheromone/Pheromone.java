@@ -63,7 +63,4 @@ public class Pheromone extends Agent {
         settings.getWorld().getChildren().remove(shape);
     }
 
-    public enum PheromoneType {
-        FOOD, HOME, SEARCH, NONE
-    }
 }

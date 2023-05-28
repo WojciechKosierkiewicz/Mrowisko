@@ -60,7 +60,7 @@ public class Map {
         return result;
     }
 
-    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, Pheromone.PheromoneType type) {
+    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, PheromoneType type) {
         Vector<Pheromone> result = new Vector<>();
         int sector_x = (int) (x / sector_size);
         int sector_y = (int) (y / sector_size);
@@ -77,7 +77,7 @@ public class Map {
     }
 
 
-    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, Pheromone.PheromoneType type, UUID creator) {
+    public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range, PheromoneType type, UUID creator) {
         Vector<Pheromone> result = new Vector<>();
         int sector_x = (int) (x / sector_size);
         int sector_y = (int) (y / sector_size);
