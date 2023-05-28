@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -26,10 +27,19 @@ public class MainAppController {
 
     XYChart.Series populacjaxy = new XYChart.Series();
     XYChart.Series pheromonyxy = new XYChart.Series();
+
+    @FXML
+    Slider AntSizeSlide = new Slider(0, 10, 3);
+
     @FXML
     TextField ticktext;
     @FXML
     private AreaChart<?, ?> populacjaant;
+
+
+    void UpdateSettings() {
+        settings.setAntCircleRadius((int) AntSizeSlide.getValue());
+    }
 
     @FXML
     public void initialize() {
@@ -47,6 +57,7 @@ public class MainAppController {
 
     @FXML
     public void step() {
+        UpdateSettings();
         sim.PrzeprowadzTickSymulacji();
         if (sim.getTick() % 100 == 0) {
             populacjaxy.getData().add(new XYChart.Data(Integer.toString(sim.getTick()), sim.getAmountofants()));

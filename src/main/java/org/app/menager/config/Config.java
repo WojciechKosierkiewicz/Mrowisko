@@ -46,6 +46,10 @@ public class Config {
         this.world = world;
     }
 
+    public void setAntCircleRadius(int antCircleRadius) {
+        AntCircleRadius = antCircleRadius;
+    }
+
     public int getOutsideMapTreshold() {
         return OutsideMapTreshold;
     }

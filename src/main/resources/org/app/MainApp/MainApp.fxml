@@ -67,6 +67,7 @@
             <children>
                 <Label text="Current Tick"/>
                 <TextField fx:id="ticktext"/>
+                <Slider fx:id="AntSizeSlide"/>
             </children>
         </VBox>
     </left>
