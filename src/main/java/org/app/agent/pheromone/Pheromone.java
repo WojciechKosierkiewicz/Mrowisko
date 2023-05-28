@@ -24,9 +24,10 @@ public class Pheromone extends Agent {
         creator = null;
     }
 
-    public Pheromone(Config settings, double posx, double posy, UUID creator, Pane world) {
+    public Pheromone(Config settings, double posx, double posy, UUID creator, Pane world, int creationTick) {
         this.settings = settings;
         this.creator = creator;
+        this.creationTick = creationTick;
         this.world = world;
         this.setTypAgenta(TypAgenta.PHEROMONE);
         setLocx(posx);

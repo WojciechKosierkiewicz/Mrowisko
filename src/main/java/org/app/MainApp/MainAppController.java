@@ -29,7 +29,7 @@ public class MainAppController {
         settings = new Config();
         sim = new Menager(settings, world);
         sim.addAnthill();
-        sim.addAnts(10, sim.getAnthillIDs().get(0));
+        sim.addAnts(10000, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
     }
 

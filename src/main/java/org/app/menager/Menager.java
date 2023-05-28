@@ -92,6 +92,8 @@ public class Menager {
             anthill.draw();
         }
         Tick++;
+        map.Tick();
+        map.removePheromonesolderthan(1);
     }
 
     public void RandomAntPosition() {

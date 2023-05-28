@@ -19,6 +19,7 @@ public class Map {
     private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
     private Config settings;
     private Pane world;
+    private int ticks;
 
 
     public Map(int x, int y, int sector_size, Config settings, Pane world) {
@@ -92,6 +93,10 @@ public class Map {
         return result;
     }
 
+    public void Tick() {
+        ticks++;
+    }
+
     public Vector<Vector<Integer>> getSurroundingTiles(double x, double y) {
         int posx = (int) x;
         int posy = (int) y;
@@ -119,7 +124,21 @@ public class Map {
     public void createPheromoneAtPoint(double posx, double posy, UUID creator) {
         int sector_x = 2;
         int sector_y = 2;
-        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, world));
+        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, world, ticks));
+    }
+
+    public void removePheromonesolderthan(int x) {
+
+        for (int i = 0; i < Pheromone_Sector_map.size(); i++) {
+            for (int j = 0; j < Pheromone_Sector_map.get(i).size(); j++) {
+                for (int k = 0; k < Pheromone_Sector_map.get(i).get(j).size(); k++) {
+                    if (ticks - Pheromone_Sector_map.get(i).get(j).get(k).getCreationTick() > x) {
+                        Pheromone_Sector_map.get(i).get(j).get(k).removefromworld();
+                        Pheromone_Sector_map.get(i).get(j).remove(k);
+                    }
+                }
+            }
+        }
     }
 
     public void clearPhermonoes() {
