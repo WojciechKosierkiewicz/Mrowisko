@@ -121,4 +121,15 @@ public class Map {
         int sector_y = 2;
         Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, world));
     }
+
+    public void clearPhermonoes() {
+        for (Vector<Vector<Pheromone>> sector : Pheromone_Sector_map) {
+            for (Vector<Pheromone> pheromonez : sector) {
+                for (Pheromone p : pheromonez) {
+                    p.removefromworld();
+                }
+                pheromonez = new Vector<>();
+            }
+        }
+    }
 }

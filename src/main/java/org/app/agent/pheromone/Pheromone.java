@@ -61,6 +61,10 @@ public class Pheromone extends Agent {
         return creator;
     }
 
+    public void removefromworld() {
+        world.getChildren().remove(shape);
+    }
+
     public enum PheromoneType {
         FOOD, HOME, SEARCH, NONE
     }

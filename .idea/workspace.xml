@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="mrowki się trzęsą !!!!!!!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/config/Config.java" afterDir="false" />
-    </list>
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="kontrolowany &quot;troche&quot; ruch mruwków !" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -280,7 +270,7 @@
       <workItem from="1684776314010" duration="608000" />
       <workItem from="1684776933024" duration="523000" />
       <workItem from="1685097195415" duration="1543000" />
-      <workItem from="1685276496703" duration="2391000" />
+      <workItem from="1685276496703" duration="2749000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -429,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685198819980</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="kontrolowany &quot;troche&quot; ruch mruwków !">
+      <created>1685279246823</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685279246823</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +458,8 @@
     <MESSAGE value="nic" />
     <MESSAGE value="troche działające ui!&#10;jeszcze dużo roboty :(" />
     <MESSAGE value="mrowki się trzęsą !!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="mrowki się trzęsą !!!!!!!" />
+    <MESSAGE value="kontrolowany &quot;troche&quot; ruch mruwków !" />
+    <option name="LAST_COMMIT_MESSAGE" value="kontrolowany &quot;troche&quot; ruch mruwków !" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

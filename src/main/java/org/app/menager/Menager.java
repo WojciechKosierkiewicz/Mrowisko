@@ -114,6 +114,7 @@ public class Menager {
             }
         }
         anthills.clear();
+        map.clearPhermonoes();
     }
 
     void ZwrocAktulneWyniki() {
