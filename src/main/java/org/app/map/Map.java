@@ -141,6 +141,16 @@ public class Map {
         }
     }
 
+    public int getamountofpheromones() {
+        int result = 0;
+        for (int i = 0; i < Pheromone_Sector_map.size(); i++) {
+            for (int j = 0; j < Pheromone_Sector_map.get(i).size(); j++) {
+                result += Pheromone_Sector_map.get(i).get(j).size();
+            }
+        }
+        return result;
+    }
+
     public void clearPhermonoes() {
         for (Vector<Vector<Pheromone>> sector : Pheromone_Sector_map) {
             for (Vector<Pheromone> pheromonez : sector) {

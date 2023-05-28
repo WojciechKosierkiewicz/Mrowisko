@@ -38,7 +38,6 @@ public class Pheromone extends Agent {
         shape.setTranslateY(this.getLocy());
         world.getChildren().add(shape);
         shape.setStroke(Color.RED);
-        System.out.println("Pheromone created");
     }
 
     public int getCreationTick() {

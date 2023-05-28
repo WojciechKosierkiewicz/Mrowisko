@@ -24,6 +24,15 @@ public class Anthill extends Agent {
         Ants = new Vector<Ant>();
     }
 
+    public void removeAntsOutsideMap(double threshold) {
+        for (int i = 0; i < Ants.size(); i++) {
+            if (Ants.get(i).getLocx() < -threshold || Ants.get(i).getLocx() > settings.getMapSizeX() + threshold || Ants.get(i).getLocy() < 0 - threshold || Ants.get(i).getLocy() > settings.getMapSizeY() + threshold) {
+                getAnts().get(i).removefromworld();
+                Ants.remove(i);
+            }
+        }
+    }
+
 
     public void addAnt(Ant ant) {
 

@@ -91,11 +91,11 @@ public class Ant extends Agent {
         double newx = this.getLocx() + movementx;
         double newy = this.getLocy() + movementy;
 
-        if (newx < 0 || newx > world.getWidth()) {
+        if (newx < 0 || newx > settings.getMapSizeX()) {
             heading.bouncexwall();
         }
 
-        if (newy < 0 || newy > world.getHeight()) {
+        if (newy < 0 || newy > settings.getMapSizeY()) {
             heading.bounceywall();
         }
 
@@ -122,9 +122,9 @@ public class Ant extends Agent {
         updateAngle();
         draw();
         livedUpdates++;
-        //if (livedUpdates % 10 == 0) {
-        //  map.createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
-        //}
+        if (livedUpdates % 10 == 0) {
+            map.createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+        }
     }
 
 

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="usuwanie pheromonów">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="usuwanie pheromonów działa now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/MainApp/MainAppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/ant/Ant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/anthill/Anthill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/agent/pheromone/Pheromone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/menager/Menager.java" afterDir="false" />
@@ -276,7 +278,8 @@
       <workItem from="1684776314010" duration="608000" />
       <workItem from="1684776933024" duration="523000" />
       <workItem from="1685097195415" duration="1543000" />
-      <workItem from="1685276496703" duration="3760000" />
+      <workItem from="1685276496703" duration="4420000" />
+      <workItem from="1685281760333" duration="1586000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -439,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685279611122</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="usuwanie pheromonów działa now">
+      <created>1685280606175</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685280606175</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +483,8 @@
     <MESSAGE value="mrowki się trzęsą !!!!!!!" />
     <MESSAGE value="kontrolowany &quot;troche&quot; ruch mruwków !" />
     <MESSAGE value="usuwanie pheromonów" />
-    <option name="LAST_COMMIT_MESSAGE" value="usuwanie pheromonów" />
+    <MESSAGE value="usuwanie pheromonów działa now" />
+    <option name="LAST_COMMIT_MESSAGE" value="usuwanie pheromonów działa now" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

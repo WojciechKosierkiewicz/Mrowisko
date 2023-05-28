@@ -29,13 +29,16 @@ public class MainAppController {
         settings = new Config();
         sim = new Menager(settings, world);
         sim.addAnthill();
-        sim.addAnts(10000, sim.getAnthillIDs().get(0));
+        sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
     }
 
     @FXML
     public void step() {
         sim.PrzeprowadzTickSymulacji();
+        if (sim.getTick() % 500 == 0) {
+            sim.addAnts(10, sim.getAnthillIDs().get(0));
+        }
     }
 
     @FXML
@@ -56,14 +59,13 @@ public class MainAppController {
 
     private class Movement extends AnimationTimer {
         private long FRAMES_PER_SEC = 50L;
-        private long INTERVAL = 10000000L / FRAMES_PER_SEC;
+        private long INTERVAL = 100L / FRAMES_PER_SEC;
         private long last = 0;
 
         @Override
         public void handle(long now) {
             if (now - last > INTERVAL) {
                 step();
-                System.out.println("Tick : " + sim.getTick());
                 last = now;
             }
         }
