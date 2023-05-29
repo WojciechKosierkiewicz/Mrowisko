@@ -32,7 +32,8 @@ public class AntHeading {
         }
         currentangle = limitpi(currentangle);
         currentangle = currentangle + turnangle;
-        turnangle += (Math.random() - 0.5) * settings.getAntTurnAngle();
+        turnangle += (Math.random() - 0.5) * settings.getAntTurnAngleChange();
+
         if (turnangle > settings.getAntTurnAngleMax()) {
             turnangle = settings.getAntTurnAngleMax();
         }

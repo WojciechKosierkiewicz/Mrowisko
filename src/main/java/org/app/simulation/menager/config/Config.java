@@ -23,7 +23,7 @@ public class Config {
     //zmienne mrówek
     int AntSenseRange = 10;
     double AntLifetime = 1500;
-    double AntTurnAngle = 0.001;
+    double AntTurnAngleChange = 0.001;
     double AntTurnAngleMax = 0.01;
     double AntConsumption = 0.5;
     int AntFoodCapacity = 100;
@@ -104,8 +104,8 @@ public class Config {
         return AntTurnAngleMax;
     }
 
-    public double getAntTurnAngle() {
-        return AntTurnAngle;
+    public double getAntTurnAngleChange() {
+        return AntTurnAngleChange;
     }
 
     public double getAntCircleRadius() {
