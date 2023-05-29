@@ -38,6 +38,7 @@ public class Config {
     double AntsEvaporationTime = 1000;
     boolean isAntsVisible = true;
 
+
     //ustawienia anthills
 
     int AnthillAntLimit = 100;
@@ -48,6 +49,7 @@ public class Config {
     boolean doPheromonesEvaporate = true;
     int PheromoneEvaporationTime = 1000;
     boolean isPheromoneVisible = true;
+
 
     //ustawienia wyswietlania
     double AntCircleRadius = 3;
@@ -181,6 +183,10 @@ public class Config {
         this.pheromoneCircleRadius = pheromoneCircleRadius;
     }
 
+    public void setPheromoneVisible(boolean pheromoneVisible) {
+        isPheromoneVisible = pheromoneVisible;
+    }
+
     public void setAntLifetime(double antLifetime) {
         AntLifetime = antLifetime;
     }
@@ -219,6 +225,22 @@ public class Config {
 
     public void setPheromoneEvaporationTime(int pheromoneEvaporationTime) {
         PheromoneEvaporationTime = pheromoneEvaporationTime;
+    }
+
+    public void setAntGetHungry(boolean antGetHungry) {
+        AntGetHungry = antGetHungry;
+    }
+
+    public void setAntDiesOfAge(boolean antDiesOfAge) {
+        AntDiesOfAge = antDiesOfAge;
+    }
+
+    public void setDoAntsEvaporate(boolean doAntsEvaporate) {
+        this.doAntsEvaporate = doAntsEvaporate;
+    }
+
+    public void setAntsVisible(boolean antsVisible) {
+        isAntsVisible = antsVisible;
     }
 
     public void setAntTurnAngleChange(double antTurnAngleChange) {

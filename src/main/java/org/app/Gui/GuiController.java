@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
@@ -79,6 +80,25 @@ public class GuiController {
     private AreaChart<String, Integer> populacjaant;
     @FXML
     private AreaChart<String, Integer> iloscpheromonow;
+
+    @FXML
+    CheckBox doPheromonesEvaporate = new CheckBox();
+
+    @FXML
+    CheckBox isPheromoneVisable = new CheckBox();
+
+    @FXML
+    CheckBox doAntsEvaporate = new CheckBox();
+
+    @FXML
+    CheckBox isAntsVisable = new CheckBox();
+
+    @FXML
+    CheckBox AntGetHungry = new CheckBox();
+
+    @FXML
+    CheckBox AntDiesOfAge = new CheckBox();
+
 
     @FXML
     void UpdateSettings() {

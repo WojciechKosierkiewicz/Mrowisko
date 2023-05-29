@@ -6,6 +6,7 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Slider?>
@@ -121,6 +122,14 @@
                                                 <Slider fx:id="AntTurnAngleChangeSlide" majorTickUnit="0.1" max="1.0"
                                                         minorTickCount="0" showTickLabels="true" showTickMarks="true"
                                                         value="0.001"/>
+                                                <Label text="DoAntsEvaporate"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
+                                                <Label text="IsAntsVisable"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
+                                                <Label text="AntGetHungry"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
+                                                <Label text="AntDiesOnAge"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
                                             </children>
                                         </VBox>
                                     </content>
@@ -155,6 +164,10 @@
                                                 <Slider fx:id="PheromoneEvaporationTimeSlide" majorTickUnit="500.0"
                                                         max="2000.0" showTickLabels="true" showTickMarks="true"
                                                         value="1000.0"/>
+                                                <Label text="DoPheromonesEvaporate"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
+                                                <Label text="IsPheromoneVisable"/>
+                                                <CheckBox mnemonicParsing="false" text="Tak"/>
                                             </children>
                                         </VBox>
                                     </content>

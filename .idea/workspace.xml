@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="podlaczone slidery z scrollpanem">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="checkboxy dodane do guicontroller, ale jeszcze nie sa zaimportowane do scenebuilde (nie wiem jak zrobic zeby dzialaly)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/Gui/MainApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/Gui/MainApp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -543,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685312978374</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="dodane wszystkie slidery, bez przyciskow wlacz wylacz">
+      <created>1685391567374</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685391567374</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,8 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="zmiana gradlew na chmod+x" />
-    <MESSAGE value="koniec github workflows :(" />
     <MESSAGE value="Dodanie plikow klas" />
     <MESSAGE value="zmiany w mrowkach" />
     <MESSAGE value="przeniesienie lifetimu" />
@@ -587,7 +591,9 @@
     <MESSAGE value="organizing file structure !" />
     <MESSAGE value="Fixed most of the warnings" />
     <MESSAGE value="delikatna zmiana ustawien domyslnych" />
-    <option name="LAST_COMMIT_MESSAGE" value="delikatna zmiana ustawien domyslnych" />
+    <MESSAGE value="dodane wszystkie slidery, bez przyciskow wlacz wylacz" />
+    <MESSAGE value="checkboxy dodane do guicontroller, ale jeszcze nie sa zaimportowane do scenebuilde (nie wiem jak zrobic zeby dzialaly)" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkboxy dodane do guicontroller, ale jeszcze nie sa zaimportowane do scenebuilde (nie wiem jak zrobic zeby dzialaly)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
