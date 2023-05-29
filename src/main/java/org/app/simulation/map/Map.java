@@ -72,7 +72,6 @@ public class Map {
     }
 
     public void removePheromonesolderthan(int x) {
-
         for (Vector<Vector<Pheromone>> vectors : Pheromone_Sector_map) {
             for (Vector<Pheromone> vector : vectors) {
                 for (int k = 0; k < vector.size(); k++) {

@@ -28,9 +28,9 @@ public class Config {
     double AntConsumption = 0.5;
     int AntFoodCapacity = 100;
     double AntHungerLimit = 100;
-    double AntStepLen = 1;
+    double AntStepLen = 0.5;
     double antRange = 10;
-    int AntPheromoneInterval = 10;
+    int AntPheromoneInterval = 20;
     boolean AntGetHungry = true;
     boolean AntDiesOfAge = true;
 
@@ -46,9 +46,9 @@ public class Config {
     boolean isPheromoneVisible = true;
 
     //ustawienia wyswietlania
-    double AntCircleRadius = 5;
-    double AntHillCircleRadius = 10;
-    double pheromoneCircleRadius = 2;
+    double AntCircleRadius = 3;
+    double AntHillCircleRadius = 5;
+    double pheromoneCircleRadius = 1;
 
 
     public Config(Pane world) {
