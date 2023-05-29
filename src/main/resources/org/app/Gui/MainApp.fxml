@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="492.0" prefWidth="806.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="org.app.Gui.GuiController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="492.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/19"
+            fx:controller="org.app.Gui.GuiController">
     <top>
         <Label text="Symulacja Mrowiska" BorderPane.alignment="CENTER">
             <padding>
@@ -67,26 +78,108 @@
                     <children>
                         <Label text="Current Tick"/>
                         <TextField fx:id="ticktext"/>
-                        <Label text="Długość życia mrówki"/>
-                        <Slider fx:id="AntLifeTimeSlide" max="10000.0" showTickLabels="true" showTickMarks="true"
-                                value="1500.0"/>
-                        <Label text="Długość kroku mrówki"/>
-                        <Slider fx:id="AntStepLengthSlide" majorTickUnit="2.0" max="10.0" showTickLabels="true"
-                                showTickMarks="true" value="1.0"/>
-                        <Label text="Zasięg mrówki"/>
-                        <Slider fx:id="AntRangeSlide" showTickLabels="true" showTickMarks="true" value="10.0"/>
-                        <Label text="AntTurnAngleMax"/>
-                        <Slider fx:id="AntTurnAngleMaxSlide" majorTickUnit="0.2" max="1.0" showTickLabels="true"
-                                showTickMarks="true" value="0.01"/>
-                        <Label text="Szerokość mrówki"/>
-                        <Slider fx:id="AntSizeSlide" majorTickUnit="2.0" max="10.0" showTickLabels="true"
-                                showTickMarks="true" value="5.0"/>
-                        <Label text="Szerokość mrowiska"/>
-                        <Slider fx:id="AnthillCircleRadiusSlide" majorTickUnit="2.0" max="10.0" showTickLabels="true"
-                                showTickMarks="true" value="10.0"/>
-                        <Label layoutX="15.0" layoutY="332.0" text="Szerokość feromonu"/>
-                        <Slider fx:id="PheromoneCircleRadiusSlide" layoutX="15.0" layoutY="359.0" majorTickUnit="2.0"
-                                max="10.0" showTickLabels="true" showTickMarks="true" value="2.0"/>
+                        <Accordion>
+                            <panes>
+                                <TitledPane animated="false" text="Mrówka">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label text="Długość życia mrówki"/>
+                                                <Slider fx:id="AntLifeTimeSlide" majorTickUnit="1000.0" max="10000.0"
+                                                        minorTickCount="10" showTickLabels="true" showTickMarks="true"
+                                                        value="1500.0"/>
+                                                <Label text="Długość kroku mrówki"/>
+                                                <Slider fx:id="AntStepLengthSlide" majorTickUnit="2.0" max="10.0"
+                                                        showTickLabels="true" showTickMarks="true" value="1.0"/>
+                                                <Label text="Zasięg mrówki"/>
+                                                <Slider fx:id="AntRangeSlide" showTickLabels="true" showTickMarks="true"
+                                                        value="10.0"/>
+                                                <Label text="AntTurnAngleMax"/>
+                                                <Slider fx:id="AntTurnAngleMaxSlide" majorTickUnit="0.2" max="1.0"
+                                                        showTickLabels="true" showTickMarks="true" value="0.01"/>
+                                                <Label text="AntsEvaporationTime"/>
+                                                <Slider fx:id="AntsEvaporationTimeSlide" majorTickUnit="1000.0"
+                                                        max="5000.0" minorTickCount="0" showTickLabels="true"
+                                                        showTickMarks="true" value="1000.0"/>
+                                                <Label text="AntPheromoneInterval"/>
+                                                <Slider fx:id="AntPheromoneIntervalSlide" majorTickUnit="20.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="20.0"/>
+                                                <Label text="AntHungerLimit"/>
+                                                <Slider fx:id="AntHungerLimitSlide" majorTickUnit="20.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="100.0"/>
+                                                <Label text="AntConsumption"/>
+                                                <Slider fx:id="AntConsumptionSlide" majorTickUnit="0.1" max="1.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="0.5"/>
+                                                <Label text="AntFoodCapacity"/>
+                                                <Slider fx:id="AntFoodCapacitySlide" majorTickUnit="20.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="100.0"/>
+                                                <Label text="AntTurnAngleChange"/>
+                                                <Slider fx:id="AntTurnAngleChangeSlide" majorTickUnit="0.1" max="1.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="0.001"/>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Mrowisko">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label text="AnthillAntLimit"/>
+                                                <Slider fx:id="AnthillAntLimitSlide" majorTickUnit="20.0"
+                                                        minorTickCount="0" showTickLabels="true" showTickMarks="true"
+                                                        value="100.0"/>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Mapa">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0"/>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Jedzenie">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0"/>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Feromon">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label text="PheromoneEvaporationTime"/>
+                                                <Slider fx:id="PheromoneEvaporationTimeSlide" majorTickUnit="500.0"
+                                                        max="2000.0" showTickLabels="true" showTickMarks="true"
+                                                        value="1000.0"/>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" layoutX="10.0" layoutY="110.0"
+                                            text="Ustawienia wyświetlania">
+                                    <content>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label text="Szerokość feromonu"/>
+                                                <Slider fx:id="PheromoneCircleRadiusSlide" majorTickUnit="2.0"
+                                                        max="10.0" showTickLabels="true" showTickMarks="true"
+                                                        value="2.0"/>
+                                                <Label text="Szerokość mrowiska"/>
+                                                <Slider fx:id="AnthillCircleRadiusSlide" majorTickUnit="2.0" max="10.0"
+                                                        showTickLabels="true" showTickMarks="true" value="10.0"/>
+                                                <Label text="Szerokość mrówki"/>
+                                                <Slider fx:id="AntSizeSlide" majorTickUnit="2.0" max="10.0"
+                                                        showTickLabels="true" showTickMarks="true" value="5.0"/>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                            </panes>
+                        </Accordion>
                         <Button mnemonicParsing="false" onAction="#UpdateSettings" text="Accept Settings"/>
                     </children>
                 </VBox>

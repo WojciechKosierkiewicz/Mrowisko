@@ -47,6 +47,32 @@ public class GuiController {
 
     @FXML
     Slider PheromoneCircleRadiusSlide = new Slider(0, 10, 2);
+
+    /// tu tu
+    @FXML
+    Slider AntsEvaporationTimeSlide = new Slider(0, 5000, 1000);
+
+    @FXML
+    Slider AntPheromoneIntervalSlide = new Slider(0, 100, 20);
+
+    @FXML
+    Slider AntHungerLimitSlide = new Slider(0, 100, 100);
+
+    @FXML
+    Slider AntConsumptionSlide = new Slider(0, 1, 0.5);
+
+    @FXML
+    Slider AntFoodCapacitySlide = new Slider(0, 100, 100);
+
+    @FXML
+    Slider AntTurnAngleChangeSlide = new Slider(0, 1, 0.001);
+
+    @FXML
+    Slider AnthillAntLimitSlide = new Slider(0, 100, 100);
+
+    @FXML
+    Slider PheromoneEvaporationTimeSlide = new Slider(0, 2000, 1000);
+
     @FXML
     TextField ticktext;
     @FXML
@@ -56,6 +82,14 @@ public class GuiController {
 
     @FXML
     void UpdateSettings() {
+        settings.setPheromoneEvaporationTime((int) PheromoneEvaporationTimeSlide.getValue());
+        settings.setAnthillAntLimit((int) AnthillAntLimitSlide.getValue());
+        settings.setAntTurnAngleChange(AntTurnAngleChangeSlide.getValue());
+        settings.setAntFoodCapacity((int) AntFoodCapacitySlide.getValue());
+        settings.setAntConsumption(AntConsumptionSlide.getValue());
+        settings.setAntHungerLimit((int) AntHungerLimitSlide.getValue());
+        settings.setAntPheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
+        settings.setAntsEvaporationTime(AntsEvaporationTimeSlide.getValue());
         settings.setAntCircleRadius(AntSizeSlide.getValue());
         settings.setAntLifetime(AntLifeTimeSlide.getValue());
         settings.setAntRange(AntRangeSlide.getValue());
@@ -133,5 +167,4 @@ public class GuiController {
         }
 
     }
-
 }

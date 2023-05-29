@@ -34,6 +34,10 @@ public class Config {
     boolean AntGetHungry = true;
     boolean AntDiesOfAge = true;
 
+    boolean doAntsEvaporate = true;
+    double AntsEvaporationTime = 1000;
+    boolean isAntsVisible = true;
+
     //ustawienia anthills
 
     int AnthillAntLimit = 100;
@@ -213,4 +217,19 @@ public class Config {
         return AntDiesOfAge;
     }
 
+    public void setPheromoneEvaporationTime(int pheromoneEvaporationTime) {
+        PheromoneEvaporationTime = pheromoneEvaporationTime;
+    }
+
+    public void setAntTurnAngleChange(double antTurnAngleChange) {
+        AntTurnAngleChange = antTurnAngleChange;
+    }
+
+    public void setAntPheromoneInterval(int antPheromoneInterval) {
+        AntPheromoneInterval = antPheromoneInterval;
+    }
+
+    public void setAntsEvaporationTime(double antsEvaporationTime) {
+        AntsEvaporationTime = antsEvaporationTime;
+    }
 }
