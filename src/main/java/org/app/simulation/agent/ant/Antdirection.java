@@ -1,5 +1,5 @@
 package org.app.simulation.agent.ant;
 
 public enum Antdirection {
-    FOOD, HOME, SEARCH, NONE
+    FOOD, FOODFOUND, HOME, SEARCH, NONE
 }

@@ -3,10 +3,12 @@ package org.app.simulation.agent.ant;
 import javafx.scene.paint.Color;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.agent.food.Food;
 import org.app.simulation.menager.config.Config;
 
 import java.util.Random;
 import java.util.UUID;
+import java.util.Vector;
 
 import javafx.scene.shape.Circle;
 
@@ -19,50 +21,16 @@ public class Ant extends Agent {
 
     private final AntHeading heading;
 
-    private final Config settings;
-    private final Circle shape;
     UUID id_mrowiska;
 
     public Ant(UUID id_mrowiska, Config settings) {
-        super();
-        this.heading = new AntHeading(settings);
+        super(TypAgenta.ANT, settings);
+        this.heading = new AntHeading(settings, this);
         this.id_mrowiska = id_mrowiska;
-        this.setTypAgenta(TypAgenta.ANT);
-        this.settings = settings;
-        this.shape = new Circle(settings.getAntCircleRadius(), this.getColor());
-        shape.setStroke(Color.BLACK);
-        settings.getWorld().getChildren().add(shape);
-        updateJavaFxLocation();
     }
 
     public int getLivedUpdates() {
         return livedUpdates;
-    }
-
-    public void updateJavaFxShape() {
-        shape.setRadius(settings.getAntCircleRadius());
-        shape.setFill(this.getColor());
-    }
-
-    public void updateJavaFxLocation() {
-        shape.setTranslateX(this.getLocx());
-        shape.setTranslateY(this.getLocy());
-    }
-
-    public void removefromworld() {
-        settings.getWorld().getChildren().remove(shape);
-    }
-
-
-    public void setPosition(double x, double y) {
-        this.setLocx(x);
-        this.setLocy(y);
-    }
-
-    public void setRandomPosition() {
-        Random rand = new Random();
-        this.setLocx(Math.random() * settings.getWorld().getWidth());
-        this.setLocy(Math.random() * settings.getWorld().getHeight());
     }
 
     public double getAntHunger() {
@@ -70,24 +38,24 @@ public class Ant extends Agent {
     }
 
     void feedself() {
-        if (!settings.isAntGetHungry()) {
+        if (!getSettings().isAntGetHungry()) {
             return;
         }
         if (CarriedFood <= 0) {
             return;
         }
-        if (antHunger == settings.getAntHungerLimit() / 2) {
+        if (antHunger == getSettings().getAntHungerLimit() / 2) {
             antHunger -= 5;
             CarriedFood--;
         }
     }
 
     void starve() {
-        if (!settings.isAntGetHungry()) {
+        if (!getSettings().isAntGetHungry()) {
             return;
         }
         if (antHunger > 0) {
-            antHunger -= settings.getAntConsumption();
+            antHunger -= getSettings().getAntConsumption();
         }
     }
 
@@ -95,19 +63,40 @@ public class Ant extends Agent {
         this.antHunger = antHunger;
     }
 
+    void handleFoodObtaining() {
+        if (direction == Antdirection.HOME) {
+            return;
+        }
+        Vector<Food> localfood = getSettings().getMap().getSurroundingFoods(this.getLocx(), this.getLocy(), getSettings().getAntRange());
+
+        if (localfood.size() > 0) {
+
+            Food closestfood = localfood.get(0);
+
+            if (direction == Antdirection.FOOD) {
+                heading.setHeadingAngle(countAngleBeetwenPoints(this.getLocx(), this.getLocy(), closestfood.getLocx(), closestfood.getLocy()));
+                direction = Antdirection.FOODFOUND;
+            }
+
+            if (countDistanceBetweenAgents(closestfood) < getSettings().getAntFeedingRange()) {
+                CarriedFood += closestfood.requestFood(getSettings().getAntFoodCapacity());
+                direction = Antdirection.HOME;
+            }
+        }
+    }
 
     public void moveAnt() {
-        double movementx = settings.getAntStepLen() * Math.cos(heading.getHeadingAngle());
-        double movementy = settings.getAntStepLen() * Math.sin(heading.getHeadingAngle());
+        double movementx = getSettings().getAntStepLen() * Math.cos(heading.getHeadingAngle());
+        double movementy = getSettings().getAntStepLen() * Math.sin(heading.getHeadingAngle());
 
         double newx = this.getLocx() + movementx;
         double newy = this.getLocy() + movementy;
 
-        if (newx < 0 || newx > settings.getMapSizeX()) {
+        if (newx < 0 || newx > getSettings().getMapSizeX()) {
             heading.bouncexwall();
         }
 
-        if (newy < 0 || newy > settings.getMapSizeY()) {
+        if (newy < 0 || newy > getSettings().getMapSizeY()) {
             heading.bounceywall();
         }
 
@@ -117,7 +106,7 @@ public class Ant extends Agent {
 
 
     public void updateAngle() {
-        heading.update(getLocx(), getLocy(), direction);
+        heading.update();
     }
 
     private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
@@ -127,23 +116,42 @@ public class Ant extends Agent {
         return Math.atan2(dy, dx);
     }
 
+    public double countDistanceBeetwenPoints(double x1, double y1, double x2, double y2) {
+        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    }
+
+    public double countDistanceBetweenAgents(Agent agent) {
+        return countDistanceBeetwenPoints(this.getLocx(), this.getLocy(), agent.getLocx(), agent.getLocy());
+    }
+
     public void leavePheromoneBehind() {
-        if (livedUpdates % settings.getAntPheromoneInterval() == 0) {
-            settings.getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+        if (livedUpdates % getSettings().getAntPheromoneInterval() == 0) {
+            getSettings().getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
         }
     }
 
     public void update() {
+
+        //Handles Food
+        handleFoodObtaining();
         starve();
         feedself();
-        moveAnt();
+
+        //Handles Movement
         updateAngle();
-        updateJavaFxLocation();
+        moveAnt();
+
+        //Handles Pheromones
         leavePheromoneBehind();
+
         livedUpdates++;
     }
 
     public String toString() {
         return "id: { " + getId() + " }, locx: { " + getLocx() + " }, locy: { " + getLocy() + " }";
+    }
+
+    public Antdirection getDirection() {
+        return direction;
     }
 }

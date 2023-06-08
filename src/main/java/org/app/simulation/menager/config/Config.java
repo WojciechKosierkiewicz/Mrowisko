@@ -31,12 +31,14 @@ public class Config {
     double AntStepLen = 0.5;
     double antRange = 10;
     int AntPheromoneInterval = 20;
+    double AntFov = 0.6 * Math.PI;
     boolean AntGetHungry = true;
     boolean AntDiesOfAge = true;
 
     boolean doAntsEvaporate = true;
     double AntsEvaporationTime = 1000;
     boolean isAntsVisible = true;
+    double antFeedingRange = 1;
 
 
     //ustawienia anthills
@@ -47,7 +49,7 @@ public class Config {
 
     //ustawienia pheromonów
     boolean doPheromonesEvaporate = true;
-    int PheromoneEvaporationTime = 1000;
+    int PheromoneEvaporationTime = 100000;
     boolean isPheromoneVisible = true;
 
 
@@ -55,7 +57,15 @@ public class Config {
     double AntCircleRadius = 3;
     double AntHillCircleRadius = 5;
     double pheromoneCircleRadius = 1;
+    double FoodCircleRadius = 5;
 
+    public double getFoodCircleRadius() {
+        return FoodCircleRadius;
+    }
+
+    public double getAntFeedingRange() {
+        return antFeedingRange;
+    }
 
     public Config(Pane world) {
         this.world = world;
@@ -253,5 +263,9 @@ public class Config {
 
     public void setAntsEvaporationTime(double antsEvaporationTime) {
         AntsEvaporationTime = antsEvaporationTime;
+    }
+
+    public double getAntFov() {
+        return AntFov;
     }
 }

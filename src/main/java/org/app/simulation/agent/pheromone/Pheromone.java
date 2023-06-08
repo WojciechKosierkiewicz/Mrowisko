@@ -13,73 +13,28 @@ public class Pheromone extends Agent {
     UUID creator;
 
     int creationTick;
-    private Config settings;
-
-    private Circle shape;
-
-    public Pheromone() {
-        type = PheromoneType.NONE;
-        creator = null;
-    }
-
 
     public Pheromone(Config settings, double posx, double posy, UUID creator, int creationTick) {
-        this.settings = settings;
+        super(TypAgenta.PHEROMONE, settings);
         this.creator = creator;
         this.creationTick = creationTick;
-        this.setTypAgenta(TypAgenta.PHEROMONE);
         setLocx(posx);
         setLocy(posy);
-        if (settings.isPheromoneVisible()) {
-            initializeDisplay();
-        }
-    }
-
-    void initializeDisplay() {
-        shape = new Circle(settings.getPheromoneCircleRadius(), this.getColor());
-        shape.setRadius(settings.getPheromoneCircleRadius());
-        shape.setTranslateX(this.getLocx());
-        shape.setTranslateY(this.getLocy());
-        settings.getWorld().getChildren().add(shape);
-        shape.setStroke(Color.RED);
     }
 
 
     public int getCreationTick() {
         return creationTick;
     }
-
     public void setCreationTick(double creationTick) {
-        this.creationTick = settings.getCurrentTick();
+        this.creationTick = getSettings().getCurrentTick();
     }
-
-    public Pheromone(PheromoneType type, UUID creator) {
-        this.type = type;
-        this.creator = creator;
-    }
-
-    public void updateJavaFxShape() {
-        if (settings.isPheromoneVisible()) {
-            if (shape == null) {
-                initializeDisplay();
-            }
-            shape.setRadius(settings.getPheromoneCircleRadius());
-            shape.setFill(this.getColor());
-        } else if (shape != null) {
-            removefromworld();
-        }
-    }
-
     public PheromoneType getType() {
         return type;
     }
 
     public UUID getCreator() {
         return creator;
-    }
-
-    public void removefromworld() {
-        settings.getWorld().getChildren().remove(shape);
     }
 
 }

@@ -22,7 +22,6 @@ public class Menager {
     @FXML
     Pane world;
     private final List<Anthill> anthills;
-    private final List<Food> foods;
     private int Tick = 0;
     private final Config settings;
     private final Map map;
@@ -38,7 +37,6 @@ public class Menager {
                 settings,
                 world);
         this.anthills = new Vector<>();
-        this.foods = new Vector<>();
     }
 
     @FXML
@@ -48,13 +46,12 @@ public class Menager {
 
     public void addAnthill(double posx, double posy) {
         anthills.add(new Anthill(settings));
-        anthills.get(anthills.size() - 1).setPos(posx, posy);
-
+        anthills.get(anthills.size() - 1).setPosition(posx, posy);
     }
 
     public void addAnthill() {
         anthills.add(new Anthill(settings));
-        anthills.get(anthills.size() - 1).setrandompos();
+        anthills.get(anthills.size() - 1).setRandomPosition();
     }
 
     public Vector<UUID> getAnthillIDs() {
@@ -80,18 +77,9 @@ public class Menager {
         }
     }
 
-    public void draw() {
-        for (Anthill anthill : anthills) {
-            anthill.draw();
-        }
-    }
-
     public void PrzeprowadzTickSymulacji() {
         for (Anthill anthill : anthills) {
             anthill.update();
-        }
-        for (Anthill anthill : anthills) {
-            anthill.draw();
         }
         Tick++;
         map.Tick();
@@ -110,13 +98,13 @@ public class Menager {
 
     public void updatealldisplayConfigs() {
         for (Anthill anthill : anthills) {
-            anthill.updateJavaFxShape();
+            anthill.updateJavaFxShapeSettings();
             for (Ant ant : anthill.getAnts()) {
-                ant.updateJavaFxShape();
+                ant.updateJavaFxShapeSettings();
             }
         }
         for (Pheromone pher : map.getPheromones()) {
-            pher.updateJavaFxShape();
+            pher.updateJavaFxShapeSettings();
         }
     }
 

@@ -11,31 +11,15 @@ import org.app.simulation.menager.config.Config;
 
 public class Anthill extends Agent {
     Vector<Ant> Ants;
-    private Config settings;
-    private Circle shape;
-
-    public Anthill() {
-        Ants = new Vector<>();
-    }
 
     public Anthill(Config settings) {
-        setTypAgenta(TypAgenta.ANTHILL);
-        shape = new Circle(settings.getAntHillCircleRadius(), getColor());
-        shape.setStroke(Color.BLUE);
-        settings.getWorld().getChildren().add(shape);
-        this.settings = settings;
+        super(TypAgenta.ANTHILL, settings);
         Ants = new Vector<>();
     }
-
-    public void updateJavaFxShape() {
-        shape.setRadius(settings.getAntHillCircleRadius());
-        shape.setFill(this.getColor());
-    }
-
     public void removeAntsOutsideMap(double threshold) {
         for (int i = 0; i < Ants.size(); i++) {
-            if (Ants.get(i).getLocx() < -threshold || Ants.get(i).getLocx() > settings.getMapSizeX() + threshold || Ants.get(i).getLocy() < 0 - threshold || Ants.get(i).getLocy() > settings.getMapSizeY() + threshold) {
-                getAnts().get(i).removefromworld();
+            if (Ants.get(i).getLocx() < -threshold || Ants.get(i).getLocx() > getSettings().getMapSizeX() + threshold || Ants.get(i).getLocy() < 0 - threshold || Ants.get(i).getLocy() > getSettings().getMapSizeY() + threshold) {
+                getAnts().get(i).RemoveFromJavaFxDisplay();
                 Ants.remove(i);
                 //zmniejszam i by nie pominąc żadnego elementu w nowej zmniejszonej tablicy
                 i--;
@@ -51,7 +35,7 @@ public class Anthill extends Agent {
     }
 
     public void addAnt() {
-        Ants.add(new Ant(getId(), settings));
+        Ants.add(new Ant(getId(), getSettings()));
         Ants.get(Ants.size() - 1).setPosition(getLocx(), getLocy());
     }
 
@@ -61,29 +45,13 @@ public class Anthill extends Agent {
         }
     }
 
-    public void setPos(double posx, double posy) {
-        setLocx(posx);
-        setLocy(posy);
-        shape.setTranslateX(posx);
-        shape.setTranslateY(posy);
-    }
-
-    public void setrandompos() {
-        setPos(Math.random() * settings.getMapSizeX(), Math.random() * settings.getMapSizeY());
-    }
-
-    public void removeFromWorld() {
-        settings.getWorld().getChildren().remove(shape);
-    }
-
     public void removeAntsfromWorld() {
         for (Ant ant : Ants) {
-            ant.removefromworld();
+            ant.RemoveFromJavaFxDisplay();
         }
     }
 
     public void removeEverythingFromWorld() {
-        removeFromWorld();
         removeAntsfromWorld();
     }
 
@@ -92,25 +60,19 @@ public class Anthill extends Agent {
             ant.update();
         }
         removeOldAnts();
-        if (Ants.size() < settings.getAnthillAntLimit()) {
-            if (Math.random() < settings.getAnthillAntSpawnChance())
+        if (Ants.size() < getSettings().getAnthillAntLimit()) {
+            if (Math.random() < getSettings().getAnthillAntSpawnChance())
                 addAnt();
         }
 
-        removeAntsOutsideMap(settings.getOutsideMapTreshold());
-    }
-
-    public void draw() {
-        for (Ant ant : Ants) {
-            ant.updateJavaFxLocation();
-        }
+        removeAntsOutsideMap(getSettings().getOutsideMapTreshold());
     }
 
     private void removeOldAnts() {
 
         for (int i = 0; i < Ants.size(); i++) {
-            if (Ants.get(i).getLivedUpdates() > settings.getAntLifetime()) {
-                Ants.get(i).removefromworld();
+            if (Ants.get(i).getLivedUpdates() > getSettings().getAntLifetime()) {
+                Ants.get(i).RemoveFromJavaFxDisplay();
                 Ants.remove(i);
                 //zmniejszam i by nie pominąc żadnego elementu w nowej zmniejszonej tablicy
                 i--;

@@ -1,20 +1,29 @@
 package org.app.simulation.agent.food;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import org.app.simulation.agent.Agent;
+import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.menager.config.Config;
 
 public class Food extends Agent {
+
     private int foodAmount;
 
-    public Food() {
-        super();
+    public Food(Config settings) {
+        super(TypAgenta.FOOD, settings);
         this.foodAmount = 100;
     }
 
-    public Food(int foodAmount, int x, int y) {
-        super();
-        this.foodAmount = foodAmount;
-        this.setLocx(x);
-        this.setLocy(y);
+    public double requestFood(int amount) {
+        if (this.foodAmount >= amount) {
+            this.foodAmount -= amount;
+            return amount;
+        } else {
+            double food = this.foodAmount;
+            this.foodAmount = 0;
+            return food;
+        }
     }
 
     public int getFoodAmount() {

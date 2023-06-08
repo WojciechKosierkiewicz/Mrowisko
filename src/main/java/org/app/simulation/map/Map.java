@@ -1,6 +1,7 @@
 package org.app.simulation.map;
 
 import javafx.scene.layout.Pane;
+import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.menager.config.Config;
@@ -11,8 +12,9 @@ import java.util.Vector;
 public class Map {
 
     private final int sector_size;
-    private final Vector<Vector<Integer>> HeightMap;
-    private final Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
+    private Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
+    //private Vector<Food> foods;
+
     private Config settings;
     private Pane world;
     private int ticks;
@@ -21,14 +23,6 @@ public class Map {
     public Map(int x, int y, int sector_size, Config settings, Pane world) {
         this.world = world;
         this.settings = settings;
-        HeightMap = new Vector<>();
-
-        for (int i = 0; i < x; i++) {
-            HeightMap.add(new Vector<>());
-            for (int j = 0; j < y; j++) {
-                HeightMap.get(i).add(0);
-            }
-        }
 
         this.sector_size = sector_size;
 
@@ -56,6 +50,22 @@ public class Map {
         return result;
     }
 
+    /*public void AddFood(Food food) {
+        foods.add(food);
+    }*/
+
+    public Vector<Food> getSurroundingFoods(double x, double y, double range) {
+        Vector<Food> result = new Vector<>();
+        /*
+        for (Food food : foods)
+            if (getDistanceBetweenPoints(x, y, food.getLocx(), food.getLocy()) < range)
+                result.add(food);
+                
+         */
+
+        return result;
+    }
+
     public void Tick() {
         ticks++;
     }
@@ -76,7 +86,7 @@ public class Map {
             for (Vector<Pheromone> vector : vectors) {
                 for (int k = 0; k < vector.size(); k++) {
                     if (ticks - vector.get(k).getCreationTick() > x) {
-                        vector.get(k).removefromworld();
+                        vector.get(k).RemoveFromJavaFxDisplay();
                         vector.remove(k);
                         k--;
                     }
@@ -99,7 +109,7 @@ public class Map {
         for (Vector<Vector<Pheromone>> sector : Pheromone_Sector_map) {
             for (Vector<Pheromone> pheromonez : sector) {
                 for (Pheromone p : pheromonez) {
-                    p.removefromworld();
+                    p.RemoveFromJavaFxDisplay();
                 }
                 pheromonez.clear();
             }

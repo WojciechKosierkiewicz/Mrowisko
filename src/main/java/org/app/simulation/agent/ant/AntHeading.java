@@ -5,6 +5,7 @@ import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
 import java.util.Comparator;
+import java.util.UUID;
 import java.util.Vector;
 
 public class AntHeading {
@@ -12,9 +13,11 @@ public class AntHeading {
     Config settings;
     double turnangle = 0.001 * Math.PI;
     double currentangle;
+    Ant owner;
 
-    AntHeading(Config settings) {
+    AntHeading(Config settings, Ant owner) {
         this.settings = settings;
+        this.owner = owner;
         currentangle = Math.random() * (Math.PI * 2);
     }
 
@@ -26,12 +29,12 @@ public class AntHeading {
         currentangle = angle;
     }
 
-    public void update(double x, double y, Antdirection direction) {
-        if (direction == Antdirection.NONE) {
-            changecurrentaanglefrompheromones(x, y, direction);
+    public void update() {
+        if (owner.getDirection() != Antdirection.NONE) {
+            changecurrentaanglefrompheromones();
         }
-        currentangle = limitpi(currentangle);
         currentangle = currentangle + turnangle;
+
         turnangle += (Math.random() - 0.5) * settings.getAntTurnAngleChange();
 
         if (turnangle > settings.getAntTurnAngleMax()) {
@@ -42,51 +45,52 @@ public class AntHeading {
         }
     }
 
-    void changecurrentaanglefrompheromones(double locx, double locy, Antdirection antdirection) {
-
-        if (antdirection == Antdirection.NONE) {
-            return;
-        }
-
-        if (antdirection == Antdirection.SEARCH) {
-            return;
-        }
-
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(locx, locy, settings.getAntRange());
-
-        if (pheromones.size() == 0) {
-            return;
-        }
-
-        if (antdirection == Antdirection.FOOD) {
-            pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
-        }
-
-        if (antdirection == Antdirection.HOME) {
-            pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
-        }
-
-        if (pheromones.size() == 0) {
-            return;
-        }
-
-        pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
-
-        Pheromone youngestPheromone = pheromones.get(pheromones.size() - 1);
-
-        double angle = Math.atan2(youngestPheromone.getLocy() - locy, youngestPheromone.getLocx() - locx);
-        angle = limitpi(angle);
-        currentangle = angle;
+    void removePheromonesNotInFov(Vector<Pheromone> pheromones) {
+        pheromones.removeIf(p -> {
+            double angle = Math.atan2(p.getLocy() - owner.getLocy(), p.getLocx() - owner.getLocx());
+            return Math.abs(angle - currentangle) > settings.getAntFov();
+        });
     }
 
-    double limitpi(double angle) {
-        if (angle > 2 * Math.PI) {
-            angle = angle - 2 * Math.PI;
+    double getmeanAnglefromPheromones(Vector<Pheromone> pheromones) {
+
+        double meanAngle = 0;
+
+        for (Pheromone p : pheromones) {
+            meanAngle += Math.atan2(p.getLocy() - owner.getLocy(), p.getLocx() - owner.getLocx());
         }
-        if (angle < 0) {
-            angle = angle + 2 * Math.PI;
+
+        return meanAngle / pheromones.size();
+    }
+
+    void changecurrentaanglefrompheromones() {
+
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getAntRange());
+
+        //exit if there are no pheromones to process
+        if (pheromones.size() == 0)
+            return;
+
+        //remove pheromones not currently looked for by the ant
+        switch (owner.getDirection()) {
+            case FOOD -> pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
+            case HOME -> {
+                pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
+                pheromones.removeIf(p -> p.getCreator() != owner.getId());
+            }
+            default -> {
+            }
         }
-        return angle;
+
+        //remove pheromones not seen by ant
+        removePheromonesNotInFov(pheromones);
+
+        //exit if ant sees nothing
+        if (pheromones.size() == 0)
+            return;
+
+        //get the mean angle of all pheromones of intereset and head that way
+        currentangle = getmeanAnglefromPheromones(pheromones);
     }
 
     void bouncexwall() {
