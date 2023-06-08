@@ -127,7 +127,6 @@ public class GuiController {
         sim = new Menager(settings, world);
         settings.setMap(sim.getMap());
         sim.addAnthill();
-        sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
 
         sim.AddRandomFood();

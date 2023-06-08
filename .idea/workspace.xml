@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="poprawa błedu gdzie usuwałem całe pożywienie :)">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +294,7 @@
       <workItem from="1686230469024" duration="702000" />
       <workItem from="1686240931414" duration="1174000" />
       <workItem from="1686242232865" duration="2899000" />
-      <workItem from="1686248241141" duration="349000" />
+      <workItem from="1686248241141" duration="977000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -586,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686248582802</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS">
+      <created>1686248753220</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1686248753220</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +616,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dodanie JavaFX !" />
     <MESSAGE value="mikro zmiany" />
     <MESSAGE value="finakl" />
     <MESSAGE value="nic" />
@@ -630,7 +640,8 @@
     <MESSAGE value="Trzeba naprawić logike wybierania kierunku :(" />
     <MESSAGE value="ta sama zmienna była ustawiana trzy razy oraz zastąpienie id tworcy itp obiektami" />
     <MESSAGE value="poprawa błedu gdzie usuwałem całe pożywienie :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawa błedu gdzie usuwałem całe pożywienie :)" />
+    <MESSAGE value="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

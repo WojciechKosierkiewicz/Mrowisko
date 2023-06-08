@@ -30,9 +30,7 @@ public class AntHeading {
     }
 
     public void update() {
-        if (owner.getDirection() != Antdirection.NONE) {
-            changecurrentaanglefrompheromones();
-        }
+        changecurrentaanglefrompheromones();
 
         currentangle = currentangle + turnangle;
 
@@ -59,11 +57,12 @@ public class AntHeading {
 
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange() * 10);
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange() * 100);
 
         //exit if there are no pheromones to process
-        if (pheromones.size() == 0)
+        if (pheromones.size() == 0) {
             return;
+        }
 
         //remove pheromones not currently looked for by the ant
         switch (owner.getDirection()) {
@@ -91,10 +90,11 @@ public class AntHeading {
                 //sorting pheromones by age
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
 
-                if (pheromones.size() == 0)
+                if (pheromones.size() == 0) {
                     return;
+                }
 
-                currentangle = findAngleToAgent(pheromones.firstElement());
+                currentangle = findAngleToAgent(pheromones.lastElement());
             }
 
             default -> {

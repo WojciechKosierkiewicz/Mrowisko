@@ -70,6 +70,7 @@ public class Ant extends Agent {
     void handlefoundhome() {
         heading.reverseDirection();
         direction = Antdirection.FOOD;
+        System.out.println("found home");
     }
 
     void checkisTargetinRange() {
@@ -93,42 +94,6 @@ public class Ant extends Agent {
             }
         }
     }
-
-    /*
-    void handleFoodObtaining() {
-        if (direction == Antdirection.HOME) {
-            return;
-        }
-        Vector<Food> localfood = getSettings().getMap().getSurroundingFoods(this.getLocx(), this.getLocy(), getSettings().getSenseRange());
-
-        if (localfood.size() > 0) {
-
-            Food closestfood = localfood.get(0);
-
-            if (direction == Antdirection.FOOD) {
-                heading.setHeadingAngle(countAngleBeetwenPoints(this.getLocx(), this.getLocy(), closestfood.getLocx(), closestfood.getLocy()));
-            }
-
-            if (countDistanceBetweenAgents(closestfood) < getSettings().getSenseRange()) {
-                CarriedFood += closestfood.requestFood(getSettings().getAntFoodCapacity());
-                direction = Antdirection.HOME;
-                heading.reverseDirection();
-            } else {
-                System.out.println("Current Distance is : " + countDistanceBetweenAgents(closestfood));
-            }
-        }
-    }
-
-
-    void handleHomeSeeking() {
-        if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange()) {
-            direction = Antdirection.FOOD;
-            heading.reverseDirection();
-        }
-    }
-
-
-     */
     public void moveAnt() {
         double movementx = getSettings().getAntStepLen() * Math.cos(heading.getHeadingAngle());
         double movementy = getSettings().getAntStepLen() * Math.sin(heading.getHeadingAngle());

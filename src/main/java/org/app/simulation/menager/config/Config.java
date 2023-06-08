@@ -35,7 +35,7 @@ public class Config {
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
-    double AntLifetime = 5000;
+    double AntLifetime = 2000;
     int AntFoodCapacity = 100;
     double AntHungerLimit = 100;
     boolean AntGetHungry = true;
