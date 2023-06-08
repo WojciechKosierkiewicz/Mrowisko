@@ -38,10 +38,14 @@ public abstract class Agent {
         shape.setFill(getColor());
     }
 
+    public Circle getShape() {
+        return shape;
+    }
+
     public void setRandomPosition() {
         Random rand = new Random();
-        setLocx(Math.random() * settings.getWorld().getWidth());
-        setLocy(Math.random() * settings.getWorld().getHeight());
+        setLocx(Math.random() * settings.getMapSizeX());
+        setLocy(Math.random() * settings.getMapSizeY());
     }
 
     public void setPosition(double x, double y) {

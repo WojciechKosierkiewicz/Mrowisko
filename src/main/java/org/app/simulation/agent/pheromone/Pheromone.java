@@ -1,5 +1,6 @@
 package org.app.simulation.agent.pheromone;
 
+import javafx.scene.paint.Color;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
 import org.app.simulation.agent.ant.Ant;
@@ -28,8 +29,25 @@ public class Pheromone extends Agent {
         this.creationTick = ant.getSettings().getCurrentTick();
         setLocx(creator.getLocx());
         setLocy(creator.getLocy());
+        updateJavaFxShapeSettings();
+
+        if (type == PheromoneType.HOME) {
+            RemoveFromJavaFxDisplay();
+        }
     }
 
+
+    public void updateJavaFxShapeSettings() {
+        getShape().setRadius(getSettings().getPheromoneCircleRadius());
+        switch (type) {
+            case FOOD:
+                getShape().setFill(Color.BLUE);
+                break;
+            case HOME:
+                getShape().setFill(Color.RED);
+                break;
+        }
+    }
 
     public int getCreationTick() {
         return creationTick;

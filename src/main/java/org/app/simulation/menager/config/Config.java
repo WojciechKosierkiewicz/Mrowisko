@@ -2,6 +2,7 @@ package org.app.simulation.menager.config;
 
 
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 import org.app.simulation.map.Map;
 
 public class Config {
@@ -22,7 +23,7 @@ public class Config {
 
     //zmienne mrówek
     int AntSenseRange = 10;
-    double AntLifetime = 1500;
+    double AntLifetime = 5000;
     double AntTurnAngleChange = 0.001;
     double AntTurnAngleMax = 0.01;
     double AntConsumption = 0.5;
@@ -30,15 +31,15 @@ public class Config {
     double AntHungerLimit = 100;
     double AntStepLen = 0.5;
     double antRange = 10;
-    int AntPheromoneInterval = 20;
-    double AntFov = 0.6 * Math.PI;
+    int AntPheromoneInterval = 2;
+    double AntFov = 1.2 * Math.PI;
     boolean AntGetHungry = true;
     boolean AntDiesOfAge = true;
 
     boolean doAntsEvaporate = true;
     double AntsEvaporationTime = 1000;
     boolean isAntsVisible = true;
-    double antFeedingRange = 1;
+    double antFeedingRange = 20;
 
 
     //ustawienia anthills
@@ -268,4 +269,5 @@ public class Config {
     public double getAntFov() {
         return AntFov;
     }
+
 }

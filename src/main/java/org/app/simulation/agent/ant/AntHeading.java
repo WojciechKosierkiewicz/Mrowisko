@@ -4,6 +4,7 @@ import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
+import java.util.Comparator;
 import java.util.Vector;
 
 public class AntHeading {
@@ -71,21 +72,37 @@ public class AntHeading {
 
         //remove pheromones not currently looked for by the ant
         switch (owner.getDirection()) {
-            case FOOD -> pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
+            case FOOD -> {
+                pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
+
+                removePheromonesNotInFov(pheromones);
+
+                if (pheromones.size() == 0)
+                    return;
+
+                currentangle = getmeanAnglefromPheromones(pheromones);
+            }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
                 pheromones.removeIf(p -> p.getCreatorID() != owner.getId());
+
+                if (pheromones.size() == 0)
+                    return;
+
+                //sorting pheromones by age
+                pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+
+                if (pheromones.size() == 0)
+                    return;
+
+                currentangle = owner.countAngleBeetwenPoints(pheromones.lastElement().getLocx(), pheromones.lastElement().getLocy(), owner.getLocx(), owner.getLocy());
+
             }
             default -> {
             }
         }
 
-        //remove pheromones not seen by ant
-        removePheromonesNotInFov(pheromones);
-
         //exit if ant sees nothing
-        if (pheromones.size() == 0)
-            return;
 
         //get the mean angle of all pheromones of intereset and head that way
         currentangle = getmeanAnglefromPheromones(pheromones);

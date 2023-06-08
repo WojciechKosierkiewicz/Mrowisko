@@ -77,7 +77,6 @@ public class Ant extends Agent {
 
             if (direction == Antdirection.FOOD) {
                 heading.setHeadingAngle(countAngleBeetwenPoints(this.getLocx(), this.getLocy(), closestfood.getLocx(), closestfood.getLocy()));
-                direction = Antdirection.FOODFOUND;
             }
 
             if (countDistanceBetweenAgents(closestfood) < getSettings().getAntFeedingRange()) {
@@ -111,7 +110,7 @@ public class Ant extends Agent {
         heading.update();
     }
 
-    private double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
+    public double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
         double dx = x2 - x1;
         double dy = y2 - y1;
 
@@ -129,8 +128,8 @@ public class Ant extends Agent {
     public void leavePheromoneBehind() {
         if (livedUpdates % getSettings().getAntPheromoneInterval() == 0) {
             switch (direction) {
-                case FOOD -> getMap().addPheromone(new Pheromone(this, PheromoneType.FOOD));
-                case HOME -> getMap().addPheromone(new Pheromone(this, PheromoneType.HOME));
+                case FOOD -> getMap().addPheromone(new Pheromone(this, PheromoneType.HOME));
+                case HOME, FOODFOUND -> getMap().addPheromone(new Pheromone(this, PheromoneType.FOOD));
                 default -> {
 
                 }
