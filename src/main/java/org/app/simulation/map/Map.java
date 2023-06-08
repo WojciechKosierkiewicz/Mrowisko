@@ -13,6 +13,7 @@ public class Map {
 
     private final int sector_size;
     private Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
+    private Vector<Pheromone> pheromones;
     private Vector<Food> foods;
 
     private Config settings;
@@ -35,6 +36,7 @@ public class Map {
         }
 
         foods = new Vector<>();
+        pheromones = new Vector<>();
 
     }
 
@@ -84,6 +86,9 @@ public class Map {
     }
 
     public void addPheromone(Pheromone pheromone) {
+
+        pheromones.add(pheromone);
+
         int sector_x = (int) (pheromone.getLocx() / sector_size);
         int sector_y = (int) (pheromone.getLocy() / sector_size);
 

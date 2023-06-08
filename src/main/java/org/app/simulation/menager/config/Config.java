@@ -16,8 +16,8 @@ public class Config {
     int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 600;
-    int MapSizeY = 600;
+    int MapSizeX = 200;
+    int MapSizeY = 200;
 
 
     //zmienne mrówek
@@ -45,7 +45,7 @@ public class Config {
 
     //ustawienia anthills
 
-    int AnthillAntLimit = 100;
+    int AnthillAntLimit = 1;
     double AnthillAntSpawnChance = 0.05;
 
 

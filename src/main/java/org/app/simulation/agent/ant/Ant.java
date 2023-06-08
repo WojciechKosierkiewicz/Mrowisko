@@ -94,6 +94,7 @@ public class Ant extends Agent {
             }
         }
     }
+
     public void moveAnt() {
         double movementx = getSettings().getAntStepLen() * Math.cos(heading.getHeadingAngle());
         double movementy = getSettings().getAntStepLen() * Math.sin(heading.getHeadingAngle());

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,6 +297,8 @@
       <workItem from="1686240931414" duration="1174000" />
       <workItem from="1686242232865" duration="2899000" />
       <workItem from="1686248241141" duration="977000" />
+      <workItem from="1686250651182" duration="1098000" />
+      <workItem from="1686255122360" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>

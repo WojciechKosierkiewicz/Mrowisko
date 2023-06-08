@@ -16,6 +16,7 @@ public class Anthill extends Agent {
         super(TypAgenta.ANTHILL, settings);
         Ants = new Vector<>();
     }
+
     public void removeAntsOutsideMap(double threshold) {
         for (int i = 0; i < Ants.size(); i++) {
             if (Ants.get(i).getLocx() < -threshold || Ants.get(i).getLocx() > getSettings().getMapSizeX() + threshold || Ants.get(i).getLocy() < 0 - threshold || Ants.get(i).getLocy() > getSettings().getMapSizeY() + threshold) {

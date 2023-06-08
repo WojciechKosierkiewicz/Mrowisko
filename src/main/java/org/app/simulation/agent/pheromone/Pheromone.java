@@ -34,9 +34,12 @@ public class Pheromone extends Agent {
         // TODO: 08.06.2023
         //NIEBEZPIECZNEE
 
+        /*
         if (type == PheromoneType.HOME) {
             RemoveFromJavaFxDisplay();
         }
+
+         */
 
     }
 
