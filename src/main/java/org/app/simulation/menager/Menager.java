@@ -39,6 +39,11 @@ public class Menager {
         this.anthills = new Vector<>();
     }
 
+    public void AddRandomFood() {
+        map.AddFood(new Food(settings));
+        map.getFoods().get(map.getFoods().size() - 1).setRandomPosition();
+    }
+
     @FXML
     public void initialize() {
         System.out.println("Menager init");
@@ -119,6 +124,7 @@ public class Menager {
         }
         anthills.clear();
         map.clearPhermonoes();
+        map.clearFood();
     }
 
     void ZwrocAktulneWyniki() {

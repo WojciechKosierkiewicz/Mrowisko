@@ -132,6 +132,8 @@ public class GuiController {
         sim.addAnts(10, sim.getAnthillIDs().get(0));
         sim.PrzeprowadzTickSymulacji();
 
+        sim.AddRandomFood();
+
         if (populacjaant.getData().size() == 0 && iloscpheromonow.getData().size() == 0) {
             populacjaant.getData().add(populacjaxy);
             iloscpheromonow.getData().add(pheromonyxy);

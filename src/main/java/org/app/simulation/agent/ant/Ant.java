@@ -4,6 +4,8 @@ import javafx.scene.paint.Color;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
 import org.app.simulation.agent.food.Food;
+import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
 import java.util.Random;
@@ -126,7 +128,13 @@ public class Ant extends Agent {
 
     public void leavePheromoneBehind() {
         if (livedUpdates % getSettings().getAntPheromoneInterval() == 0) {
-            getSettings().getMap().createPheromoneAtPoint(this.getLocx(), this.getLocy(), this.id_mrowiska);
+            switch (direction) {
+                case FOOD -> getMap().addPheromone(new Pheromone(this, PheromoneType.FOOD));
+                case HOME -> getMap().addPheromone(new Pheromone(this, PheromoneType.HOME));
+                default -> {
+
+                }
+            }
         }
     }
 

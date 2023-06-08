@@ -4,8 +4,6 @@ import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
-import java.util.Comparator;
-import java.util.UUID;
 import java.util.Vector;
 
 public class AntHeading {
@@ -76,7 +74,7 @@ public class AntHeading {
             case FOOD -> pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
-                pheromones.removeIf(p -> p.getCreator() != owner.getId());
+                pheromones.removeIf(p -> p.getCreatorID() != owner.getId());
             }
             default -> {
             }

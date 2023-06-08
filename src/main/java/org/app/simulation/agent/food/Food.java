@@ -12,7 +12,7 @@ public class Food extends Agent {
 
     public Food(Config settings) {
         super(TypAgenta.FOOD, settings);
-        this.foodAmount = 100;
+        this.foodAmount = 100000;
     }
 
     public double requestFood(int amount) {

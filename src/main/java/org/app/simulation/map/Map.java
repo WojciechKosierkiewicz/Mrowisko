@@ -2,7 +2,6 @@ package org.app.simulation.map;
 
 import javafx.scene.layout.Pane;
 import org.app.simulation.agent.food.Food;
-import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.menager.config.Config;
 
@@ -13,7 +12,7 @@ public class Map {
 
     private final int sector_size;
     private Vector<Vector<Vector<Pheromone>>> Pheromone_Sector_map;
-    //private Vector<Food> foods;
+    private Vector<Food> foods;
 
     private Config settings;
     private Pane world;
@@ -34,6 +33,8 @@ public class Map {
             }
         }
 
+        foods = new Vector<>();
+
     }
 
     public Vector<Pheromone> getSurroundingPheromones(double x, double y, double range) {
@@ -50,18 +51,37 @@ public class Map {
         return result;
     }
 
-    /*public void AddFood(Food food) {
+    public void RemovePheromonesCreatedBy(UUID id) {
+        for (Vector<Vector<Pheromone>> sector : Pheromone_Sector_map) {
+            for (Vector<Pheromone> pheromones : sector) {
+                for (int i = 0; i < pheromones.size(); i++) {
+                    if (pheromones.get(i).getCreatorID() == id) {
+                        pheromones.get(i).RemoveFromJavaFxDisplay();
+                        pheromones.remove(i);
+                        i--;
+                    }
+                }
+            }
+        }
+    }
+
+    public void AddFood(Food food) {
         foods.add(food);
-    }*/
+    }
+
+    public Vector<Food> getFoods() {
+        return foods;
+    }
 
     public Vector<Food> getSurroundingFoods(double x, double y, double range) {
+        if (foods == null)
+            return null;
+
         Vector<Food> result = new Vector<>();
-        /*
+
         for (Food food : foods)
             if (getDistanceBetweenPoints(x, y, food.getLocx(), food.getLocy()) < range)
                 result.add(food);
-                
-         */
 
         return result;
     }
@@ -75,10 +95,17 @@ public class Map {
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
 
-    public void createPheromoneAtPoint(double posx, double posy, UUID creator) {
-        int sector_x = 2;
-        int sector_y = 2;
-        Pheromone_Sector_map.get(sector_x).get(sector_y).add(new Pheromone(settings, posx, posy, creator, ticks));
+    public void addPheromone(Pheromone pheromone) {
+        int sector_x = (int) (pheromone.getLocx() / sector_size);
+        int sector_y = (int) (pheromone.getLocy() / sector_size);
+
+        if (sector_x > Pheromone_Sector_map.size() - 1)
+            sector_x = Pheromone_Sector_map.size() - 1;
+
+        if (sector_y > Pheromone_Sector_map.get(sector_x).size() - 1)
+            sector_y = Pheromone_Sector_map.get(sector_x).size() - 1;
+
+        Pheromone_Sector_map.get(sector_x).get(sector_y).add(pheromone);
     }
 
     public void removePheromonesolderthan(int x) {
@@ -129,5 +156,12 @@ public class Map {
             }
         }
         return result;
+    }
+
+    public void clearFood() {
+        for (Food f : foods) {
+            f.RemoveFromJavaFxDisplay();
+        }
+        //foods.clear();
     }
 }

@@ -53,6 +53,7 @@ public class Anthill extends Agent {
 
     public void removeEverythingFromWorld() {
         removeAntsfromWorld();
+        RemoveFromJavaFxDisplay();
     }
 
     public void update() {
@@ -73,6 +74,7 @@ public class Anthill extends Agent {
         for (int i = 0; i < Ants.size(); i++) {
             if (Ants.get(i).getLivedUpdates() > getSettings().getAntLifetime()) {
                 Ants.get(i).RemoveFromJavaFxDisplay();
+                getMap().RemovePheromonesCreatedBy(Ants.get(i).getId());
                 Ants.remove(i);
                 //zmniejszam i by nie pominąc żadnego elementu w nowej zmniejszonej tablicy
                 i--;

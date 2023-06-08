@@ -4,6 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.app.simulation.menager.config.Config;
 
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -84,5 +85,9 @@ public abstract class Agent {
     public void setLocy(double locy) {
         this.locy = locy;
         shape.setTranslateY(locy);
+    }
+
+    public org.app.simulation.map.Map getMap() {
+        return settings.getMap();
     }
 }
