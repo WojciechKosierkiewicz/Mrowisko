@@ -109,10 +109,8 @@ public class GuiController {
         settings.setAntConsumption(AntConsumptionSlide.getValue());
         settings.setAntHungerLimit((int) AntHungerLimitSlide.getValue());
         settings.setAntPheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
-        settings.setAntsEvaporationTime(AntsEvaporationTimeSlide.getValue());
         settings.setAntCircleRadius(AntSizeSlide.getValue());
         settings.setAntLifetime(AntLifeTimeSlide.getValue());
-        settings.setAntRange(AntRangeSlide.getValue());
         settings.setAntStepLen(AntStepLengthSlide.getValue());
         settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
         settings.setAntHillCircleRadius(AnthillCircleRadiusSlide.getValue());

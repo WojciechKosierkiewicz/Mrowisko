@@ -31,9 +31,13 @@ public class Pheromone extends Agent {
         setLocy(creator.getLocy());
         updateJavaFxShapeSettings();
 
+        // TODO: 08.06.2023
+        //NIEBEZPIECZNEE
+
         if (type == PheromoneType.HOME) {
             RemoveFromJavaFxDisplay();
         }
+
     }
 
 
@@ -65,4 +69,7 @@ public class Pheromone extends Agent {
         return creator.getId();
     }
 
+    public Ant getCreator() {
+        return creator;
+    }
 }

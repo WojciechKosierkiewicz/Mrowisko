@@ -1,5 +1,6 @@
 package org.app.simulation.agent.ant;
 
+import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
@@ -32,16 +33,12 @@ public class AntHeading {
         if (owner.getDirection() != Antdirection.NONE) {
             changecurrentaanglefrompheromones();
         }
+        if (owner.getDirection() == Antdirection.HOME) {
+            return;
+        }
         currentangle = currentangle + turnangle;
 
         turnangle += (Math.random() - 0.5) * settings.getAntTurnAngleChange();
-
-        if (turnangle > settings.getAntTurnAngleMax()) {
-            turnangle = settings.getAntTurnAngleMax();
-        }
-        if (turnangle < -settings.getAntTurnAngleMax()) {
-            turnangle = -settings.getAntTurnAngleMax();
-        }
     }
 
     void removePheromonesNotInFov(Vector<Pheromone> pheromones) {
@@ -64,7 +61,7 @@ public class AntHeading {
 
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getAntRange());
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange());
 
         //exit if there are no pheromones to process
         if (pheromones.size() == 0)
@@ -80,14 +77,19 @@ public class AntHeading {
                 if (pheromones.size() == 0)
                     return;
 
-                currentangle = getmeanAnglefromPheromones(pheromones);
+                pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+
+                currentangle = findAngleToAgent(pheromones.firstElement());
+
             }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
-                pheromones.removeIf(p -> p.getCreatorID() != owner.getId());
+                pheromones.removeIf(p -> p.getCreator() != owner);
 
-                if (pheromones.size() == 0)
+                if (pheromones.size() == 0) {
+                    System.out.println("No pheromones");
                     return;
+                }
 
                 //sorting pheromones by age
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
@@ -95,8 +97,7 @@ public class AntHeading {
                 if (pheromones.size() == 0)
                     return;
 
-                currentangle = owner.countAngleBeetwenPoints(pheromones.lastElement().getLocx(), pheromones.lastElement().getLocy(), owner.getLocx(), owner.getLocy());
-
+                currentangle = findAngleToAgent(pheromones.firstElement());
             }
             default -> {
             }
@@ -106,6 +107,14 @@ public class AntHeading {
 
         //get the mean angle of all pheromones of intereset and head that way
         currentangle = getmeanAnglefromPheromones(pheromones);
+    }
+
+    double findAngleToAgent(Agent agent) {
+        return owner.countAngleBeetwenPoints(agent.getLocx(), agent.getLocy(), owner.getLocx(), owner.getLocy());
+    }
+
+    void reverseDirection() {
+        currentangle += Math.PI;
     }
 
     void bouncexwall() {

@@ -21,7 +21,7 @@ public class Menager {
 
     @FXML
     Pane world;
-    private final List<Anthill> anthills;
+    private final Vector<Anthill> anthills;
     private int Tick = 0;
     private final Config settings;
     private final Map map;
@@ -36,6 +36,7 @@ public class Menager {
                 settings.getMapSizeX() > settings.getMapSizeY() ? settings.getMapSizeX() / (settings.getSenseRange() / 2) : settings.getMapSizeY() / (settings.getSenseRange() / 2),
                 settings,
                 world);
+
         this.anthills = new Vector<>();
     }
 

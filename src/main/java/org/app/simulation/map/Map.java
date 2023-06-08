@@ -1,6 +1,7 @@
 package org.app.simulation.map;
 
 import javafx.scene.layout.Pane;
+import org.app.simulation.agent.anthill.Anthill;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.menager.config.Config;

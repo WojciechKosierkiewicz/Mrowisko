@@ -36,7 +36,7 @@ public class Anthill extends Agent {
     }
 
     public void addAnt() {
-        Ants.add(new Ant(getId(), getSettings()));
+        Ants.add(new Ant(this, getSettings()));
         Ants.get(Ants.size() - 1).setPosition(getLocx(), getLocy());
     }
 

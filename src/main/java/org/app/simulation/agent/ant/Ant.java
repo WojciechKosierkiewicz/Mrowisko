@@ -1,18 +1,14 @@
 package org.app.simulation.agent.ant;
 
-import javafx.scene.paint.Color;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
+import org.app.simulation.agent.anthill.Anthill;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
-import java.util.Random;
-import java.util.UUID;
 import java.util.Vector;
-
-import javafx.scene.shape.Circle;
 
 public class Ant extends Agent {
 
@@ -23,12 +19,12 @@ public class Ant extends Agent {
 
     private final AntHeading heading;
 
-    UUID id_mrowiska;
+    Anthill mrowisko;
 
-    public Ant(UUID id_mrowiska, Config settings) {
+    public Ant(Anthill mrowisko, Config settings) {
         super(TypAgenta.ANT, settings);
         this.heading = new AntHeading(settings, this);
-        this.id_mrowiska = id_mrowiska;
+        this.mrowisko = mrowisko;
     }
 
     public int getLivedUpdates() {
@@ -69,7 +65,7 @@ public class Ant extends Agent {
         if (direction == Antdirection.HOME) {
             return;
         }
-        Vector<Food> localfood = getSettings().getMap().getSurroundingFoods(this.getLocx(), this.getLocy(), getSettings().getAntRange());
+        Vector<Food> localfood = getSettings().getMap().getSurroundingFoods(this.getLocx(), this.getLocy(), getSettings().getSenseRange());
 
         if (localfood.size() > 0) {
 
@@ -79,10 +75,20 @@ public class Ant extends Agent {
                 heading.setHeadingAngle(countAngleBeetwenPoints(this.getLocx(), this.getLocy(), closestfood.getLocx(), closestfood.getLocy()));
             }
 
-            if (countDistanceBetweenAgents(closestfood) < getSettings().getAntFeedingRange()) {
+            if (countDistanceBetweenAgents(closestfood) < getSettings().getSenseRange()) {
                 CarriedFood += closestfood.requestFood(getSettings().getAntFoodCapacity());
                 direction = Antdirection.HOME;
+                heading.reverseDirection();
+            } else {
+                System.out.println("Current Distance is : " + countDistanceBetweenAgents(closestfood));
             }
+        }
+    }
+
+    void handleHomeSeeking() {
+        if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange()) {
+            direction = Antdirection.FOOD;
+            heading.reverseDirection();
         }
     }
 
@@ -118,7 +124,10 @@ public class Ant extends Agent {
     }
 
     public double countDistanceBeetwenPoints(double x1, double y1, double x2, double y2) {
-        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+
+        return Math.sqrt(dx * dx + dy * dy);
     }
 
     public double countDistanceBetweenAgents(Agent agent) {

@@ -2,7 +2,6 @@ package org.app.simulation.menager.config;
 
 
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
 import org.app.simulation.map.Map;
 
 public class Config {
@@ -22,30 +21,32 @@ public class Config {
 
 
     //zmienne mrówek
-    int AntSenseRange = 10;
-    double AntLifetime = 5000;
+    //możliwości ruchu mrowki
     double AntTurnAngleChange = 0.001;
     double AntTurnAngleMax = 0.01;
     double AntConsumption = 0.5;
+    double AntStepLen = 0.5;
+
+    //zsotawianie znakow przez mrowke
+    int AntPheromoneInterval = 8;
+
+    //zasieg widzenie mrówki
+    int AntSenseRange = 20;
+    double AntFov = 1.2 * Math.PI;
+
+    //prawa życia mrowki
+    double AntLifetime = 5000;
     int AntFoodCapacity = 100;
     double AntHungerLimit = 100;
-    double AntStepLen = 0.5;
-    double antRange = 10;
-    int AntPheromoneInterval = 2;
-    double AntFov = 1.2 * Math.PI;
     boolean AntGetHungry = true;
     boolean AntDiesOfAge = true;
-
-    boolean doAntsEvaporate = true;
-    double AntsEvaporationTime = 1000;
     boolean isAntsVisible = true;
-    double antFeedingRange = 20;
 
 
     //ustawienia anthills
 
     int AnthillAntLimit = 100;
-    double AnthillAntSpawnChance = 0.1;
+    double AnthillAntSpawnChance = 0.05;
 
 
     //ustawienia pheromonów
@@ -64,9 +65,6 @@ public class Config {
         return FoodCircleRadius;
     }
 
-    public double getAntFeedingRange() {
-        return antFeedingRange;
-    }
 
     public Config(Pane world) {
         this.world = world;
@@ -158,13 +156,6 @@ public class Config {
         AntCircleRadius = antCircleRadius;
     }
 
-    public double getAntRange() {
-        return antRange;
-    }
-
-    public void setAntRange(double antRange) {
-        this.antRange = antRange;
-    }
 
     public int getAnthillAntLimit() {
         return AnthillAntLimit;
@@ -246,10 +237,6 @@ public class Config {
         AntDiesOfAge = antDiesOfAge;
     }
 
-    public void setDoAntsEvaporate(boolean doAntsEvaporate) {
-        this.doAntsEvaporate = doAntsEvaporate;
-    }
-
     public void setAntsVisible(boolean antsVisible) {
         isAntsVisible = antsVisible;
     }
@@ -260,10 +247,6 @@ public class Config {
 
     public void setAntPheromoneInterval(int antPheromoneInterval) {
         AntPheromoneInterval = antPheromoneInterval;
-    }
-
-    public void setAntsEvaporationTime(double antsEvaporationTime) {
-        AntsEvaporationTime = antsEvaporationTime;
     }
 
     public double getAntFov() {
