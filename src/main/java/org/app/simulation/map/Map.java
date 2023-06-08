@@ -162,6 +162,6 @@ public class Map {
         for (Food f : foods) {
             f.RemoveFromJavaFxDisplay();
         }
-        //foods.clear();
+        foods.clear();
     }
 }
