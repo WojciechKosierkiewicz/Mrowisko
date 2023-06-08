@@ -61,7 +61,7 @@ public class AntHeading {
 
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange());
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange() * 2);
 
         //exit if there are no pheromones to process
         if (pheromones.size() == 0)
@@ -87,7 +87,6 @@ public class AntHeading {
                 pheromones.removeIf(p -> p.getCreator() != owner);
 
                 if (pheromones.size() == 0) {
-                    System.out.println("No pheromones");
                     return;
                 }
 

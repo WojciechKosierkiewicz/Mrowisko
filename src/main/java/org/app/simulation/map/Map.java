@@ -74,19 +74,6 @@ public class Map {
         return foods;
     }
 
-    public Vector<Food> getSurroundingFoods(double x, double y, double range) {
-        if (foods == null)
-            return null;
-
-        Vector<Food> result = new Vector<>();
-
-        for (Food food : foods)
-            if (getDistanceBetweenPoints(x, y, food.getLocx(), food.getLocy()) < range)
-                result.add(food);
-
-        return result;
-    }
-
     public void Tick() {
         ticks++;
     }

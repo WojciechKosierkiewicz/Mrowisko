@@ -61,6 +61,40 @@ public class Ant extends Agent {
         this.antHunger = antHunger;
     }
 
+    void handlefoundfood(Vector<Food> foods) {
+        heading.reverseDirection();
+        direction = Antdirection.HOME;
+        System.out.println("found food");
+    }
+
+    void handlefoundhome() {
+        heading.reverseDirection();
+        direction = Antdirection.FOOD;
+    }
+
+    void checkisTargetinRange() {
+        switch (direction) {
+            case FOOD -> {
+                //Vector<Food> foods = new Vector<>(getMap().getFoods());
+                Vector<Food> foods = new Vector<>(getMap().getFoods());
+
+                foods.removeIf(f -> countDistanceBeetwenPoints(getLocx(), getLocy(), f.getLocx(), f.getLocy()) > getSettings().getSenseRange());
+
+                if (foods.size() > 0) {
+                    System.out.println("found food");
+                    handlefoundfood(foods);
+                }
+            }
+            case HOME -> {
+                if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange() * 2) {
+                    System.out.println("found home");
+                    handlefoundhome();
+                }
+            }
+        }
+    }
+
+    /*
     void handleFoodObtaining() {
         if (direction == Antdirection.HOME) {
             return;
@@ -85,6 +119,7 @@ public class Ant extends Agent {
         }
     }
 
+
     void handleHomeSeeking() {
         if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange()) {
             direction = Antdirection.FOOD;
@@ -92,6 +127,8 @@ public class Ant extends Agent {
         }
     }
 
+
+     */
     public void moveAnt() {
         double movementx = getSettings().getAntStepLen() * Math.cos(heading.getHeadingAngle());
         double movementy = getSettings().getAntStepLen() * Math.sin(heading.getHeadingAngle());
@@ -131,7 +168,7 @@ public class Ant extends Agent {
     }
 
     public double countDistanceBetweenAgents(Agent agent) {
-        return countDistanceBeetwenPoints(this.getLocx(), this.getLocy(), agent.getLocx(), agent.getLocy());
+        return countDistanceBeetwenPoints(getLocx(), getLocy(), agent.getLocx(), agent.getLocy());
     }
 
     public void leavePheromoneBehind() {
@@ -147,9 +184,9 @@ public class Ant extends Agent {
     }
 
     public void update() {
+        checkisTargetinRange();
 
         //Handles Food
-        handleFoodObtaining();
         starve();
         feedself();
 

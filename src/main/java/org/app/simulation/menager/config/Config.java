@@ -31,7 +31,7 @@ public class Config {
     int AntPheromoneInterval = 8;
 
     //zasieg widzenie mrówki
-    int AntSenseRange = 20;
+    int AntSenseRange = 15;
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
