@@ -31,6 +31,10 @@ public class AntHeading {
         currentangle = angle;
     }
 
+    public void clear_known_pheromones() {
+        arleadyusedpheromones.clear();
+    }
+
     public void update() {
         changecurrentaanglefrompheromones();
 
@@ -128,7 +132,7 @@ public class AntHeading {
 
 
                 turnangle = calculateneededanglechange(pheromones.lastElement());
-                arleadyusedpheromones.add(pheromones.lastElement());
+                arleadyusedpheromones.add(pheromones.firstElement());
             }
 
             default -> {

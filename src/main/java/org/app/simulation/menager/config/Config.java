@@ -16,8 +16,9 @@ public class Config {
     int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 500;
-    int MapSizeY = 500;
+    int MapSizeX = 800;
+    int MapSizeY = 800;
+    int MapSectorSize = 10;
 
 
     //zmienne mrówek
@@ -38,7 +39,7 @@ public class Config {
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
-    double AntLifetime = 2000;
+    double AntLifetime = 5000;
     int AntFoodCapacity = 100;
     double AntHungerLimit = 100;
     boolean AntGetHungry = true;
@@ -48,14 +49,14 @@ public class Config {
 
     //ustawienia anthills
 
-    int AnthillAntLimit = 20;
+    int AnthillAntLimit = 100;
     double AnthillAntSpawnChance = 0.05;
 
 
     //ustawienia pheromonów
     boolean doPheromonesEvaporate = true;
     int PheromoneEvaporationTime = 100000;
-    boolean isPheromoneVisible = true;
+    boolean isPheromoneVisible = false;
 
 
     //ustawienia wyswietlania
@@ -63,6 +64,11 @@ public class Config {
     double AntHillCircleRadius = 5;
     double pheromoneCircleRadius = 1;
     double FoodCircleRadius = 5;
+
+
+    public int getMapSectorSize() {
+        return MapSectorSize;
+    }
 
     public double getFoodCircleRadius() {
         return FoodCircleRadius;

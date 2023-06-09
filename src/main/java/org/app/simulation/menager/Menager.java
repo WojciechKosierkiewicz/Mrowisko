@@ -110,6 +110,8 @@ public class Menager {
         for (Pheromone pher : map.getPheromones()) {
             pher.updateJavaFxShapeSettings();
         }
+        if (settings.isPheromoneVisible()) {
+        }
     }
 
     public int getTick() {

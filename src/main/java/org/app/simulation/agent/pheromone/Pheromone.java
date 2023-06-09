@@ -45,6 +45,12 @@ public class Pheromone extends Agent {
 
 
     public void updateJavaFxShapeSettings() {
+        if (getSettings().isPheromoneVisible()) {
+            AddToJavaFxDisplay();
+        } else {
+            RemoveFromJavaFxDisplay();
+        }
+
         getShape().setRadius(getSettings().getPheromoneCircleRadius());
         switch (type) {
             case FOOD:

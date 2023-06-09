@@ -29,6 +29,18 @@ public class Map {
 
     }
 
+    public void hide_pheromones() {
+        for (Pheromone p : pheromones) {
+            p.RemoveFromJavaFxDisplay();
+        }
+    }
+
+    public void show_pheromones() {
+        for (Pheromone p : pheromones) {
+            p.AddToJavaFxDisplay();
+        }
+    }
+
     public Vector<Pheromone> getSurroundingPheromones(Agent queryowner, double range) {
         Vector<Pheromone> pheromonez = new Vector<>();
         for (Pheromone p : pheromones) {
