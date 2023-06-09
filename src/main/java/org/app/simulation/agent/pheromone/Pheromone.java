@@ -53,12 +53,23 @@ public class Pheromone extends Agent {
 
         getShape().setRadius(getSettings().getPheromoneCircleRadius());
         switch (type) {
-            case FOOD:
+            case FOOD -> {
+                if (getSettings().isToFoodPheromoneVisible()) {
+                    AddToJavaFxDisplay();
+                } else {
+                    RemoveFromJavaFxDisplay();
+                }
                 getShape().setFill(Color.BLUE);
-                break;
-            case HOME:
+            }
+            case HOME -> {
+                if (getSettings().isToHomePheromoneVisible()) {
+                    AddToJavaFxDisplay();
+                } else {
+                    RemoveFromJavaFxDisplay();
+                }
                 getShape().setFill(Color.RED);
-                break;
+            }
+            default -> getShape().setFill(Color.BLACK);
         }
     }
 

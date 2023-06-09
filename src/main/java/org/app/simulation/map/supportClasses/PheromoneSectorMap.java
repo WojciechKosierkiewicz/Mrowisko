@@ -40,6 +40,7 @@ public class PheromoneSectorMap {
             for (Vector<Pheromone> pheromones : datax) {
                 for (int k = 0; k < pheromones.size(); k++) {
                     if (pheromones.get(k).getCreatorID() == id) {
+                        pheromones.get(k).RemoveFromJavaFxDisplay();
                         pheromones.remove(k);
                         k--;
                     }

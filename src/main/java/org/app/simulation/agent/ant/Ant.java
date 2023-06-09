@@ -63,12 +63,10 @@ public class Ant extends Agent {
 
     void handlefoundfood(Vector<Food> foods) {
         direction = Antdirection.HOME;
-        heading.clear_known_pheromones();
     }
 
     void handlefoundhome() {
         direction = Antdirection.FOOD;
-        heading.clear_known_pheromones();
     }
 
     void checkisTargetinRange() {

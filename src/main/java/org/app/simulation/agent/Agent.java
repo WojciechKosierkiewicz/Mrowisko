@@ -28,6 +28,11 @@ public abstract class Agent {
     }
 
     public void AddToJavaFxDisplay() {
+        //dont add if arleady in world
+        if (settings.getWorld().getChildren().contains(shape)) {
+            return;
+        }
+
         settings.getWorld().getChildren().add(shape);
     }
 

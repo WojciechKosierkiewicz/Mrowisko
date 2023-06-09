@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="ostatni commit przed sektoryzacją">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/SectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +102,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/app/MainApp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wojte\Documents\Projekty\PolWro\Mrowisko\src\main\java\org\app\simulation\map\supportClasses" />
       <recent name="$PROJECT_DIR$/src/main/resources/org/app/MainApp" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
@@ -300,14 +307,7 @@
       <workItem from="1686318312612" duration="1755000" />
       <workItem from="1686320078427" duration="361000" />
       <workItem from="1686320449562" duration="189000" />
-      <workItem from="1686320648737" duration="1952000" />
-    </task>
-    <task id="LOCAL-00001" summary="start">
-      <created>1683797811727</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1683797811727</updated>
+      <workItem from="1686320648737" duration="4201000" />
     </task>
     <task id="LOCAL-00002" summary="start">
       <created>1683797857847</created>
@@ -645,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686320436117</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy">
+      <created>1686324947869</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1686324947869</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="kontrolowany &quot;troche&quot; ruch mruwków !" />
     <MESSAGE value="usuwanie pheromonów" />
     <MESSAGE value="usuwanie pheromonów działa now" />
     <MESSAGE value="poprawa mapy" />
@@ -689,7 +695,8 @@
     <MESSAGE value="Jakiś mały głupi błąd ale już chodzą !!!!!!" />
     <MESSAGE value="trzeba naprawić kółka śmierci i zagłady ale już powstają ścieżki" />
     <MESSAGE value="ostatni commit przed sektoryzacją" />
-    <option name="LAST_COMMIT_MESSAGE" value="ostatni commit przed sektoryzacją" />
+    <MESSAGE value="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy" />
+    <option name="LAST_COMMIT_MESSAGE" value="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -6,6 +6,7 @@ import org.app.simulation.agent.ant.Ant;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.map.supportClasses.PheromoneSectorMap;
+import org.app.simulation.map.supportClasses.PheromoneSectorMapBruteForceFAKEONE;
 import org.app.simulation.menager.config.Config;
 
 import java.util.UUID;
@@ -13,7 +14,7 @@ import java.util.Vector;
 
 public class Map {
 
-    private PheromoneSectorMap pheromonessectormap;
+    private PheromoneSectorMapBruteForceFAKEONE pheromonessectormap;
     private Vector<Food> foods;
 
     private Config settings;
@@ -26,7 +27,7 @@ public class Map {
         this.settings = settings;
 
         foods = new Vector<>();
-        pheromonessectormap = new PheromoneSectorMap(settings);
+        pheromonessectormap = new PheromoneSectorMapBruteForceFAKEONE(settings);
     }
 
     public void hide_pheromones() {
@@ -79,6 +80,7 @@ public class Map {
     }
 
     public void clearPhermonoes() {
+        pheromonessectormap.HideAllPheromones();
         pheromonessectormap.clear();
     }
 
