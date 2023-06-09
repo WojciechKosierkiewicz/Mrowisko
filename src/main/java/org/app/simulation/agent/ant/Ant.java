@@ -72,7 +72,6 @@ public class Ant extends Agent {
     void checkisTargetinRange() {
         switch (direction) {
             case FOOD -> {
-                //Vector<Food> foods = new Vector<>(getMap().getFoods());
                 Vector<Food> foods = new Vector<>(getMap().getFoods());
 
                 foods.removeIf(f -> countDistanceBetweenAgents(f) > getSettings().getSenseRange());

@@ -27,6 +27,9 @@ public class Config {
     double AntConsumption = 0.5;
     double AntStepLen = 0.5;
 
+    //decyzyjność mrówki
+    double AntDecisionPheromoneImportance = 0.1;
+
     //zsotawianie znakow przez mrowke
     int AntPheromoneInterval = 8;
 
@@ -65,6 +68,9 @@ public class Config {
         return FoodCircleRadius;
     }
 
+    public double getAntDecisionPheromoneImportance() {
+        return AntDecisionPheromoneImportance;
+    }
 
     public Config(Pane world) {
         this.world = world;

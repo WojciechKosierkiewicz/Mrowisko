@@ -13,6 +13,7 @@ public class AntHeading {
     Config settings;
     double turnangle = 0.001 * Math.PI;
     double currentangle;
+    double pheromoneangle;
     Ant owner;
     Vector<Pheromone> arleadyusedpheromones = new Vector<>();
 
@@ -32,6 +33,9 @@ public class AntHeading {
 
     public void update() {
         changecurrentaanglefrompheromones();
+
+        turnangle = turnangle + pheromoneangle * settings.getAntDecisionPheromoneImportance();
+
 
         currentangle += turnangle;
 
@@ -92,13 +96,16 @@ public class AntHeading {
         switch (owner.getDirection()) {
             case FOOD -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
+                //remove arleady used pheromones
+                pheromones.removeIf(p -> arleadyusedpheromones.contains(p));
 
 
                 if (pheromones.size() == 0)
                     return;
 
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
-                turnangle = calculateneededanglechange(pheromones.firstElement());
+                pheromoneangle = calculateneededanglechange(pheromones.firstElement());
+                arleadyusedpheromones.add(pheromones.lastElement());
             }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);

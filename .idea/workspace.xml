@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="wrcają do domu!">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Jakiś mały głupi błąd ale już chodzą !!!!!!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +297,8 @@
       <workItem from="1686250651182" duration="1098000" />
       <workItem from="1686255122360" duration="1546000" />
       <workItem from="1686309481481" duration="665000" />
-      <workItem from="1686316379129" duration="1802000" />
+      <workItem from="1686316379129" duration="1874000" />
+      <workItem from="1686318312612" duration="1031000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -618,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686317838356</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Jakiś mały głupi błąd ale już chodzą !!!!!!">
+      <created>1686318245079</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1686318245079</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="nic" />
     <MESSAGE value="troche działające ui!&#10;jeszcze dużo roboty :(" />
     <MESSAGE value="mrowki się trzęsą !!!!!!!" />
     <MESSAGE value="kontrolowany &quot;troche&quot; ruch mruwków !" />
@@ -662,7 +672,8 @@
     <MESSAGE value="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS" />
     <MESSAGE value="chce zrobić fikołka z okna" />
     <MESSAGE value="wrcają do domu!" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrcają do domu!" />
+    <MESSAGE value="Jakiś mały głupi błąd ale już chodzą !!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jakiś mały głupi błąd ale już chodzą !!!!!!" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
