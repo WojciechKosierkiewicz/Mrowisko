@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="chce zrobić fikołka z okna">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +292,7 @@
       <workItem from="1686242232865" duration="2899000" />
       <workItem from="1686248241141" duration="977000" />
       <workItem from="1686250651182" duration="1098000" />
-      <workItem from="1686255122360" duration="1124000" />
+      <workItem from="1686255122360" duration="1546000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -601,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686248753220</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="chce zrobić fikołka z okna">
+      <created>1686256558489</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1686256558489</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +621,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mikro zmiany" />
     <MESSAGE value="finakl" />
     <MESSAGE value="nic" />
     <MESSAGE value="troche działające ui!&#10;jeszcze dużo roboty :(" />
@@ -645,7 +645,8 @@
     <MESSAGE value="ta sama zmienna była ustawiana trzy razy oraz zastąpienie id tworcy itp obiektami" />
     <MESSAGE value="poprawa błedu gdzie usuwałem całe pożywienie :)" />
     <MESSAGE value="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Znajduje jedzienie ale nie wraca do domu. PROGRESSSS" />
+    <MESSAGE value="chce zrobić fikołka z okna" />
+    <option name="LAST_COMMIT_MESSAGE" value="chce zrobić fikołka z okna" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

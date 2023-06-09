@@ -93,6 +93,7 @@ public class AntHeading {
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
                 pheromones.removeIf(p -> p.getCreator() != owner);
+                System.out.println(pheromones.size());
 
                 if (pheromones.size() == 0) {
                     return;
