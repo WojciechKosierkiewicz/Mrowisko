@@ -98,7 +98,7 @@ public class AntHeading {
                     return;
 
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
-                turnangle = calculateneededanglechange(pheromones.lastElement());
+                turnangle = calculateneededanglechange(pheromones.firstElement());
             }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
