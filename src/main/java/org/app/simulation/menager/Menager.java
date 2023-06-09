@@ -32,8 +32,6 @@ public class Menager {
         this.world = world;
         this.map = new Map(settings.getMapSizeX(),
                 settings.getMapSizeY(),
-                //ustawia najniższy optymalny sektor
-                settings.getMapSizeX() > settings.getMapSizeY() ? settings.getMapSizeX() / (settings.getSenseRange() / 2) : settings.getMapSizeY() / (settings.getSenseRange() / 2),
                 settings,
                 world);
 

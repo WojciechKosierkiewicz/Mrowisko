@@ -14,6 +14,7 @@ public class AntHeading {
     double turnangle = 0.001 * Math.PI;
     double currentangle;
     Ant owner;
+    Vector<Pheromone> arleadyusedpheromones = new Vector<>();
 
     AntHeading(Config settings, Ant owner) {
         this.settings = settings;
@@ -31,11 +32,19 @@ public class AntHeading {
 
     public void update() {
         changecurrentaanglefrompheromones();
-        reduceturnangletolimits();
 
         currentangle += turnangle;
 
         turnangle += (Math.random() - 0.5) * settings.getAntTurnAngleChange();
+
+        //reduce turn angle to angle turn max
+
+        if (turnangle > settings.getAntTurnAngleMax()) {
+            turnangle = settings.getAntTurnAngleMax();
+        }
+        if (turnangle < -settings.getAntTurnAngleMax()) {
+            turnangle = -settings.getAntTurnAngleMax();
+        }
     }
 
     void removePheromonesNotInFov(Vector<Pheromone> pheromones) {
@@ -56,23 +65,24 @@ public class AntHeading {
         return meanAngle / pheromones.size();
     }
 
-    void reduceturnangletolimits() {
-        if (turnangle > settings.getAntTurnAngleMax()) {
-            turnangle = settings.getAntTurnAngleMax();
-        }
-        if (turnangle < -settings.getAntTurnAngleMax()) {
-            turnangle = -settings.getAntTurnAngleMax();
-        }
-    }
-
+    //function that calculate what needs to be added to current angle to get to the target
     double calculateneededanglechange(Agent target) {
         double angle = Math.atan2(target.getLocy() - owner.getLocy(), target.getLocx() - owner.getLocx());
-        return currentangle - angle;
+        double neededanglechange = angle - currentangle;
+
+        if (neededanglechange > Math.PI) {
+            neededanglechange -= Math.PI * 2;
+        }
+        if (neededanglechange < -Math.PI) {
+            neededanglechange += Math.PI * 2;
+        }
+
+        return neededanglechange;
     }
 
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner.getLocx(), owner.getLocx(), settings.getSenseRange());
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getSenseRange());
 
         //exit if there are no pheromones to process
         if (pheromones.size() == 0) {
@@ -88,11 +98,14 @@ public class AntHeading {
                     return;
 
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
-                turnangle = calculateneededanglechange(pheromones.lastElement()) / 100;
+                turnangle = calculateneededanglechange(pheromones.lastElement());
             }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
                 pheromones.removeIf(p -> p.getCreator() != owner);
+                //remove arleady used pheromones
+                pheromones.removeIf(p -> arleadyusedpheromones.contains(p));
+
                 System.out.println(pheromones.size());
 
                 if (pheromones.size() == 0) {
@@ -106,7 +119,9 @@ public class AntHeading {
                     return;
                 }
 
-                turnangle = calculateneededanglechange(pheromones.firstElement()) / 100;
+
+                turnangle = calculateneededanglechange(pheromones.lastElement());
+                arleadyusedpheromones.add(pheromones.lastElement());
             }
 
             default -> {

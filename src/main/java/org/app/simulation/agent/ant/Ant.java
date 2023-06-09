@@ -62,12 +62,10 @@ public class Ant extends Agent {
     }
 
     void handlefoundfood(Vector<Food> foods) {
-        heading.reverseDirection();
         direction = Antdirection.HOME;
     }
 
     void handlefoundhome() {
-        heading.reverseDirection();
         direction = Antdirection.FOOD;
     }
 
@@ -77,14 +75,14 @@ public class Ant extends Agent {
                 //Vector<Food> foods = new Vector<>(getMap().getFoods());
                 Vector<Food> foods = new Vector<>(getMap().getFoods());
 
-                foods.removeIf(f -> countDistanceBeetwenPoints(getLocx(), getLocy(), f.getLocx(), f.getLocy()) > getSettings().getSenseRange());
+                foods.removeIf(f -> countDistanceBetweenAgents(f) > getSettings().getSenseRange());
 
                 if (foods.size() > 0) {
                     handlefoundfood(foods);
                 }
             }
             case HOME -> {
-                if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange() * 2) {
+                if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange()) {
                     handlefoundhome();
                 }
             }

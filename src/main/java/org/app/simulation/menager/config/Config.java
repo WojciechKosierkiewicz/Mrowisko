@@ -16,8 +16,8 @@ public class Config {
     int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 200;
-    int MapSizeY = 200;
+    int MapSizeX = 500;
+    int MapSizeY = 500;
 
 
     //zmienne mrówek
@@ -31,7 +31,7 @@ public class Config {
     int AntPheromoneInterval = 8;
 
     //zasieg widzenie mrówki
-    int AntSenseRange = 15;
+    int AntSenseRange = 10;
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
@@ -45,7 +45,7 @@ public class Config {
 
     //ustawienia anthills
 
-    int AnthillAntLimit = 1;
+    int AnthillAntLimit = 20;
     double AnthillAntSpawnChance = 0.05;
 
 
