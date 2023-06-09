@@ -2,9 +2,10 @@ package org.app.simulation.map;
 
 import javafx.scene.layout.Pane;
 import org.app.simulation.agent.Agent;
-import org.app.simulation.agent.anthill.Anthill;
+import org.app.simulation.agent.ant.Ant;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.map.supportClasses.PheromoneSectorMap;
 import org.app.simulation.menager.config.Config;
 
 import java.util.UUID;
@@ -12,7 +13,7 @@ import java.util.Vector;
 
 public class Map {
 
-    private Vector<Pheromone> pheromones;
+    private PheromoneSectorMap pheromonessectormap;
     private Vector<Food> foods;
 
     private Config settings;
@@ -25,40 +26,23 @@ public class Map {
         this.settings = settings;
 
         foods = new Vector<>();
-        pheromones = new Vector<>();
-
+        pheromonessectormap = new PheromoneSectorMap(settings);
     }
 
     public void hide_pheromones() {
-        for (Pheromone p : pheromones) {
-            p.RemoveFromJavaFxDisplay();
-        }
+        pheromonessectormap.HideAllPheromones();
     }
 
     public void show_pheromones() {
-        for (Pheromone p : pheromones) {
-            p.AddToJavaFxDisplay();
-        }
+        pheromonessectormap.ShowAllPheromones();
     }
 
-    public Vector<Pheromone> getSurroundingPheromones(Agent queryowner, double range) {
-        Vector<Pheromone> pheromonez = new Vector<>();
-        for (Pheromone p : pheromones) {
-            if (getDistanceBetweenAgents(queryowner, p) < range) {
-                pheromonez.add(p);
-            }
-        }
-        return pheromonez;
+    public Vector<Pheromone> getSurroundingPheromones(Ant querywoner, double range) {
+        return pheromonessectormap.request_pheromones_surrounding_point(querywoner.getLocx(), querywoner.getLocy(), range);
     }
 
     public void RemovePheromonesCreatedBy(UUID id) {
-        for (int i = 0; i < pheromones.size(); i++) {
-            if (pheromones.get(i).getCreatorID() == id) {
-                pheromones.get(i).RemoveFromJavaFxDisplay();
-                pheromones.remove(i);
-                i--;
-            }
-        }
+        pheromonessectormap.remove_pheromones_by_id(id);
     }
 
     public void AddFood(Food food) {
@@ -83,32 +67,23 @@ public class Map {
     }
 
     public void addPheromone(Pheromone pheromone) {
-        pheromones.add(pheromone);
+        pheromonessectormap.add_pheromone(pheromone);
     }
 
     public void removePheromonesolderthan(int x) {
-        for (int i = 0; i < pheromones.size(); i++) {
-            if (pheromones.get(i).getCreationTick() - ticks > x) {
-                pheromones.get(i).RemoveFromJavaFxDisplay();
-                pheromones.remove(i);
-                i--;
-            }
-        }
+        pheromonessectormap.removePheromonesOlderThan(x, ticks);
     }
 
     public int getamountofpheromones() {
-        return pheromones.size();
+        return pheromonessectormap.get_pheromone_count();
     }
 
     public void clearPhermonoes() {
-        for (Pheromone p : pheromones) {
-            p.RemoveFromJavaFxDisplay();
-        }
-        pheromones.clear();
+        pheromonessectormap.clear();
     }
 
     public Vector<Pheromone> getPheromones() {
-        return pheromones;
+        return pheromonessectormap.get_all_pheromones();
     }
 
     public void clearFood() {

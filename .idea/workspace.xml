@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="trzeba naprawić kółka śmierci i zagłady ale już powstają ścieżki">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/SectorMap.java" afterDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="ostatni commit przed sektoryzacją">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/SectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +298,9 @@
       <workItem from="1686309481481" duration="665000" />
       <workItem from="1686316379129" duration="1874000" />
       <workItem from="1686318312612" duration="1755000" />
-      <workItem from="1686320078427" duration="333000" />
+      <workItem from="1686320078427" duration="361000" />
+      <workItem from="1686320449562" duration="189000" />
+      <workItem from="1686320648737" duration="1952000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1683797811727</created>
@@ -641,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686319407969</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="ostatni commit przed sektoryzacją">
+      <created>1686320436117</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686320436117</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mrowki się trzęsą !!!!!!!" />
     <MESSAGE value="kontrolowany &quot;troche&quot; ruch mruwków !" />
     <MESSAGE value="usuwanie pheromonów" />
     <MESSAGE value="usuwanie pheromonów działa now" />
@@ -685,7 +688,8 @@
     <MESSAGE value="wrcają do domu!" />
     <MESSAGE value="Jakiś mały głupi błąd ale już chodzą !!!!!!" />
     <MESSAGE value="trzeba naprawić kółka śmierci i zagłady ale już powstają ścieżki" />
-    <option name="LAST_COMMIT_MESSAGE" value="trzeba naprawić kółka śmierci i zagłady ale już powstają ścieżki" />
+    <MESSAGE value="ostatni commit przed sektoryzacją" />
+    <option name="LAST_COMMIT_MESSAGE" value="ostatni commit przed sektoryzacją" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
