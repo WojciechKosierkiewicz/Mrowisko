@@ -32,7 +32,7 @@ public class Config {
     double AntDecisionPheromoneImportance = 0.01;
 
     //zsotawianie znakow przez mrowke
-    int AntPheromoneInterval = 2;
+    int AntPheromoneInterval = 10;
 
     //zasieg widzenie mrówki
     int AntSenseRange = 10;

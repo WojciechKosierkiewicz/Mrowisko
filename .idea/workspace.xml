@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" afterDir="false" />
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="zostało napisać tylko rozśadny dobór scieżki do jedzenia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -307,14 +300,10 @@
       <workItem from="1686318312612" duration="1755000" />
       <workItem from="1686320078427" duration="361000" />
       <workItem from="1686320449562" duration="189000" />
-      <workItem from="1686320648737" duration="4201000" />
-    </task>
-    <task id="LOCAL-00002" summary="start">
-      <created>1683797857847</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1683797857847</updated>
+      <workItem from="1686320648737" duration="4468000" />
+      <workItem from="1686330607418" duration="6000" />
+      <workItem from="1686330904660" duration="142000" />
+      <workItem from="1686339599984" duration="604000" />
     </task>
     <task id="LOCAL-00003" summary="start">
       <created>1683798499395</created>
@@ -652,7 +641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686324947869</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="zostało napisać tylko rozśadny dobór scieżki do jedzenia">
+      <created>1686327314894</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1686327314894</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +667,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="usuwanie pheromonów" />
     <MESSAGE value="usuwanie pheromonów działa now" />
     <MESSAGE value="poprawa mapy" />
     <MESSAGE value="dldldldldlld" />
@@ -696,7 +691,8 @@
     <MESSAGE value="trzeba naprawić kółka śmierci i zagłady ale już powstają ścieżki" />
     <MESSAGE value="ostatni commit przed sektoryzacją" />
     <MESSAGE value="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy" />
-    <option name="LAST_COMMIT_MESSAGE" value="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy" />
+    <MESSAGE value="zostało napisać tylko rozśadny dobór scieżki do jedzenia" />
+    <option name="LAST_COMMIT_MESSAGE" value="zostało napisać tylko rozśadny dobór scieżki do jedzenia" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
