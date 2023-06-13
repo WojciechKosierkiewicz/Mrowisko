@@ -11,7 +11,6 @@ import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.map.Map;
 import org.app.simulation.menager.config.Config;
 
-import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
 
@@ -87,7 +86,7 @@ public class Menager {
         }
         Tick++;
         map.Tick();
-        if (settings.isDoPheromonesEvaporate()) {
+        if (settings.isPheromonesEvaporate()) {
             map.removePheromonesolderthan(settings.getPheromoneEvaporationTime());
         }
     }

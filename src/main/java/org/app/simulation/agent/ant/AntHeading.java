@@ -38,7 +38,7 @@ public class AntHeading {
     public void update() {
         changecurrentaanglefrompheromones();
         if (owner.getDirection() == Antdirection.FOOD) {
-            turnangle = turnangle + pheromoneangle * settings.getAntDecisionPheromoneImportance();
+            turnangle = turnangle + pheromoneangle * settings.getAntProbabilityOfTakingPheromonesIntoAccount();
         }
 
 
@@ -91,7 +91,7 @@ public class AntHeading {
 
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getSenseRange());
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getAntViewRange());
 
         //exit if there are no pheromones to process
         if (pheromones.size() == 0) {

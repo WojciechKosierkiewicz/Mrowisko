@@ -42,7 +42,7 @@ public class Ant extends Agent {
         if (CarriedFood <= 0) {
             return;
         }
-        if (antHunger == getSettings().getAntHungerLimit() / 2) {
+        if (antHunger == getSettings().getAntMaximumHungerLevel() / 2) {
             antHunger -= 5;
             CarriedFood--;
         }
@@ -74,14 +74,14 @@ public class Ant extends Agent {
             case FOOD -> {
                 Vector<Food> foods = new Vector<>(getMap().getFoods());
 
-                foods.removeIf(f -> countDistanceBetweenAgents(f) > getSettings().getSenseRange());
+                foods.removeIf(f -> countDistanceBetweenAgents(f) > getSettings().getAntViewRange());
 
                 if (foods.size() > 0) {
                     handlefoundfood(foods);
                 }
             }
             case HOME -> {
-                if (countDistanceBetweenAgents(mrowisko) < getSettings().getSenseRange()) {
+                if (countDistanceBetweenAgents(mrowisko) < getSettings().getAntViewRange()) {
                     handlefoundhome();
                 }
             }
@@ -89,8 +89,8 @@ public class Ant extends Agent {
     }
 
     public void moveAnt() {
-        double movementx = getSettings().getAntStepLen() * Math.cos(heading.getHeadingAngle());
-        double movementy = getSettings().getAntStepLen() * Math.sin(heading.getHeadingAngle());
+        double movementx = getSettings().getAntStepLengthh() * Math.cos(heading.getHeadingAngle());
+        double movementy = getSettings().getAntStepLengthh() * Math.sin(heading.getHeadingAngle());
 
         double newx = this.getLocx() + movementx;
         double newy = this.getLocy() + movementy;
@@ -131,7 +131,7 @@ public class Ant extends Agent {
     }
 
     public void leavePheromoneBehind() {
-        if (livedUpdates % getSettings().getAntPheromoneInterval() == 0) {
+        if (livedUpdates % getSettings().getAntLeavePheromoneInterval() == 0) {
             switch (direction) {
                 case FOOD -> getMap().addPheromone(new Pheromone(this, PheromoneType.HOME));
                 case HOME, FOODFOUND -> getMap().addPheromone(new Pheromone(this, PheromoneType.FOOD));

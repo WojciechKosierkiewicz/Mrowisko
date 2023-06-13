@@ -102,21 +102,21 @@ public class GuiController {
 
     @FXML
     void UpdateSettings() {
-        settings.setPheromoneEvaporationTime((int) PheromoneEvaporationTimeSlide.getValue());
-        settings.setAnthillAntLimit((int) AnthillAntLimitSlide.getValue());
-        settings.setAntTurnAngleChange(AntTurnAngleChangeSlide.getValue());
-        settings.setAntFoodCapacity((int) AntFoodCapacitySlide.getValue());
-        settings.setAntConsumption(AntConsumptionSlide.getValue());
-        settings.setAntHungerLimit((int) AntHungerLimitSlide.getValue());
-        settings.setAntPheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
-        settings.setAntCircleRadius(AntSizeSlide.getValue());
-        settings.setAntLifetime(AntLifeTimeSlide.getValue());
-        settings.setAntStepLen(AntStepLengthSlide.getValue());
-        settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
-        settings.setAntHillCircleRadius(AnthillCircleRadiusSlide.getValue());
-        settings.setPheromoneCircleRadius(PheromoneCircleRadiusSlide.getValue());
-
-        sim.updatealldisplayConfigs();
+//        settings.setPheromoneEvaporationTime((int) PheromoneEvaporationTimeSlide.getValue());
+//        settings.setAnthillAntsLimit((int) AnthillAntLimitSlide.getValue());
+//        settings.setAntTurnAngleChange(AntTurnAngleChangeSlide.getValue());
+//        settings.setAntFoodCapacity((int) AntFoodCapacitySlide.getValue());
+//        settings.setAntConsumption(AntConsumptionSlide.getValue());
+//        settings.setAntMaximumHungerLevel((int) AntHungerLimitSlide.getValue());
+//        settings.setAntLeavePheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
+//        settings.setDisplayAntSize(AntSizeSlide.getValue());
+//        settings.setAntLifetime(AntLifeTimeSlide.getValue());
+//        settings.setAntStepLengthh(AntStepLengthSlide.getValue());
+//        settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
+//        settings.setDisplayAnthillSize(AnthillCircleRadiusSlide.getValue());
+//        settings.setDisplayPheromoneSize(PheromoneCircleRadiusSlide.getValue());
+//
+//        sim.updatealldisplayConfigs();
     }
 
     @FXML

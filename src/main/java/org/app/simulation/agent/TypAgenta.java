@@ -12,7 +12,7 @@ public enum TypAgenta {
         }
 
         public Circle getShape(Config Settings) {
-            return new Circle(Settings.getPheromoneCircleRadius(), this.getColor());
+            return new Circle(Settings.getDisplayPheromoneSize(), this.getColor());
         }
     }, FOOD {
         public Color getColor() {
@@ -20,7 +20,7 @@ public enum TypAgenta {
         }
 
         public Circle getShape(Config Settings) {
-            return new Circle(Settings.getFoodCircleRadius(), this.getColor());
+            return new Circle(Settings.getDisplayFoodSize(), this.getColor());
         }
     }, ANTHILL {
         public Color getColor() {
@@ -28,7 +28,7 @@ public enum TypAgenta {
         }
 
         public Circle getShape(Config Settings) {
-            return new Circle(Settings.getAntHillCircleRadius(), this.getColor());
+            return new Circle(Settings.getDisplayAnthillSize(), this.getColor());
         }
     }, ANT {
         public Color getColor() {
@@ -36,7 +36,7 @@ public enum TypAgenta {
         }
 
         public Circle getShape(Config Settings) {
-            return new Circle(Settings.getAntCircleRadius(), this.getColor());
+            return new Circle(Settings.getDisplayAntSize(), this.getColor());
         }
     };
 

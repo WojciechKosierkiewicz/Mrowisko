@@ -4,9 +4,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.app.simulation.menager.config.Config;
 
-import javax.security.auth.login.AccountLockedException;
-import java.lang.ref.Cleaner;
-import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -41,7 +38,7 @@ public abstract class Agent {
     }
 
     public void updateJavaFxShapeSettings() {
-        shape.setRadius(settings.getAntCircleRadius());
+        shape.setRadius(settings.getDisplayAntSize());
         shape.setFill(getColor());
     }
 

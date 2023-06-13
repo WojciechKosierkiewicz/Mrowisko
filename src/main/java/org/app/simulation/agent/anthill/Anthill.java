@@ -2,8 +2,6 @@ package org.app.simulation.agent.anthill;
 
 import java.util.Vector;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
 import org.app.simulation.agent.ant.Ant;
@@ -63,8 +61,8 @@ public class Anthill extends Agent {
             ant.update();
         }
         removeOldAnts();
-        if (Ants.size() < getSettings().getAnthillAntLimit()) {
-            if (Math.random() < getSettings().getAnthillAntSpawnChance())
+        if (Ants.size() < getSettings().getAnthillAntsLimit()) {
+            if (Math.random() < getSettings().getAnthillChanceOfAntSpawning())
                 addAnt();
         }
 

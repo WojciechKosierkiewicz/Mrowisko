@@ -26,253 +26,229 @@ public class Config {
     double AntTurnAngleChange = 0.001;
     double AntTurnAngleMax = 0.01;
     double AntConsumption = 0.5;
-    double AntStepLen = 0.5;
+    double AntStepLength = 0.5;
 
     //decyzyjność mrówki
-    double AntDecisionPheromoneImportance = 0.01;
+    double AntProbabilityOfTakingPheromonesIntoAccount = 0.01;
 
-    //zsotawianie znakow przez mrowke
-    int AntPheromoneInterval = 10;
+    //zostawianie znakow przez mrowke
+    int AntLeavePheromoneInterval = 10;
 
     //zasieg widzenie mrówki
-    int AntSenseRange = 10;
+    int AntViewRange = 10;
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
     double AntLifetime = 5000;
     int AntFoodCapacity = 100;
-    double AntHungerLimit = 100;
-    boolean AntGetHungry = true;
+    double AntMaximumHungerLevel = 100;
+    boolean isAntGetHungry = true;
     boolean AntDiesOfAge = true;
     boolean isAntsVisible = true;
 
 
     //ustawienia anthills
 
-    int AnthillAntLimit = 20;
-    double AnthillAntSpawnChance = 0.05;
+    int AnthillAntsLimit = 20;
+    double AnthillChanceOfAntSpawning = 0.05;
 
 
     //ustawienia pheromonów
-    boolean doPheromonesEvaporate = true;
+    boolean isPheromonesEvaporate = true;
     int PheromoneEvaporationTime = 100000;
     boolean isPheromoneVisible = true;
-    boolean isToHomePheromoneVisible = false;
-    boolean isToFoodPheromoneVisible = true;
+    boolean isPheromoneToHomeVisible = false;
+    boolean isPheromoneToFoodVisible = true;
 
 
     //ustawienia wyswietlania
-    double AntCircleRadius = 3;
-    double AntHillCircleRadius = 5;
-    double pheromoneCircleRadius = 1;
-    double FoodCircleRadius = 5;
+    double DisplayAntSize = 3;
+    double DisplayAnthillSize = 5;
+    double DisplayPheromoneSize = 1;
+    double DisplayFoodSize = 5;
 
 
+// gettery i settery dla calego projektu
 
-    public int getMapSectorSize() {
-        return MapSectorSize;
-    }
-
-    public double getFoodCircleRadius() {
-        return FoodCircleRadius;
-    }
-
-    public double getAntDecisionPheromoneImportance() {
-        return AntDecisionPheromoneImportance;
-    }
 
     public Config(Pane world) {
         this.world = world;
-    }
-
-    public int getPheromoneEvaporationTime() {
-        return PheromoneEvaporationTime;
-    }
-
-    public int getAntPheromoneInterval() {
-        return AntPheromoneInterval;
-    }
-
-    public double getAntHillCircleRadius() {
-        return AntHillCircleRadius;
-    }
-
-    public int getOutsideMapTreshold() {
-        return OutsideMapTreshold;
-    }
-
-
-    public int getCurrentTick() {
-        return CurrentTick;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public double getPheromoneCircleRadius() {
-        return pheromoneCircleRadius;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-
-    public boolean isPheromoneVisible() {
-        return isPheromoneVisible;
     }
 
     public Pane getWorld() {
         return world;
     }
 
-    public double getAnthillAntSpawnChance() {
-        return AnthillAntSpawnChance;
+    public Map getMap() {
+        return map;
     }
 
-    public double getAntTurnAngleMax() {
-        return AntTurnAngleMax;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
-    public double getAntTurnAngleChange() {
-        return AntTurnAngleChange;
-    }
-
-    public double getAntCircleRadius() {
-        return AntCircleRadius;
+    public int getCurrentTick() {
+        return CurrentTick;
     }
 
 
-    public int getSenseRange() {
-        return AntSenseRange;
+//gettery i settery ogolne symulacji
+
+
+    public int getOutsideMapTreshold() {
+        return OutsideMapTreshold;
     }
+
+
+//gettery i settery mapy
+
 
     public int getMapSizeX() {
         return MapSizeX;
     }
 
+
     public int getMapSizeY() {
         return MapSizeY;
     }
 
-    public boolean isDoPheromonesEvaporate() {
-        return doPheromonesEvaporate;
-    }
 
-    public void setDoPheromonesEvaporate(boolean doPheromonesEvaporate) {
-        this.doPheromonesEvaporate = doPheromonesEvaporate;
-    }
-
-    public double getAntStepLen() {
-        return AntStepLen;
-    }
-
-    public void setAntCircleRadius(double antCircleRadius) {
-        AntCircleRadius = antCircleRadius;
+    public int getMapSectorSize() {
+        return MapSectorSize;
     }
 
 
-    public int getAnthillAntLimit() {
-        return AnthillAntLimit;
+//gettery i settery mrówek
+
+    //mozliwości ruchu mrówki
+
+
+    public double getAntTurnAngleMax() {
+        return AntTurnAngleMax;
     }
 
-    public void setAnthillAntLimit(int anthillAntLimit) {
-        AnthillAntLimit = anthillAntLimit;
+
+    public double getAntTurnAngleChange() {
+        return AntTurnAngleChange;
     }
 
-    public void setAntStepLen(double antStepLen) {
-        AntStepLen = antStepLen;
-    }
-
-    public double getAntLifetime() {
-        return AntLifetime;
-    }
-
-    public void setAntTurnAngleMax(double antTurnAngleMax) {
-        AntTurnAngleMax = antTurnAngleMax;
-    }
-
-    public void setAntHillCircleRadius(double antHillCircleRadius) {
-        AntHillCircleRadius = antHillCircleRadius;
-    }
-
-    public void setPheromoneCircleRadius(double pheromoneCircleRadius) {
-        this.pheromoneCircleRadius = pheromoneCircleRadius;
-    }
-
-    public void setPheromoneVisible(boolean pheromoneVisible) {
-        isPheromoneVisible = pheromoneVisible;
-    }
-
-    public void setAntLifetime(double antLifetime) {
-        AntLifetime = antLifetime;
-    }
-
-    public double getAntHungerLimit() {
-        return AntHungerLimit;
-    }
-
-    public void setAntHungerLimit(int antHungerLimit) {
-        AntHungerLimit = antHungerLimit;
-    }
 
     public double getAntConsumption() {
         return AntConsumption;
     }
 
-    public void setAntConsumption(double antConsumption) {
-        AntConsumption = antConsumption;
+
+    public double getAntStepLengthh() {
+        return AntStepLength;
     }
 
-    public int getAntFoodCapacity() {
-        return AntFoodCapacity;
+
+    //decyzyjność mrówki
+
+
+    public double getAntProbabilityOfTakingPheromonesIntoAccount() {
+        return AntProbabilityOfTakingPheromonesIntoAccount;
     }
 
-    public void setAntFoodCapacity(int antFoodCapacity) {
-        AntFoodCapacity = antFoodCapacity;
+
+    //zostawianie znaków przez mrówke
+
+
+    public int getAntLeavePheromoneInterval() {
+        return AntLeavePheromoneInterval;
     }
 
-    public boolean isAntGetHungry() {
-        return AntGetHungry;
+
+    //zasieg widzenia mrówki
+
+
+    public int getAntViewRange() {
+        return AntViewRange;
     }
 
-    public boolean isAntDiesOfAge() {
-        return AntDiesOfAge;
-    }
-
-    public void setPheromoneEvaporationTime(int pheromoneEvaporationTime) {
-        PheromoneEvaporationTime = pheromoneEvaporationTime;
-    }
-
-    public void setAntGetHungry(boolean antGetHungry) {
-        AntGetHungry = antGetHungry;
-    }
-
-    public void setAntDiesOfAge(boolean antDiesOfAge) {
-        AntDiesOfAge = antDiesOfAge;
-    }
-
-    public void setAntsVisible(boolean antsVisible) {
-        isAntsVisible = antsVisible;
-    }
-
-    public void setAntTurnAngleChange(double antTurnAngleChange) {
-        AntTurnAngleChange = antTurnAngleChange;
-    }
-
-    public void setAntPheromoneInterval(int antPheromoneInterval) {
-        AntPheromoneInterval = antPheromoneInterval;
-    }
 
     public double getAntFov() {
         return AntFov;
     }
 
-    public boolean isToFoodPheromoneVisible() {
-        return isToFoodPheromoneVisible;
+
+    //prawa zycia mrówki
+
+
+    public double getAntLifetime() {
+        return AntLifetime;
     }
 
-    public boolean isToHomePheromoneVisible() {
-        return isToHomePheromoneVisible;
+
+    public double getAntMaximumHungerLevel() {
+        return AntMaximumHungerLevel;
+    }
+
+
+    public boolean isAntGetHungry() {
+        return isAntGetHungry;
+    }
+
+
+//gettery i settery anthills
+
+
+    public int getAnthillAntsLimit() {
+        return AnthillAntsLimit;
+    }
+
+    public double getAnthillChanceOfAntSpawning() {
+        return AnthillChanceOfAntSpawning;
+    }
+
+
+//gettery i settery phermomonów
+
+
+    public boolean isPheromonesEvaporate() {
+        return isPheromonesEvaporate;
+    }
+
+
+    public int getPheromoneEvaporationTime() {
+        return PheromoneEvaporationTime;
+    }
+
+
+    public boolean isPheromoneVisible() {
+        return isPheromoneVisible;
+    }
+
+
+    public boolean isPheromoneToFoodVisible() {
+        return isPheromoneToFoodVisible;
+    }
+
+
+    public boolean isPheromoneToHomeVisible() {
+        return isPheromoneToHomeVisible;
+    }
+
+
+//gettery i settery wyswietlania
+
+
+    public double getDisplayAntSize() {
+        return DisplayAntSize;
+    }
+
+
+    public double getDisplayAnthillSize() {
+        return DisplayAnthillSize;
+    }
+
+
+    public double getDisplayPheromoneSize() {
+        return DisplayPheromoneSize;
+    }
+
+
+    public double getDisplayFoodSize() {
+        return DisplayFoodSize;
     }
 }
