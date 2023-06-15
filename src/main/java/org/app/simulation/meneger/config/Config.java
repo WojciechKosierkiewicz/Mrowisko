@@ -1,4 +1,4 @@
-package org.app.simulation.menager.config;
+package org.app.simulation.meneger.config;
 
 
 import javafx.scene.layout.Pane;

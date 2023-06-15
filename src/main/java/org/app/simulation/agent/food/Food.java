@@ -1,10 +1,8 @@
 package org.app.simulation.agent.food;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 public class Food extends Agent {
 

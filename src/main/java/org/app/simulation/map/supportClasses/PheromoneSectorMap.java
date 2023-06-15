@@ -1,8 +1,7 @@
 package org.app.simulation.map.supportClasses;
 
-import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.pheromone.Pheromone;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
 import java.util.Vector;

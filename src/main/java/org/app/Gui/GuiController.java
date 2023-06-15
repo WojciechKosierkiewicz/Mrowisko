@@ -10,9 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
-import org.app.simulation.menager.Menager;
+import org.app.simulation.meneger.Meneger;
 import javafx.scene.paint.Color;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 
 public class GuiController {
@@ -20,7 +20,7 @@ public class GuiController {
     Pane world;
 
     Config settings;
-    Menager sim;
+    Meneger sim;
 
     Boolean isRunning = false;
     private TimeKeeper clock;
@@ -124,7 +124,7 @@ public class GuiController {
         clock = new TimeKeeper();
         world.setBackground(new Background(new BackgroundFill(Color.BEIGE, null, null)));
         settings = new Config(world);
-        sim = new Menager(settings, world);
+        sim = new Meneger(settings, world);
         settings.setMap(sim.getMap());
         sim.addAnthill();
         sim.PrzeprowadzTickSymulacji();

@@ -1,4 +1,4 @@
-package org.app.simulation.menager;
+package org.app.simulation.meneger;
 
 
 import javafx.fxml.FXML;
@@ -9,14 +9,14 @@ import org.app.simulation.agent.anthill.Anthill;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.map.Map;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
 import java.util.Vector;
 
 import org.app.simulation.agent.ant.Ant;
 
-public class Menager {
+public class Meneger {
 
     @FXML
     Pane world;
@@ -26,7 +26,7 @@ public class Menager {
     private final Map map;
     private final int CurrentTick = 0;
 
-    public Menager(Config settings, Pane world) {
+    public Meneger(Config settings, Pane world) {
         this.settings = settings;
         this.world = world;
         this.map = new Map(settings.getMapSizeX(),

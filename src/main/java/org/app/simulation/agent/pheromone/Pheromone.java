@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
 import org.app.simulation.agent.ant.Ant;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
 
@@ -27,7 +27,7 @@ public class Pheromone extends Agent {
         super(TypAgenta.PHEROMONE, ant.getSettings());
         this.type = type;
         this.creator = ant;
-        this.creationTick = ant.getSettings().getCurrentTick();
+        this.creationTick = ant.getSettings().getMap().getTick();
         setLocx(creator.getLocx());
         setLocy(creator.getLocy());
         updateJavaFxShapeSettings();

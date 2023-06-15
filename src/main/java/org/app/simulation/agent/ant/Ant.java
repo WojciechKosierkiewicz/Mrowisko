@@ -6,7 +6,7 @@ import org.app.simulation.agent.anthill.Anthill;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.Vector;
 

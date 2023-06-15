@@ -5,7 +5,7 @@ import java.util.Vector;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.TypAgenta;
 import org.app.simulation.agent.ant.Ant;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 public class Anthill extends Agent {
     Vector<Ant> Ants;

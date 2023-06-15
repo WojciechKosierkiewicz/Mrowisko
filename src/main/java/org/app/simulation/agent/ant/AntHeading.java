@@ -3,7 +3,7 @@ package org.app.simulation.agent.ant;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.agent.pheromone.PheromoneType;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.Comparator;
 import java.util.Vector;

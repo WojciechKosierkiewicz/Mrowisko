@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="backup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/TypAgenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/TypAgenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/food/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/food/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/Menager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/Menager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/Meneger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/menager/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,14 +313,7 @@
       <workItem from="1686330607418" duration="6000" />
       <workItem from="1686330904660" duration="142000" />
       <workItem from="1686339599984" duration="604000" />
-      <workItem from="1686860893183" duration="1435000" />
-    </task>
-    <task id="LOCAL-00003" summary="start">
-      <created>1683798499395</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683798499395</updated>
+      <workItem from="1686860893183" duration="2428000" />
     </task>
     <task id="LOCAL-00004" summary="start">
       <created>1683799817128</created>
@@ -651,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686327314894</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="backup">
+      <created>1686862594246</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1686862594247</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +677,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="usuwanie pheromonów działa now" />
     <MESSAGE value="poprawa mapy" />
     <MESSAGE value="dldldldldlld" />
     <MESSAGE value="wyswietlanie grafów" />
@@ -695,7 +701,8 @@
     <MESSAGE value="ostatni commit przed sektoryzacją" />
     <MESSAGE value="sektoryzacja &quot;chyba działa&quot; ale warto uważać na ewnetualne błędy" />
     <MESSAGE value="zostało napisać tylko rozśadny dobór scieżki do jedzenia" />
-    <option name="LAST_COMMIT_MESSAGE" value="zostało napisać tylko rozśadny dobór scieżki do jedzenia" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

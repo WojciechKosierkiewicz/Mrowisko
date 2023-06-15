@@ -5,9 +5,8 @@ import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.ant.Ant;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
-import org.app.simulation.map.supportClasses.PheromoneSectorMap;
 import org.app.simulation.map.supportClasses.PheromoneSectorMapBruteForceFAKEONE;
-import org.app.simulation.menager.config.Config;
+import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
 import java.util.Vector;
@@ -97,5 +96,9 @@ public class Map {
             f.RemoveFromJavaFxDisplay();
         }
         foods.clear();
+    }
+
+    public int getTick() {
+        return ticks;
     }
 }
