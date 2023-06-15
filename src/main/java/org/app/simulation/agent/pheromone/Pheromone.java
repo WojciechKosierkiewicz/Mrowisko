@@ -15,12 +15,15 @@ public class Pheromone extends Agent {
     int creationTick;
     int amountofuse = 0;
 
-    public Pheromone(Config settings, double posx, double posy, Ant creator, int creationTick) {
-        super(TypAgenta.PHEROMONE, settings);
+    public Pheromone(double posx, double posy, Ant creator, PheromoneType type) {
+        super(TypAgenta.PHEROMONE, creator.getSettings());
+        this.type = type;
         this.creator = creator;
-        this.creationTick = creationTick;
+        this.creationTick = creator.getSettings().getMap().getTick();
         setLocx(posx);
         setLocy(posy);
+        updateJavaFxShapeSettings();
+
     }
 
     public Pheromone(Ant ant, PheromoneType type) {

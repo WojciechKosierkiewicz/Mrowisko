@@ -13,7 +13,8 @@ public class AntHeading {
     Config settings;
     double turnangle = 0.001 * Math.PI;
     double currentangle;
-    double pheromoneangle;
+    double pheromoneangle = 0;
+    double pheromonehomeangle = 0;
     Ant owner;
     Vector<Pheromone> arleadyusedpheromones = new Vector<>();
 
@@ -39,6 +40,9 @@ public class AntHeading {
         changecurrentaanglefrompheromones();
         if (owner.getDirection() == Antdirection.FOOD) {
             turnangle = turnangle + pheromoneangle * settings.getAntProbabilityOfTakingPheromonesIntoAccount();
+        }
+        if (owner.getDirection() == Antdirection.HOME) {
+            turnangle = turnangle + pheromonehomeangle * (settings.getAntProbabilityOfTakingPheromonesIntoAccount() / 1);
         }
 
 
@@ -89,9 +93,22 @@ public class AntHeading {
         return neededanglechange;
     }
 
+    double calculateneededanglechangetoangle(double angle) {
+        double neededanglechange = angle - currentangle;
+
+        if (neededanglechange > Math.PI) {
+            neededanglechange -= Math.PI * 2;
+        }
+        if (neededanglechange < -Math.PI) {
+            neededanglechange += Math.PI * 2;
+        }
+
+        return neededanglechange;
+    }
+
     void changecurrentaanglefrompheromones() {
 
-        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getAntViewRange());
+        Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getAntPheromoneSenseRange());
 
         //exit if there are no pheromones to process
         if (pheromones.size() == 0) {
@@ -101,22 +118,6 @@ public class AntHeading {
         switch (owner.getDirection()) {
             case FOOD -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.FOOD);
-                //remove arleady used pheromones
-                pheromones.removeIf(p -> arleadyusedpheromones.contains(p));
-
-
-                if (pheromones.size() == 0)
-                    return;
-
-                pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
-                pheromoneangle = calculateneededanglechange(pheromones.lastElement());
-                arleadyusedpheromones.add(pheromones.lastElement());
-            }
-            case HOME -> {
-                pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
-                pheromones.removeIf(p -> p.getCreator() != owner);
-                //remove arleady used pheromones
-                pheromones.removeIf(p -> arleadyusedpheromones.contains(p));
 
 
                 if (pheromones.size() == 0) {
@@ -131,14 +132,46 @@ public class AntHeading {
                 }
 
 
-                turnangle = calculateneededanglechange(pheromones.lastElement());
-                arleadyusedpheromones.add(pheromones.lastElement());
-                pheromones.lastElement().add_use();
+                pheromoneangle = calculateneededanglechange(pheromones.firstElement());
+                pheromones.firstElement().add_use();
+            }
+            case HOME -> {
+                pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
+
+
+                if (pheromones.size() == 0) {
+                    return;
+                }
+
+                //sorting pheromones by age
+                pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+
+                if (pheromones.size() == 0) {
+                    return;
+                }
+
+
+                pheromonehomeangle = calculateneededanglechange(pheromones.firstElement());
+                pheromones.firstElement().add_use();
             }
 
             default -> {
             }
         }
+    }
+
+
+    double calulatemediananglefrompheromones(Vector<Pheromone> pheromones) {
+        Vector<Double> angles = new Vector<>();
+
+        for (Pheromone pheromone : pheromones) {
+            angles.add(Math.atan2(pheromone.getLocy() - owner.getLocy(), pheromone.getLocx() - owner.getLocx()));
+        }
+
+        angles.sort(Comparator.comparingDouble(Double::doubleValue));
+
+
+        return angles.get((int) angles.size() / 2);
     }
 
     double findAngleToAgent(Agent agent) {

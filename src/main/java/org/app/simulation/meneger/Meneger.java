@@ -89,7 +89,6 @@ public class Meneger {
         if (settings.isPheromonesEvaporate()) {
             map.removePheromonesolderthan(settings.getPheromoneEvaporationTime());
         }
-        map.RemoveOverlyUsedPheromones();
     }
 
     public void RandomAntPosition() {

@@ -31,6 +31,7 @@ public class PheromoneSectorMapBruteForceFAKEONE {
     public void remove_pheromones_by_id(UUID id) {
         for (int k = 0; k < data.size(); k++) {
             if (data.get(k).getCreatorID() == id) {
+                data.get(k).RemoveFromJavaFxDisplay();
                 data.remove(k);
                 k--;
             }

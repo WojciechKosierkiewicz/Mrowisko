@@ -62,6 +62,7 @@ public class Ant extends Agent {
     }
 
     void handlefoundfood(Vector<Food> foods) {
+        leavePhermoneat(foods.get(0).getLocx(), foods.get(0).getLocy(), PheromoneType.FOOD);
         direction = Antdirection.HOME;
     }
 
@@ -128,6 +129,10 @@ public class Ant extends Agent {
 
     public double countDistanceBetweenAgents(Agent agent) {
         return countDistanceBeetwenPoints(getLocx(), getLocy(), agent.getLocx(), agent.getLocy());
+    }
+
+    void leavePhermoneat(double locx, double locy, PheromoneType type) {
+        getMap().addPheromone(new Pheromone(locx, locy, this, type));
     }
 
     public void leavePheromoneBehind() {

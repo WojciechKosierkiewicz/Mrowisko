@@ -16,14 +16,14 @@ public class Config {
     int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 300;
-    int MapSizeY = 300;
+    int MapSizeX = 400;
+    int MapSizeY = 400;
     int MapSectorSize = 10;
 
 
     //zmienne mrówek
     //możliwości ruchu mrowki
-    double AntTurnAngleChange = 0.001;
+    double AntTurnAngleChange = 0.01;
     double AntTurnAngleMax = 0.01;
     double AntConsumption = 0.5;
     double AntStepLength = 0.5;
@@ -36,6 +36,7 @@ public class Config {
 
     //zasieg widzenie mrówki
     int AntViewRange = 10;
+    double AntPheromoneSenseRange = 20;
     double AntFov = 1.2 * Math.PI;
 
     //prawa życia mrowki
@@ -49,18 +50,18 @@ public class Config {
 
     //ustawienia anthills
 
-    int AnthillAntsLimit = 20;
-    double AnthillChanceOfAntSpawning = 0.05;
+    int AnthillAntsLimit = 100;
+    double AnthillChanceOfAntSpawning = 0.009;
 
 
     //ustawienia pheromonów
     boolean isPheromonesEvaporate = true;
-    int PheromoneEvaporationTime = 900;
+    int PheromoneEvaporationTime = 6000;
     int MaxPheromoneToHomeUsage = 1;
     int MaxPheromoneToFoodUsage = 5;
 
     boolean isPheromoneVisible = true;
-    boolean isPheromoneToHomeVisible = true;
+    boolean isPheromoneToHomeVisible = false;
     boolean isPheromoneToFoodVisible = true;
     boolean isPheromoneToHomeUsedUp = true;
     boolean isPheromoneToFoodUsedUp = true;
@@ -127,6 +128,10 @@ public class Config {
 
     //mozliwości ruchu mrówki
 
+
+    public double getAntPheromoneSenseRange() {
+        return AntPheromoneSenseRange;
+    }
 
     public double getAntTurnAngleMax() {
         return AntTurnAngleMax;
