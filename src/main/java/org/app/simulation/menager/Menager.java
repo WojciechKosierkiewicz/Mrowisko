@@ -89,6 +89,7 @@ public class Menager {
         if (settings.isPheromonesEvaporate()) {
             map.removePheromonesolderthan(settings.getPheromoneEvaporationTime());
         }
+        map.RemoveOverlyUsedPheromones();
     }
 
     public void RandomAntPosition() {
@@ -125,10 +126,6 @@ public class Menager {
         anthills.clear();
         map.clearPhermonoes();
         map.clearFood();
-    }
-
-    void ZwrocAktulneWyniki() {
-        // TODO: 15.05.2023  
     }
 
     public int getAmountofants() {

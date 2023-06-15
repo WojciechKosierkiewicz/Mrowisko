@@ -55,10 +55,15 @@ public class Config {
 
     //ustawienia pheromonów
     boolean isPheromonesEvaporate = true;
-    int PheromoneEvaporationTime = 100000;
+    int PheromoneEvaporationTime = 900;
+    int MaxPheromoneToHomeUsage = 1;
+    int MaxPheromoneToFoodUsage = 5;
+
     boolean isPheromoneVisible = true;
-    boolean isPheromoneToHomeVisible = false;
+    boolean isPheromoneToHomeVisible = true;
     boolean isPheromoneToFoodVisible = true;
+    boolean isPheromoneToHomeUsedUp = true;
+    boolean isPheromoneToFoodUsedUp = true;
 
 
     //ustawienia wyswietlania
@@ -229,8 +234,31 @@ public class Config {
         return isPheromoneToHomeVisible;
     }
 
+    public int getMaxPheromoneToFoodUsage() {
+        return MaxPheromoneToFoodUsage;
+    }
 
-//gettery i settery wyswietlania
+    public void setMaxPheromoneToFoodUsage(int maxPheromoneToFoodUsage) {
+        MaxPheromoneToFoodUsage = maxPheromoneToFoodUsage;
+    }
+
+    public int getMaxPheromoneToHomeUsage() {
+        return MaxPheromoneToHomeUsage;
+    }
+
+    public void setMaxPheromoneToHomeUsage(int maxPheromoneToHomeUsage) {
+        MaxPheromoneToHomeUsage = maxPheromoneToHomeUsage;
+    }
+
+    public boolean isPheromoneToFoodUsedUp() {
+        return isPheromoneToFoodUsedUp;
+    }
+
+    public boolean isPheromoneToHomeUsedUp() {
+        return isPheromoneToHomeUsedUp;
+    }
+
+    //gettery i settery wyswietlania
 
 
     public double getDisplayAntSize() {

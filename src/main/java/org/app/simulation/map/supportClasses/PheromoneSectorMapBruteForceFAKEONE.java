@@ -1,6 +1,7 @@
 package org.app.simulation.map.supportClasses;
 
 import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.menager.config.Config;
 
 import java.util.UUID;
@@ -55,6 +56,7 @@ public class PheromoneSectorMapBruteForceFAKEONE {
     public void removePheromonesOlderThan(int ticks, int currentTicks) {
         for (int k = 0; k < data.size(); k++) {
             if (data.get(k).getCreationTick() + ticks < currentTicks) {
+                data.get(k).RemoveFromJavaFxDisplay();
                 data.remove(k);
                 k--;
             }
@@ -69,5 +71,27 @@ public class PheromoneSectorMapBruteForceFAKEONE {
         Vector<Pheromone> pheromones = new Vector<>(data);
         pheromones.removeIf(p -> count_distance(p.getLocx(), p.getLocy(), locx, locy) > range);
         return pheromones;
+    }
+
+    public void remove_overly_used_pheromones() {
+        if (settings.isPheromoneToFoodUsedUp() && settings.isPheromoneToHomeUsedUp()) {
+            return;
+        }
+
+        for (Pheromone p : data) {
+            if (p.getType() == PheromoneType.FOOD && settings.isPheromoneToFoodUsedUp()) {
+                if (p.getAmountofuse() > settings.getMaxPheromoneToFoodUsage()) {
+                    p.RemoveFromJavaFxDisplay();
+                    data.remove(p);
+                }
+            } else {
+                if (settings.isPheromoneToHomeUsedUp()) {
+                    if (p.getAmountofuse() > settings.getMaxPheromoneToHomeUsage()) {
+                        p.RemoveFromJavaFxDisplay();
+                        data.remove(p);
+                    }
+                }
+            }
+        }
     }
 }

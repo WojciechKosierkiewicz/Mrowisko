@@ -13,6 +13,7 @@ public class Pheromone extends Agent {
     Ant creator;
 
     int creationTick;
+    int amountofuse = 0;
 
     public Pheromone(Config settings, double posx, double posy, Ant creator, int creationTick) {
         super(TypAgenta.PHEROMONE, settings);
@@ -31,16 +32,10 @@ public class Pheromone extends Agent {
         setLocy(creator.getLocy());
         updateJavaFxShapeSettings();
 
-        // TODO: 08.06.2023
-        //NIEBEZPIECZNEE
+    }
 
-        /*
-        if (type == PheromoneType.HOME) {
-            RemoveFromJavaFxDisplay();
-        }
-
-         */
-
+    public void add_use() {
+        amountofuse++;
     }
 
 
@@ -71,6 +66,10 @@ public class Pheromone extends Agent {
             }
             default -> getShape().setFill(Color.BLACK);
         }
+    }
+
+    public int getAmountofuse() {
+        return amountofuse;
     }
 
     public int getCreationTick() {

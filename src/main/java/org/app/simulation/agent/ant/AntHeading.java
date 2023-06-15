@@ -133,6 +133,7 @@ public class AntHeading {
 
                 turnangle = calculateneededanglechange(pheromones.lastElement());
                 arleadyusedpheromones.add(pheromones.lastElement());
+                pheromones.lastElement().add_use();
             }
 
             default -> {
