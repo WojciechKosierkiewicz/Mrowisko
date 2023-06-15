@@ -29,7 +29,7 @@ public class Config {
     double AntStepLength = 0.5;
 
     //decyzyjność mrówki
-    double AntProbabilityOfTakingPheromonesIntoAccount = 0.01;
+    double AntProbabilityOfTakingPheromonesIntoAccount = 0.005;
 
     //zostawianie znakow przez mrowke
     int AntLeavePheromoneInterval = 10;
@@ -62,7 +62,7 @@ public class Config {
 
     boolean isPheromoneVisible = true;
     boolean isPheromoneToHomeVisible = false;
-    boolean isPheromoneToFoodVisible = true;
+    boolean isPheromoneToFoodVisible = false;
     boolean isPheromoneToHomeUsedUp = true;
     boolean isPheromoneToFoodUsedUp = true;
 

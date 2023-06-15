@@ -42,7 +42,7 @@ public class AntHeading {
             turnangle = turnangle + pheromoneangle * settings.getAntProbabilityOfTakingPheromonesIntoAccount();
         }
         if (owner.getDirection() == Antdirection.HOME) {
-            turnangle = turnangle + pheromonehomeangle * (settings.getAntProbabilityOfTakingPheromonesIntoAccount() / 1);
+            turnangle = turnangle + pheromonehomeangle * settings.getAntProbabilityOfTakingPheromonesIntoAccount();
         }
 
 
@@ -126,6 +126,7 @@ public class AntHeading {
 
                 //sorting pheromones by age
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+                pheromones.sort(Comparator.comparingInt(Pheromone::getGottotarget));
 
                 if (pheromones.size() == 0) {
                     return;
@@ -133,7 +134,6 @@ public class AntHeading {
 
 
                 pheromoneangle = calculateneededanglechange(pheromones.firstElement());
-                pheromones.firstElement().add_use();
             }
             case HOME -> {
                 pheromones.removeIf(p -> p.getType() != PheromoneType.HOME);
@@ -145,6 +145,7 @@ public class AntHeading {
 
                 //sorting pheromones by age
                 pheromones.sort(Comparator.comparingInt(Pheromone::getCreationTick));
+                pheromones.sort(Comparator.comparingInt(Pheromone::getGottotarget));
 
                 if (pheromones.size() == 0) {
                     return;
@@ -152,7 +153,6 @@ public class AntHeading {
 
 
                 pheromonehomeangle = calculateneededanglechange(pheromones.firstElement());
-                pheromones.firstElement().add_use();
             }
 
             default -> {
@@ -171,7 +171,7 @@ public class AntHeading {
         angles.sort(Comparator.comparingDouble(Double::doubleValue));
 
 
-        return angles.get((int) angles.size() / 2);
+        return angles.get(angles.size() / 2);
     }
 
     double findAngleToAgent(Agent agent) {

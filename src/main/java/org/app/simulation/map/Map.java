@@ -3,6 +3,7 @@ package org.app.simulation.map;
 import javafx.scene.layout.Pane;
 import org.app.simulation.agent.Agent;
 import org.app.simulation.agent.ant.Ant;
+import org.app.simulation.agent.ant.Antdirection;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.map.supportClasses.PheromoneSectorMap;
@@ -97,5 +98,9 @@ public class Map {
 
     public int getTick() {
         return ticks;
+    }
+
+    public void updateperomonesuccesrate(Ant ant, Antdirection direction) {
+        pheromonessectormap.update_pheromone_succes_rate(ant, direction);
     }
 }

@@ -74,25 +74,4 @@ public class PheromoneSectorMapBruteForceFAKEONE {
         return pheromones;
     }
 
-    public void remove_overly_used_pheromones() {
-        if (settings.isPheromoneToFoodUsedUp() && settings.isPheromoneToHomeUsedUp()) {
-            return;
-        }
-
-        for (Pheromone p : data) {
-            if (p.getType() == PheromoneType.FOOD && settings.isPheromoneToFoodUsedUp()) {
-                if (p.getAmountofuse() > settings.getMaxPheromoneToFoodUsage()) {
-                    p.RemoveFromJavaFxDisplay();
-                    data.remove(p);
-                }
-            } else {
-                if (settings.isPheromoneToHomeUsedUp()) {
-                    if (p.getAmountofuse() > settings.getMaxPheromoneToHomeUsage()) {
-                        p.RemoveFromJavaFxDisplay();
-                        data.remove(p);
-                    }
-                }
-            }
-        }
-    }
 }

@@ -13,7 +13,7 @@ public class Pheromone extends Agent {
     Ant creator;
 
     int creationTick;
-    int amountofuse = 0;
+    int gottotarget = 0;
 
     public Pheromone(double posx, double posy, Ant creator, PheromoneType type) {
         super(TypAgenta.PHEROMONE, creator.getSettings());
@@ -37,8 +37,8 @@ public class Pheromone extends Agent {
 
     }
 
-    public void add_use() {
-        amountofuse++;
+    public void add_success() {
+        gottotarget++;
     }
 
 
@@ -71,8 +71,8 @@ public class Pheromone extends Agent {
         }
     }
 
-    public int getAmountofuse() {
-        return amountofuse;
+    public int getGottotarget() {
+        return gottotarget;
     }
 
     public int getCreationTick() {

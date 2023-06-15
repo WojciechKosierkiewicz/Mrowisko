@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="naprawiony wiek pheromonu!">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="mamy to">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/Meneger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/Meneger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -309,13 +308,7 @@
       <workItem from="1686330904660" duration="142000" />
       <workItem from="1686339599984" duration="604000" />
       <workItem from="1686860893183" duration="6710000" />
-    </task>
-    <task id="LOCAL-00005" summary="zmiana gradlew na chmod+x">
-      <created>1683801227338</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1683801227338</updated>
+      <workItem from="1686867677079" duration="748000" />
     </task>
     <task id="LOCAL-00006" summary="zmiana gradlew na chmod+x">
       <created>1683801598746</created>
@@ -653,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686863360725</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="mamy to">
+      <created>1686867717461</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1686867717461</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="dldldldldlld" />
     <MESSAGE value="wyswietlanie grafów" />
     <MESSAGE value="usuwanie redundant kopii mapy i world" />
     <MESSAGE value="nowa rozdzielczosc" />
@@ -697,7 +696,8 @@
     <MESSAGE value="zostało napisać tylko rozśadny dobór scieżki do jedzenia" />
     <MESSAGE value="backup" />
     <MESSAGE value="naprawiony wiek pheromonu!" />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawiony wiek pheromonu!" />
+    <MESSAGE value="mamy to" />
+    <option name="LAST_COMMIT_MESSAGE" value="mamy to" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

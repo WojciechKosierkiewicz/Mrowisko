@@ -64,10 +64,12 @@ public class Ant extends Agent {
     void handlefoundfood(Vector<Food> foods) {
         leavePhermoneat(foods.get(0).getLocx(), foods.get(0).getLocy(), PheromoneType.FOOD);
         direction = Antdirection.HOME;
+        getSettings().getMap().updateperomonesuccesrate(this, Antdirection.FOOD);
     }
 
     void handlefoundhome() {
         direction = Antdirection.FOOD;
+        getSettings().getMap().updateperomonesuccesrate(this, Antdirection.HOME);
     }
 
     void checkisTargetinRange() {

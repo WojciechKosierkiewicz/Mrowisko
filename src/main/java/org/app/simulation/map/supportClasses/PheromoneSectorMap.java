@@ -1,6 +1,9 @@
 package org.app.simulation.map.supportClasses;
 
+import org.app.simulation.agent.ant.Ant;
+import org.app.simulation.agent.ant.Antdirection;
 import org.app.simulation.agent.pheromone.Pheromone;
+import org.app.simulation.agent.pheromone.PheromoneType;
 import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
@@ -111,5 +114,25 @@ public class PheromoneSectorMap {
             }
         }
         return pheromones;
+    }
+
+    public void update_pheromone_succes_rate(Ant ant, Antdirection direction) {
+        for (Vector<Pheromone>[] datax : data) {
+            for (Vector<Pheromone> pheromones : datax) {
+                for (Pheromone p : pheromones) {
+                    if (p.getCreator() == ant) {
+                        if (direction == Antdirection.FOOD) {
+                            if (p.getType() == PheromoneType.FOOD) {
+                                p.add_success();
+                            }
+                        } else if (direction == Antdirection.HOME) {
+                            if (p.getType() == PheromoneType.HOME) {
+                                p.add_success();
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
