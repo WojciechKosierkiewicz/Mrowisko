@@ -93,6 +93,7 @@ public class PheromoneSectorMap {
             for (Vector<Pheromone> pheromones : datax) {
                 for (int k = 0; k < pheromones.size(); k++) {
                     if (currentTicks - pheromones.get(k).getCreationTick() > ticks) {
+                        pheromones.get(k).RemoveFromJavaFxDisplay();
                         pheromones.remove(k);
                         k--;
                     }

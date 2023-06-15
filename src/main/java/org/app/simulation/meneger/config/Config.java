@@ -56,13 +56,13 @@ public class Config {
 
     //ustawienia pheromonów
     boolean isPheromonesEvaporate = true;
-    int PheromoneEvaporationTime = 6000;
+    int PheromoneEvaporationTime = 8000;
     int MaxPheromoneToHomeUsage = 1;
     int MaxPheromoneToFoodUsage = 5;
 
     boolean isPheromoneVisible = true;
     boolean isPheromoneToHomeVisible = false;
-    boolean isPheromoneToFoodVisible = false;
+    boolean isPheromoneToFoodVisible = true;
     boolean isPheromoneToHomeUsedUp = true;
     boolean isPheromoneToFoodUsedUp = true;
 
