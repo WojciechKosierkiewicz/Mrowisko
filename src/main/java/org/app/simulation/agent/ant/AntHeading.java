@@ -66,6 +66,10 @@ public class AntHeading {
 
         turnangle += (Math.random() - 0.5) * settings.getAntTurnAngleChange();
 
+        if (Math.random() >= 0.98) {
+            turnangle = 0;
+        }
+
         //reduce turn angle to angle turn max
 
         if (turnangle > settings.getAntTurnAngleMax()) {

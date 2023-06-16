@@ -86,6 +86,7 @@ public class Ant extends Agent {
     void handlefoundhome() {
         direction = Antdirection.FOOD;
         getSettings().getMap().updateperomonesuccesrate(this, Antdirection.HOME);
+        leavePhermoneat(mrowisko.getLocx(), mrowisko.getLocy(), PheromoneType.FOOD);
     }
 
     /**

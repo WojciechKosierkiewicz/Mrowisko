@@ -23,20 +23,20 @@ public class Config {
     int OutsideMapTreshold = 10;
 
     //zmienne mapy
-    int MapSizeX = 400;
-    int MapSizeY = 400;
+    int MapSizeX = 800;
+    int MapSizeY = 800;
     int MapSectorSize = 10;
 
 
     //zmienne mrówek
     //możliwości ruchu mrowki
     double AntTurnAngleChange = 0.01;
-    double AntTurnAngleMax = 0.01;
+    double AntTurnAngleMax = 0.1;
     double AntConsumption = 0.5;
     double AntStepLength = 0.5;
 
     //decyzyjność mrówki
-    double AntProbabilityOfTakingPheromonesIntoAccount = 0.005;
+    double AntProbabilityOfTakingPheromonesIntoAccount = 0.01;
 
     //zostawianie znakow przez mrowke
     int AntLeavePheromoneInterval = 10;
@@ -290,5 +290,145 @@ public class Config {
 
     public double getDisplayFoodSize() {
         return DisplayFoodSize;
+    }
+
+
+    //temp do ułożenia
+
+
+    public void setAntFoodCapacity(int antFoodCapacity) {
+        AntFoodCapacity = antFoodCapacity;
+    }
+
+    public void setAntConsumption(double antConsumption) {
+        AntConsumption = antConsumption;
+    }
+
+    public void setAntDiesOfAge(boolean antDiesOfAge) {
+        AntDiesOfAge = antDiesOfAge;
+    }
+
+    public void setAntFov(double antFov) {
+        AntFov = antFov;
+    }
+
+    public void setAntGetHungry(boolean antGetHungry) {
+        isAntGetHungry = antGetHungry;
+    }
+
+    public void setAnthillAntsLimit(int anthillAntsLimit) {
+        AnthillAntsLimit = anthillAntsLimit;
+    }
+
+    public void setAnthillChanceOfAntSpawning(double anthillChanceOfAntSpawning) {
+        AnthillChanceOfAntSpawning = anthillChanceOfAntSpawning;
+    }
+
+    public void setAntLeavePheromoneInterval(int antLeavePheromoneInterval) {
+        AntLeavePheromoneInterval = antLeavePheromoneInterval;
+    }
+
+    public void setAntLifetime(double antLifetime) {
+        AntLifetime = antLifetime;
+    }
+
+    public void setAntMaximumHungerLevel(double antMaximumHungerLevel) {
+        AntMaximumHungerLevel = antMaximumHungerLevel;
+    }
+
+    public void setAntPheromoneSenseRange(double antPheromoneSenseRange) {
+        AntPheromoneSenseRange = antPheromoneSenseRange;
+    }
+
+    public void setAntProbabilityOfTakingPheromonesIntoAccount(double antProbabilityOfTakingPheromonesIntoAccount) {
+        AntProbabilityOfTakingPheromonesIntoAccount = antProbabilityOfTakingPheromonesIntoAccount;
+    }
+
+    public void setAntStepLength(double antStepLength) {
+        AntStepLength = antStepLength;
+    }
+
+    public void setAntsVisible(boolean antsVisible) {
+        isAntsVisible = antsVisible;
+    }
+
+    public void setAntTurnAngleChange(double antTurnAngleChange) {
+        AntTurnAngleChange = antTurnAngleChange;
+    }
+
+    public void setAntTurnAngleMax(double antTurnAngleMax) {
+        AntTurnAngleMax = antTurnAngleMax;
+    }
+
+    public void setAntViewRange(int antViewRange) {
+        AntViewRange = antViewRange;
+    }
+
+    public void setCurrentTick(int currentTick) {
+        CurrentTick = currentTick;
+    }
+
+    public void setDisplayAnthillSize(double displayAnthillSize) {
+        DisplayAnthillSize = displayAnthillSize;
+    }
+
+    public void setDisplayAntSize(double displayAntSize) {
+        DisplayAntSize = displayAntSize;
+    }
+
+    public void setDisplayFoodSize(double displayFoodSize) {
+        DisplayFoodSize = displayFoodSize;
+    }
+
+    public void setDisplayPheromoneSize(double displayPheromoneSize) {
+        DisplayPheromoneSize = displayPheromoneSize;
+    }
+
+    public void setMapSectorSize(int mapSectorSize) {
+        MapSectorSize = mapSectorSize;
+    }
+
+    public void setMapSizeX(int mapSizeX) {
+        MapSizeX = mapSizeX;
+    }
+
+    public void setMapSizeY(int mapSizeY) {
+        MapSizeY = mapSizeY;
+    }
+
+    public void setOutsideMapTreshold(int outsideMapTreshold) {
+        OutsideMapTreshold = outsideMapTreshold;
+    }
+
+    public void setPheromoneEvaporationTime(int pheromoneEvaporationTime) {
+        PheromoneEvaporationTime = pheromoneEvaporationTime;
+    }
+
+    public void setPheromonesEvaporate(boolean pheromonesEvaporate) {
+        isPheromonesEvaporate = pheromonesEvaporate;
+    }
+
+    public void setPheromoneToFoodUsedUp(boolean pheromoneToFoodUsedUp) {
+        isPheromoneToFoodUsedUp = pheromoneToFoodUsedUp;
+    }
+
+    public void setPheromoneToFoodVisible(boolean pheromoneToFoodVisible) {
+        isPheromoneToFoodVisible = pheromoneToFoodVisible;
+    }
+
+    public void setPheromoneToHomeUsedUp(boolean pheromoneToHomeUsedUp) {
+        isPheromoneToHomeUsedUp = pheromoneToHomeUsedUp;
+    }
+
+    public void setPheromoneToHomeVisible(boolean pheromoneToHomeVisible) {
+        isPheromoneToHomeVisible = pheromoneToHomeVisible;
+    }
+
+    public void setPheromoneVisible(boolean pheromoneVisible) {
+        isPheromoneVisible = pheromoneVisible;
+    }
+
+    public void setWorld(Pane world) {
+        this.world = world;
     }
 }

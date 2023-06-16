@@ -105,21 +105,24 @@ public class GuiController {
 
     @FXML
     void UpdateSettings() {
-//        settings.setPheromoneEvaporationTime((int) PheromoneEvaporationTimeSlide.getValue());
-//        settings.setAnthillAntsLimit((int) AnthillAntLimitSlide.getValue());
-//        settings.setAntTurnAngleChange(AntTurnAngleChangeSlide.getValue());
-//        settings.setAntFoodCapacity((int) AntFoodCapacitySlide.getValue());
-//        settings.setAntConsumption(AntConsumptionSlide.getValue());
-//        settings.setAntMaximumHungerLevel((int) AntHungerLimitSlide.getValue());
-//        settings.setAntLeavePheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
-//        settings.setDisplayAntSize(AntSizeSlide.getValue());
-//        settings.setAntLifetime(AntLifeTimeSlide.getValue());
-//        settings.setAntStepLengthh(AntStepLengthSlide.getValue());
-//        settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
-//        settings.setDisplayAnthillSize(AnthillCircleRadiusSlide.getValue());
-//        settings.setDisplayPheromoneSize(PheromoneCircleRadiusSlide.getValue());
-//
-//        sim.updatealldisplayConfigs();
+        settings.setDisplayAntSize(AntSizeSlide.getValue());
+        settings.setDisplayAnthillSize(AnthillCircleRadiusSlide.getValue());
+        settings.setDisplayPheromoneSize(PheromoneCircleRadiusSlide.getValue());
+
+        settings.setAntLifetime((int) AntLifeTimeSlide.getValue());
+        settings.setAntPheromoneSenseRange((int) AntRangeSlide.getValue());
+        settings.setAntStepLength((int) AntStepLengthSlide.getValue());
+        settings.setAntTurnAngleMax(AntTurnAngleMaxSlide.getValue());
+        settings.setAntLeavePheromoneInterval((int) AntPheromoneIntervalSlide.getValue());
+        settings.setAntMaximumHungerLevel((int) AntHungerLimitSlide.getValue());
+        settings.setAntConsumption(AntConsumptionSlide.getValue());
+        settings.setAntFoodCapacity((int) AntFoodCapacitySlide.getValue());
+        settings.setAntTurnAngleChange(AntTurnAngleChangeSlide.getValue());
+        settings.setAnthillAntsLimit((int) AnthillAntLimitSlide.getValue());
+        settings.setPheromoneEvaporationTime((int) PheromoneEvaporationTimeSlide.getValue());
+
+
+        sim.updatealldisplayConfigs();
     }
 
     /**

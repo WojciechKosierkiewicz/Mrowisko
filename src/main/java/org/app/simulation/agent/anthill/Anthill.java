@@ -14,6 +14,10 @@ import org.app.simulation.meneger.config.Config;
 public class Anthill extends Agent {
     Vector<Ant> Ants;
 
+    public void updateJavaFxShapeSettings() {
+        getShape().setRadius(getSettings().getDisplayAnthillSize());
+        getShape().setFill(TypAgenta.ANTHILL.getColor());
+    }
 
     public Anthill(Config settings) {
         super(TypAgenta.ANTHILL, settings);

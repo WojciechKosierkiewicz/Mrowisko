@@ -139,16 +139,18 @@ public class Meneger {
      * feromonów) na mapie.
      */
     public void updatealldisplayConfigs() {
+
         for (Anthill anthill : anthills) {
             anthill.updateJavaFxShapeSettings();
+
             for (Ant ant : anthill.getAnts()) {
                 ant.updateJavaFxShapeSettings();
             }
+
         }
+
         for (Pheromone pher : map.getPheromones()) {
             pher.updateJavaFxShapeSettings();
-        }
-        if (settings.isPheromoneVisible()) {
         }
     }
 
