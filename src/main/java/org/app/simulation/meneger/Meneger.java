@@ -16,6 +16,11 @@ import java.util.Vector;
 
 import org.app.simulation.agent.ant.Ant;
 
+/**
+ * Odpowiada za zarządzanie symulacją.
+ * Posiada adnotację @FXML i metodę "initialize()",
+ * która jest wywoływana podczas inicjalizacji kontrolera FXML.
+ */
 public class Meneger {
 
     @FXML
@@ -26,6 +31,9 @@ public class Meneger {
     private final Map map;
     private final int CurrentTick = 0;
 
+    /**
+     * Konstruktor klasy Menager, inicjalizuje menedżera symulacji z określonymi ustawieniami i panelem.
+     */
     public Meneger(Config settings, Pane world) {
         this.settings = settings;
         this.world = world;
@@ -37,26 +45,41 @@ public class Meneger {
         this.anthills = new Vector<>();
     }
 
+    /**
+     * Dodaje losowe jedzenie na mapę.
+     */
     public void AddRandomFood() {
         map.AddFood(new Food(settings));
         map.getFoods().get(map.getFoods().size() - 1).setRandomPosition();
     }
 
+    /**
+     * Inicjalizuje menedżera symulacji (metoda wywoływana podczas inicjalizacji kontrolera FXML).
+     */
     @FXML
     public void initialize() {
         System.out.println("Menager init");
     }
 
+    /**
+     * Dodaje mrowisko na określonych współrzędnych.
+     */
     public void addAnthill(double posx, double posy) {
         anthills.add(new Anthill(settings));
         anthills.get(anthills.size() - 1).setPosition(posx, posy);
     }
 
+    /**
+     * Dodaje mrowisko na losowych współrzędnych.
+     */
     public void addAnthill() {
         anthills.add(new Anthill(settings));
         anthills.get(anthills.size() - 1).setRandomPosition();
     }
 
+    /**
+     * Zwraca wektor identyfikatorów wszystkich mrowisk.
+     */
     public Vector<UUID> getAnthillIDs() {
         Vector<UUID> anthillIDs = new Vector<>();
         for (Anthill anthill : anthills) {
@@ -69,6 +92,9 @@ public class Meneger {
         return map;
     }
 
+    /**
+     * Dodaje określoną liczbę mrówek do mrowiska o określonym identyfikatorze.
+     */
     public void addAnts(int amount, UUID anthillID) {
         for (Anthill anthill : anthills) {
             if (anthill.getId() == anthillID) {
@@ -80,6 +106,10 @@ public class Meneger {
         }
     }
 
+    /**
+     * Wykonuje pojedynczy krok symulacji,
+     * aktualizując wszystkie mrowiska i mapę.
+     */
     public void PrzeprowadzTickSymulacji() {
         for (Anthill anthill : anthills) {
             anthill.update();
@@ -91,6 +121,9 @@ public class Meneger {
         }
     }
 
+    /**
+     * Ustawia losowe pozycje dla wszystkich mrówek na mapie.
+     */
     public void RandomAntPosition() {
         for (Anthill anthill : anthills) {
             for (Ant ant : anthill.getAnts()) {
@@ -99,6 +132,12 @@ public class Meneger {
         }
     }
 
+    /**
+     * Aktualizuje ustawienia wyświetlania dla wszystkich elementów
+     * (mrowiska,
+     * mrówek,
+     * feromonów) na mapie.
+     */
     public void updatealldisplayConfigs() {
         for (Anthill anthill : anthills) {
             anthill.updateJavaFxShapeSettings();
@@ -117,7 +156,12 @@ public class Meneger {
         return Tick;
     }
 
-
+    /**
+     * Usuwa wszystkie elementy z symulacji (mrowiska,
+     * mrówki,
+     * feromony,
+     * jedzenie).
+     */
     public void killeveryone() {
         for (Anthill anthill : anthills) {
             anthill.removeEverythingFromWorld();
@@ -127,6 +171,9 @@ public class Meneger {
         map.clearFood();
     }
 
+    /**
+     * Zwraca liczbę wszystkich mrówek na mapie.
+     */
     public int getAmountofants() {
         int amount = 0;
         for (Anthill anthill : anthills) {

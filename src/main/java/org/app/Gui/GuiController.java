@@ -14,7 +14,10 @@ import org.app.simulation.meneger.Meneger;
 import javafx.scene.paint.Color;
 import org.app.simulation.meneger.config.Config;
 
-
+/**
+ * Odpowiada za obsługę interakcji użytkownika,
+ * aktualizację ustawień i wywołanie odpowiednich akcji w aplikacji.
+ */
 public class GuiController {
     @FXML
     Pane world;
@@ -119,6 +122,12 @@ public class GuiController {
 //        sim.updatealldisplayConfigs();
     }
 
+    /**
+     * Inicjalizuje kontroler GUI,
+     * ustawia tło świata,
+     * tworzy obiekty konfiguracji i menedżera symulacji oraz dodaje mrowisko.
+     * Dodaje również początkową ilość jedzenia i inicjalizuje wykresy.
+     */
     @FXML
     public void initialize() {
         clock = new TimeKeeper();
@@ -137,6 +146,9 @@ public class GuiController {
         }
     }
 
+    /**
+     * Wykonuje pojedynczy krok symulacji.
+     */
     @FXML
     public void step() {
         sim.PrzeprowadzTickSymulacji();
@@ -147,17 +159,28 @@ public class GuiController {
         ticktext.setText(Integer.toString(sim.getTick()));
     }
 
+    /**
+     * Uruchamia animację symulacji.
+     */
 
     @FXML
     public void start() {
         clock.start();
     }
 
+    /**
+     * Zatrzymuje animację symulacji.
+     */
     @FXML
     public void stop() {
         clock.stop();
     }
 
+    /**
+     * Resetuje symulację,
+     * zatrzymuje animację,
+     * zabija wszystkie mrówki i czyści wykresy.
+     */
     @FXML
     public void reset() {
         clock.stop();
@@ -166,6 +189,9 @@ public class GuiController {
         initialize();
     }
 
+    /**
+     * Czyści dane wykresów.
+     */
     public void clearGraphs() {
         populacjaxy.getData().clear();
         pheromonyxy.getData().clear();

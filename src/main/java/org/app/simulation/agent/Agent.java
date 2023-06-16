@@ -7,6 +7,13 @@ import org.app.simulation.meneger.config.Config;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * Odpowiada za wspólne położenie,
+ * kolor oraz ID obiektu,
+ * z tej klasy dziedziczy klasa Ant,
+ * Athill,
+ * Food i Pheromone.
+ */
 public abstract class Agent {
     private final java.util.UUID id;
     private TypAgenta typ;
@@ -16,6 +23,10 @@ public abstract class Agent {
     private Config settings;
     private Circle shape;
 
+    /**
+     * Konstruktor abstrakcyjnej klasy Agent,
+     * inicjalizuje agenta o określonym typie i ustawieniach.
+     */
     public Agent(TypAgenta typ, Config settings) {
         this.typ = typ;
         id = java.util.UUID.randomUUID();
@@ -24,6 +35,9 @@ public abstract class Agent {
         AddToJavaFxDisplay();
     }
 
+    /**
+     * Dodaje agenta do widoku JavaFX.
+     */
     public void AddToJavaFxDisplay() {
         //dont add if arleady in world
         if (settings.getWorld().getChildren().contains(shape)) {
@@ -33,10 +47,16 @@ public abstract class Agent {
         settings.getWorld().getChildren().add(shape);
     }
 
+    /**
+     * Usuwa agenta z widoku JavaFX.
+     */
     public void RemoveFromJavaFxDisplay() {
         settings.getWorld().getChildren().remove(shape);
     }
 
+    /**
+     * Aktualizuje ustawienia kształtu obiektu wizualizacji JavaFX dla agenta.
+     */
     public void updateJavaFxShapeSettings() {
         shape.setRadius(settings.getDisplayAntSize());
         shape.setFill(getColor());
@@ -46,6 +66,9 @@ public abstract class Agent {
         return shape;
     }
 
+    /**
+     * Ustawia losową pozycję agenta na mapie.
+     */
     public void setRandomPosition() {
         Random rand = new Random();
         setLocx(Math.random() * settings.getMapSizeX());

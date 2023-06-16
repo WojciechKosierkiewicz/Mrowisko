@@ -8,6 +8,10 @@ import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;
 
+/**
+ * Reprezentuje pojedynczy feromon w symulacji.
+ * Jest podklasą klasy "Agent.
+ */
 public class Pheromone extends Agent {
     PheromoneType type;
     Ant creator;
@@ -15,6 +19,10 @@ public class Pheromone extends Agent {
     int creationTick;
     int gottotarget = 0;
 
+    /**
+     * Konstruktor klasy Pheromone,
+     * inicjalizuje obiekt feromonu.
+     */
     public Pheromone(double posx, double posy, Ant creator, PheromoneType type) {
         super(TypAgenta.PHEROMONE, creator.getSettings());
         this.type = type;
@@ -26,6 +34,9 @@ public class Pheromone extends Agent {
 
     }
 
+    /**
+     * Konstruktor klasy Pheromone dla feromonu utworzonego przez mrówkę.
+     */
     public Pheromone(Ant ant, PheromoneType type) {
         super(TypAgenta.PHEROMONE, ant.getSettings());
         this.type = type;
@@ -37,11 +48,16 @@ public class Pheromone extends Agent {
 
     }
 
+    /**
+     * Inkrementuje wartość zmiennej gottotarget o jeden.
+     */
     public void add_success() {
         gottotarget++;
     }
 
-
+    /**
+     * Aktualizuje ustawienia obiektu wizualizacji JavaFX dla feromonu.
+     */
     public void updateJavaFxShapeSettings() {
         if (getSettings().isPheromoneVisible()) {
             AddToJavaFxDisplay();

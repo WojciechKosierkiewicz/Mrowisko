@@ -8,6 +8,12 @@ import org.app.simulation.meneger.config.Config;
 import java.util.Comparator;
 import java.util.Vector;
 
+/**
+ * odpowiada za zarządzanie kierunkiem poruszania się mrówki w symulacji.
+ * Jest odpowiedzialna za obliczanie i aktualizację kąta kierunku mrówki na podstawie różnych czynników,
+ * np.
+ * takich jak feromony.
+ */
 public class AntHeading {
 
     Config settings;
@@ -18,6 +24,10 @@ public class AntHeading {
     Ant owner;
     Vector<Pheromone> arleadyusedpheromones = new Vector<>();
 
+    /**
+     * Konstruktor klasy AntHeading,
+     * inicjalizuje obiekt kierunku dla mrówki.
+     */
     AntHeading(Config settings, Ant owner) {
         this.settings = settings;
         this.owner = owner;
@@ -32,10 +42,16 @@ public class AntHeading {
         currentangle = angle;
     }
 
+    /**
+     * Czyści listę już użytych feromonów.
+     */
     public void clear_known_pheromones() {
         arleadyusedpheromones.clear();
     }
 
+    /**
+     * Aktualizuje kierunek mrówki na podstawie pheromonów i innych czynników.
+     */
     public void update() {
         changecurrentaanglefrompheromones();
         if (owner.getDirection() == Antdirection.FOOD) {
@@ -60,6 +76,9 @@ public class AntHeading {
         }
     }
 
+    /**
+     * Usuwa feromony spoza pola widzenia mrówki.
+     */
     void removePheromonesNotInFov(Vector<Pheromone> pheromones) {
         pheromones.removeIf(p -> {
             double angle = Math.atan2(p.getLocy() - owner.getLocy(), p.getLocx() - owner.getLocx());
@@ -67,6 +86,9 @@ public class AntHeading {
         });
     }
 
+    /**
+     * Oblicza średni kąt na podstawie pheromonów.
+     */
     double getmeanAnglefromPheromones(Vector<Pheromone> pheromones) {
 
         double meanAngle = 0;
@@ -78,7 +100,9 @@ public class AntHeading {
         return meanAngle / pheromones.size();
     }
 
-    //function that calculate what needs to be added to current angle to get to the target
+    /**
+     * Oblicza potrzebną zmianę kąta dla osiągnięcia celu.
+     */
     double calculateneededanglechange(Agent target) {
         double angle = Math.atan2(target.getLocy() - owner.getLocy(), target.getLocx() - owner.getLocx());
         double neededanglechange = angle - currentangle;
@@ -93,6 +117,9 @@ public class AntHeading {
         return neededanglechange;
     }
 
+    /**
+     * Zmienia aktualny kąt na podstawie pheromonów zależnie od kierunku mrówki.
+     */
     double calculateneededanglechangetoangle(double angle) {
         double neededanglechange = angle - currentangle;
 
@@ -106,6 +133,9 @@ public class AntHeading {
         return neededanglechange;
     }
 
+    /**
+     * Zmienia aktualny kąt na podstawie pheromonów zależnie od kierunku mrówki.
+     */
     void changecurrentaanglefrompheromones() {
 
         Vector<Pheromone> pheromones = settings.getMap().getSurroundingPheromones(owner, settings.getAntPheromoneSenseRange());
@@ -160,7 +190,9 @@ public class AntHeading {
         }
     }
 
-
+    /**
+     * Oblicza kąt między mrówką a innym agentem.
+     */
     double calulatemediananglefrompheromones(Vector<Pheromone> pheromones) {
         Vector<Double> angles = new Vector<>();
 
@@ -174,18 +206,30 @@ public class AntHeading {
         return angles.get(angles.size() / 2);
     }
 
+    /**
+     * Oblicza kąt między mrówką a innym agentem.
+     */
     double findAngleToAgent(Agent agent) {
         return owner.countAngleBeetwenPoints(agent.getLocx(), agent.getLocy(), owner.getLocx(), owner.getLocy());
     }
 
+    /**
+     * Odwraca kierunek mrówki.
+     */
     void reverseDirection() {
         currentangle += Math.PI;
     }
 
+    /**
+     * Odbija kierunek mrówki od ściany wzdłuż osi x.
+     */
     void bouncexwall() {
         currentangle = Math.PI - currentangle;
     }
 
+    /**
+     * Odbija kierunek mrówki od ściany wzdłuż osi y.
+     */
     void bounceywall() {
         currentangle = 2 * Math.PI - currentangle;
     }

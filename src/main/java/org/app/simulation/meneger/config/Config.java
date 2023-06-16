@@ -1,5 +1,12 @@
 package org.app.simulation.meneger.config;
 
+/**
+ * Odpowiada za przechowywanie ustawień symulacji w ramach projektu.
+ * Zawiera zmienne dotyczące różnych aspektów symulacji,
+ * takich jak mapa, mrówki,
+ * feromony,
+ * ustawienia wyświetlania itp.
+ */
 
 import javafx.scene.layout.Pane;
 import org.app.simulation.map.Map;

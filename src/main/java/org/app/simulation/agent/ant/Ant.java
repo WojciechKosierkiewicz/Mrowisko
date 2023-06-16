@@ -21,6 +21,10 @@ public class Ant extends Agent {
 
     Anthill mrowisko;
 
+    /**
+     * Konstruktor klasy Ant,
+     * inicjalizuje mrówkę ustawiając odpowiednie wartości początkowe.
+     */
     public Ant(Anthill mrowisko, Config settings) {
         super(TypAgenta.ANT, settings);
         this.heading = new AntHeading(settings, this);
@@ -35,6 +39,9 @@ public class Ant extends Agent {
         return antHunger;
     }
 
+    /**
+     * Zajmuje się karmieniem mrówki.
+     */
     void feedself() {
         if (!getSettings().isAntGetHungry()) {
             return;
@@ -48,6 +55,9 @@ public class Ant extends Agent {
         }
     }
 
+    /**
+     * Obsługuje głodzenie się mrówki.
+     */
     void starve() {
         if (!getSettings().isAntGetHungry()) {
             return;
@@ -61,17 +71,26 @@ public class Ant extends Agent {
         this.antHunger = antHunger;
     }
 
+    /**
+     * Obsługuje znalezienie jedzenia przez mrówkę.
+     */
     void handlefoundfood(Vector<Food> foods) {
         leavePhermoneat(foods.get(0).getLocx(), foods.get(0).getLocy(), PheromoneType.FOOD);
         direction = Antdirection.HOME;
         getSettings().getMap().updateperomonesuccesrate(this, Antdirection.FOOD);
     }
 
+    /**
+     * Obsługuje znalezienie mrowiska przez mrówkę.
+     */
     void handlefoundhome() {
         direction = Antdirection.FOOD;
         getSettings().getMap().updateperomonesuccesrate(this, Antdirection.HOME);
     }
 
+    /**
+     * Sprawdza czy cel znajduje się w zasięgu wzroku mrówki.
+     */
     void checkisTargetinRange() {
         switch (direction) {
             case FOOD -> {
@@ -91,6 +110,9 @@ public class Ant extends Agent {
         }
     }
 
+    /**
+     * Porusza mrówką na podstawie jej aktualnej pozycji i kierunku.
+     */
     public void moveAnt() {
         double movementx = getSettings().getAntStepLengthh() * Math.cos(heading.getHeadingAngle());
         double movementy = getSettings().getAntStepLengthh() * Math.sin(heading.getHeadingAngle());
@@ -110,11 +132,16 @@ public class Ant extends Agent {
         this.setLocy(newy);
     }
 
-
+    /**
+     * Aktualizuje kąt kierunku mrówki.
+     */
     public void updateAngle() {
         heading.update();
     }
 
+    /**
+     * Oblicza kąt między dwoma punktami.
+     */
     public double countAngleBeetwenPoints(double x1, double y1, double x2, double y2) {
         double dx = x2 - x1;
         double dy = y2 - y1;
@@ -122,6 +149,9 @@ public class Ant extends Agent {
         return Math.atan2(dy, dx);
     }
 
+    /**
+     * Oblicza kąt między dwoma punktami.
+     */
     public double countDistanceBeetwenPoints(double x1, double y1, double x2, double y2) {
         double dx = x2 - x1;
         double dy = y2 - y1;
@@ -129,14 +159,23 @@ public class Ant extends Agent {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
+    /**
+     * Oblicza odległość między mrówką a innym agentem.
+     */
     public double countDistanceBetweenAgents(Agent agent) {
         return countDistanceBeetwenPoints(getLocx(), getLocy(), agent.getLocx(), agent.getLocy());
     }
 
+    /**
+     * Pozostawia feromon informujący o jedzeniu w środowisku.
+     */
     void leavePhermoneat(double locx, double locy, PheromoneType type) {
         getMap().addPheromone(new Pheromone(locx, locy, this, type));
     }
 
+    /**
+     * Pozostawia feromon w środowisku na podstawie aktualnego kierunku mrówki.
+     */
     public void leavePheromoneBehind() {
         if (livedUpdates % getSettings().getAntLeavePheromoneInterval() == 0) {
             switch (direction) {
@@ -149,6 +188,9 @@ public class Ant extends Agent {
         }
     }
 
+    /**
+     * Aktualizuje stan mrówki na podstawie jej zachowania.
+     */
     public void update() {
         checkisTargetinRange();
 
