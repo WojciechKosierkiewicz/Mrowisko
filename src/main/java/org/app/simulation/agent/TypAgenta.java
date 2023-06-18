@@ -4,6 +4,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.app.simulation.meneger.config.Config;
 
+/**
+ * Reprezentuje różne typy agentów w symulacji.
+ * Każdy typ agenta ma przypisaną pewną barwę (Color) oraz kształt graficzny (Circle) zależny od konfiguracji (Settings).
+ */
 
 public enum TypAgenta {
     PHEROMONE {

@@ -7,7 +7,6 @@ import org.app.simulation.agent.ant.Antdirection;
 import org.app.simulation.agent.food.Food;
 import org.app.simulation.agent.pheromone.Pheromone;
 import org.app.simulation.map.supportClasses.PheromoneSectorMap;
-import org.app.simulation.map.supportClasses.PheromoneSectorMapBruteForceFAKEONE;
 import org.app.simulation.meneger.config.Config;
 
 import java.util.UUID;

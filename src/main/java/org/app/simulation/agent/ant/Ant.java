@@ -10,6 +10,11 @@ import org.app.simulation.meneger.config.Config;
 
 import java.util.Vector;
 
+/**
+ * Rozszerza funkcjonalność klasy Agent,
+ * dostosowując ją do zachowań i cech charakterystycznych dla mrówek,
+ * implementując ruch agenta oraz jego reakcje na środowisko.
+ */
 public class Ant extends Agent {
 
     private int livedUpdates = 0;

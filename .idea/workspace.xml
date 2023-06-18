@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="posprzątany config">
+    <list default="true" id="09f89bb6-dea5-405c-b7db-ea3ff795bded" name="Changes" comment="dodane komentarze javadocs">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Gui/GuiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/TypAgenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/TypAgenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/AntHeading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Antdirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/ant/Antdirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/anthill/Anthill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/food/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/food/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/Pheromone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/PheromoneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/agent/pheromone/PheromoneType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/Meneger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/Meneger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/map/supportClasses/PheromoneSectorMapBruteForceFAKEONE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/simulation/meneger/config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

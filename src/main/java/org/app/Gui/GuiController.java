@@ -102,7 +102,9 @@ public class GuiController {
     @FXML
     CheckBox AntDiesOfAge = new CheckBox();
 
-
+    /**
+     * Odpowiedzialna za aktualizację ustawień symulacji na podstawie wartości pobranych z suwaków lub innych elementów interfejsu użytkownika.
+     */
     @FXML
     void UpdateSettings() {
         settings.setDisplayAntSize(AntSizeSlide.getValue());
